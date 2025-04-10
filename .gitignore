@@ -118,3 +118,9 @@ src/locale/locales/**/*.js
 
 # ogcard assets
 bskyogcard/src/assets/fonts/noto-*
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

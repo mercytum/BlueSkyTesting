@@ -222,6 +222,7 @@
     "@expo/config-plugins": "9.0.10",
     "@lingui/cli": "^4.14.1",
     "@lingui/macro": "^4.14.1",
+    "@playwright/test": "^1.51.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@react-native/eslint-config": "^0.76.9",
     "@react-native/typescript-config": "^0.76.9",
