@@ -55,7 +55,10 @@
     "make-deploy-bundle": "bash scripts/bundleUpdate.sh",
     "generate-webpack-stats-file": "EXPO_PUBLIC_GENERATE_STATS=1 yarn build-web",
     "open-analyzer": "EXPO_PUBLIC_OPEN_ANALYZER=1 yarn build-web",
-    "icons:optimize": "svgo -f ./assets/icons"
+    "icons:optimize": "svgo -f ./assets/icons",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "allure:report": "npx allure generate allure-results -o allure-report && npx allure open allure-report"
   },
   "dependencies": {
     "@atproto/api": "^0.14.21",
@@ -240,6 +243,7 @@
     "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "allure-playwright": "^3.2.1",
     "babel-jest": "^29.7.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-module-resolver": "^5.0.2",

@@ -22,7 +22,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 3 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'], ['allure-playwright', {outputFolder: 'allure-results'}]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -75,6 +75,6 @@ export default defineConfig({
     command: 'yarn web',
     url: 'http://127.0.0.1:19006',
     reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
+    timeout: 120 * 1000, //2 minutes
   },
 })
