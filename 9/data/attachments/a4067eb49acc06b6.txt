@@ -1,0 +1,1537 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: user can follow and unfollow mercytum
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('search', { name: 'Search' })
+    - locator resolved to <input rows="1" value="" dir="auto" role="search" autocorrect="off" autocomplete="off" spellcheck="false" aria-label="Search" placeholder="Search" autocapitalize="none" enterkeyhint="search" virtualkeyboardpolicy="auto" class="css-textinput-11aywtz r-placeholderTextColor-6taxm2"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    42 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:18:52
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - img
+  - link "View your feeds and explore more":
+    - img
+  - tablist:
+    - tab "Discover"
+    - tab "Following"
+  - 'link "New Jersey Devils''s avatar View profileView profile · April 11, 2025 at 10:04 PM Hey, didn’t that orange guy put a tariff on these guys? Regardless, welcome to the Rock. 👊: Pittsburgh Penguins 🏒: 7 PM 📺: MSGSN 🎧: bit.ly/33z5veQ Hashtag NJDevils An error occurred while loading the video. Please try again. Retry Reply (0 replies) Repost or quote post Like (7 likes) Open post options menu t-sports"':
+    - link "New Jersey Devils's avatar"
+    - link "View profile": ‪New Jersey Devils‬
+    - link "View profile": ‪@njdevils.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 10:04 PM": 7m
+    - text: "Hey, didn’t that orange guy put a tariff on these guys? Regardless, welcome to the Rock. 👊: Pittsburgh Penguins 🏒: 7 PM 📺: MSGSN 🎧:"
+    - link "bit.ly/33z5veQ"
+    - link "Hashtag NJDevils": "#NJDevils"
+    - text: An error occurred while loading the video. Please try again.
+    - button "Retry"
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (7 likes)":
+      - img
+      - text: "7"
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "titsay 𓆏's avatar View profileView profile · April 11, 2025 at 1:36 PM Reply (51 replies) Repost or quote post Like (5,397 likes) Open post options menu t-art":
+    - link "titsay 𓆏's avatar"
+    - link "View profile": ‪titsay 𓆏‬
+    - link "View profile": ‪@titsay.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 1:36 PM": 8h
+    - button "Reply (51 replies)":
+      - img
+      - text: "51"
+    - button "Repost or quote post":
+      - img
+      - text: 1.1K
+    - button "Like (5,397 likes)":
+      - img
+      - text: 5.3K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "daily bunnies 🐇✨'s avatar View profileView profile · April 11, 2025 at 10:53 AM Reply (83 replies) Repost or quote post Like (7,569 likes) Open post options menu t-animals":
+    - link "daily bunnies 🐇✨'s avatar"
+    - link "View profile": ‪daily bunnies 🐇✨‬
+    - link "View profile": ‪@dailybunnies.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 10:53 AM": 11h
+    - button "Reply (83 replies)":
+      - img
+      - text: "83"
+    - button "Repost or quote post":
+      - img
+      - text: "550"
+    - button "Like (7,569 likes)":
+      - img
+      - text: 7.5K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Tyro, ft Ricky's avatar View profileView profile · April 11, 2025 at 8:17 PM It's been a long week. Remember to take time to take care of yourself 💅🏻 💕 A Siamese cat sitting on a cat bed, with one of his back legs raised up. His toes on that foot are outstretched so that his claws are sticking straight up and the cat's head is lowered to them. He seems to be carefully grooming his toes and nails. Reply (18 replies) Repost or quote post Like (1,003 likes) Open post options menu t-pets":
+    - link "Tyro, ft Ricky's avatar"
+    - link "View profile": ‪Tyro, ft Ricky‬
+    - link "View profile": ‪@tyrowo.com‬
+    - text: ·
+    - link "April 11, 2025 at 8:17 PM": 1h
+    - text: It's been a long week. Remember to take time to take care of yourself 💅🏻 💕
+    - img "A Siamese cat sitting on a cat bed, with one of his back legs raised up. His toes on that foot are outstretched so that his claws are sticking straight up and the cat's head is lowered to them. He seems to be carefully grooming his toes and nails."
+    - text: ALT
+    - button "Reply (18 replies)":
+      - img
+      - text: "18"
+    - button "Repost or quote post":
+      - img
+      - text: "57"
+    - button "Like (1,003 likes)":
+      - img
+      - text: 1K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "Paul Bronks's avatar View profileView profile · April 11, 2025 at 10:00 PM \"Excuse me. My eyes are up here\" Reply (4 replies) Repost or quote post Like (78 likes) Open post options menu t-animals":
+    - link "Paul Bronks's avatar"
+    - link "View profile": ‪Paul Bronks‬
+    - link "View profile": ‪@slendersherbet.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 10:00 PM": 12m
+    - text: "\"Excuse me. My eyes are up here\""
+    - button "Reply (4 replies)":
+      - img
+      - text: "4"
+    - button "Repost or quote post":
+      - img
+      - text: "7"
+    - button "Like (78 likes)":
+      - img
+      - text: "78"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Brie ✿'s avatar View profileView profile · April 11, 2025 at 3:21 AM Not all pasta is the same. All different but in a good way. Reply (2 replies) Repost or quote post Like (29 likes) Open post options menu clusterv2:54362":
+    - link "Brie ✿'s avatar"
+    - link "View profile": ‪Brie ✿‬
+    - link "View profile": ‪@riebrie.fears.men‬
+    - text: ·
+    - link "April 11, 2025 at 3:21 AM": 18h
+    - text: Not all pasta is the same. All different but in a good way.
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "1"
+    - button "Like (29 likes)":
+      - img
+      - text: "29"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "𝖆𝖇𝖘𝖎𝖙 ♱ 𝖔𝖒𝖊𝖓's avatar View profileView profile · April 11, 2025 at 7:36 PM 🌙 semidark☀️ Image Image Image Reply (11 replies) Repost or quote post Like (412 likes) Open post options menu t-animals":
+    - link "𝖆𝖇𝖘𝖎𝖙 ♱ 𝖔𝖒𝖊𝖓's avatar"
+    - link "View profile": ‪𝖆𝖇𝖘𝖎𝖙 ♱ 𝖔𝖒𝖊𝖓‬
+    - link "View profile": ‪@murkbone.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 7:36 PM": 2h
+    - text: 🌙 semidark☀️
+    - button "Image"
+    - button "Image"
+    - button "Image"
+    - button "Reply (11 replies)":
+      - img
+      - text: "11"
+    - button "Repost or quote post":
+      - img
+      - text: "99"
+    - button "Like (412 likes)":
+      - img
+      - text: "412"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "chase's avatar View profileView profile · April 11, 2025 at 3:18 AM happy thursday night mooties!! this week has been mad busy so i think i’ll stay up late playing games and slack off at work tomorrow!! Play a cartoon character is standing in front of a field of daisies with his arms outstretched . Reply (5 replies) Repost or quote post Like (18 likes) Open post options menu clusterv2:54362":
+    - link "chase's avatar"
+    - link "View profile": ‪chase‬
+    - link "View profile": ‪@chsmbly.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 3:18 AM": 18h
+    - text: happy thursday night mooties!! this week has been mad busy so i think i’ll stay up late playing games and slack off at work tomorrow!!
+    - button "Play":
+      - img
+    - button "Reply (5 replies)":
+      - img
+      - text: "5"
+    - button "Repost or quote post":
+      - img
+    - button "Like (18 likes)":
+      - img
+      - text: "18"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "Slime 💚🧪's avatar View profileView profile · April 10, 2025 at 10:33 PM I’m in the middle of reading three different books, playing four different games and watching five different shows. My life is a series of backlogs I’m trying to make my way through and it’s never ending. Reply (7 replies) Repost or quote post Like (71 likes) Open post options menu clusterv2:54362":
+    - link "Slime 💚🧪's avatar"
+    - link "View profile": ‪Slime 💚🧪‬
+    - link "View profile": ‪@capernica.avoids.work‬
+    - text: ·
+    - link "April 10, 2025 at 10:33 PM": 23h
+    - text: I’m in the middle of reading three different books, playing four different games and watching five different shows. My life is a series of backlogs I’m trying to make my way through and it’s never ending.
+    - button "Reply (7 replies)":
+      - img
+      - text: "7"
+    - button "Repost or quote post":
+      - img
+      - text: "4"
+    - button "Like (71 likes)":
+      - img
+      - text: "71"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "Aly *japan arc*'s avatar View profileView profile · April 11, 2025 at 10:50 AM I might start streaming randomizers instead of 1st play thru games. I think it’d be fun to do Elden ring, loz, super Mario, etc 👉🏼👈🏼 Reply (7 replies) Repost or quote post Like (30 likes) Open post options menu clusterv2:54540":
+    - link "Aly *japan arc*'s avatar"
+    - link "View profile": ‪Aly *japan arc*‬
+    - link "View profile": ‪@alyreadsmanga.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 10:50 AM": 11h
+    - text: I might start streaming randomizers instead of 1st play thru games. I think it’d be fun to do Elden ring, loz, super Mario, etc 👉🏼👈🏼
+    - button "Reply (7 replies)":
+      - img
+      - text: "7"
+    - button "Repost or quote post":
+      - img
+    - button "Like (30 likes)":
+      - img
+      - text: "30"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "alnc's avatar View profileView profile · April 11, 2025 at 3:27 PM Reply (4 replies) Repost or quote post Like (550 likes) Open post options menu t-animals":
+    - link "alnc's avatar"
+    - link "View profile": ‪alnc‬
+    - link "View profile": ‪@alnica.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 3:27 PM": 6h
+    - button "Reply (4 replies)":
+      - img
+      - text: "4"
+    - button "Repost or quote post":
+      - img
+      - text: "85"
+    - button "Like (550 likes)":
+      - img
+      - text: "550"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Cats of Yore's avatar View profileView profile · April 10, 2025 at 7:21 PM Cats! Richly illustrated book in my collection from 1950. I’ll post some more from it later. ☺️ Very detailed black ink illustration on white background of two cats. A short haired tabby, is about to tip over a pot of ink with a pen in it and a long-haired black or gray cat is tearing up a pad of paper with his teeth. This is all taking place on a desk with some books in the background. Text reads Cats the title of the book and it is written and illustrated by Wilfred S Bronson. Reply (73 replies) Repost or quote post Like (5,105 likes) Open post options menu t-pets":
+    - link "Cats of Yore's avatar"
+    - link "View profile": ‪Cats of Yore‬
+    - link "View profile": ‪@catsofyore.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 7:21 PM": 1d
+    - text: Cats! Richly illustrated book in my collection from 1950. I’ll post some more from it later. ☺️
+    - img "Very detailed black ink illustration on white background of two cats. A short haired tabby, is about to tip over a pot of ink with a pen in it and a long-haired black or gray cat is tearing up a pad of paper with his teeth. This is all taking place on a desk with some books in the background. Text reads Cats the title of the book and it is written and illustrated by Wilfred S Bronson."
+    - text: ALT
+    - button "Reply (73 replies)":
+      - img
+      - text: "73"
+    - button "Repost or quote post":
+      - img
+      - text: "444"
+    - button "Like (5,105 likes)":
+      - img
+      - text: 5.1K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "Tracy Yardley!'s avatar View profileView profile · April 11, 2025 at 6:13 PM I was going to put up a few pieces at once, but I need to do a few things so I’ll go ahead and put this on the store momentarily Brightly colored artwork featuring Sonic, Amy, Tails and Knuckles in classic style Reply (25 replies) Repost or quote post Like (1,479 likes) Open post options menu t-art":
+    - link "Tracy Yardley!'s avatar"
+    - link "View profile": ‪Tracy Yardley!‬
+    - link "View profile": ‪@yardleyart.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 6:13 PM": 3h
+    - text: I was going to put up a few pieces at once, but I need to do a few things so I’ll go ahead and put this on the store momentarily
+    - img "Brightly colored artwork featuring Sonic, Amy, Tails and Knuckles in classic style"
+    - text: ALT
+    - button "Reply (25 replies)":
+      - img
+      - text: "25"
+    - button "Repost or quote post":
+      - img
+      - text: "307"
+    - button "Like (1,479 likes)":
+      - img
+      - text: 1.4K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Point Defiance Zoo & Aquarium's avatar View profileView profile · April 11, 2025 at 7:57 PM Pretzel and Willow are serving up some serious energy! These two playful muskoxen are making the most of a crisp spring day with some joyful romping and zoomies through their habitat. Pretzel turns two on May 5 and weighs 278 pounds. Willow turns two in September and weighs 341 pounds. Reply (9 replies) Repost or quote post Like (162 likes) Open post options menu t-animals":
+    - link "Point Defiance Zoo & Aquarium's avatar"
+    - link "View profile": ‪Point Defiance Zoo & Aquarium‬
+    - link "View profile": ‪@ptdefiancezoo.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 7:57 PM": 2h
+    - text: Pretzel and Willow are serving up some serious energy! These two playful muskoxen are making the most of a crisp spring day with some joyful romping and zoomies through their habitat. Pretzel turns two on May 5 and weighs 278 pounds. Willow turns two in September and weighs 341 pounds.
+    - button "Reply (9 replies)":
+      - img
+      - text: "9"
+    - button "Repost or quote post":
+      - img
+      - text: "22"
+    - button "Like (162 likes)":
+      - img
+      - text: "162"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "My Happy Place's avatar View profileView profile · April 11, 2025 at 1:32 PM Did you know that Canada is a world leader in tulip production? Had the pleasure of finding some of Vanco Farms (link below) fields while driving the backroads of PEI. A beautiful sight to behold 😎🇨🇦💐🌷❤️ Hashtag ArtYear Hashtag Canada Hashtag Photography Hashtag Flowers Hashtag VancoFarms A photograph of colourful rows of tulips. ALT A photograph of rows of tulips with a single yellow flower embedded in a sea of red. ALT A photograph of a bunch of tulips that are separated from the row. ALT A photograph of colourful tulips in a field. ALT Reply (138 replies) Repost or quote post Like (4,496 likes) Open post options menu t-nature":
+    - link "My Happy Place's avatar"
+    - link "View profile": ‪My Happy Place‬
+    - link "View profile": ‪@goodnrg.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 1:32 PM": 8h
+    - text: Did you know that Canada is a world leader in tulip production? Had the pleasure of finding some of Vanco Farms (link below) fields while driving the backroads of PEI. A beautiful sight to behold 😎🇨🇦💐🌷❤️
+    - link "Hashtag ArtYear": "#ArtYear"
+    - link "Hashtag Canada": "#Canada"
+    - link "Hashtag Photography": "#Photography"
+    - link "Hashtag Flowers": "#Flowers"
+    - link "Hashtag VancoFarms": "#VancoFarms"
+    - button "A photograph of colourful rows of tulips.":
+      - img "A photograph of colourful rows of tulips."
+    - text: ALT
+    - button "A photograph of rows of tulips with a single yellow flower embedded in a sea of red.":
+      - img "A photograph of rows of tulips with a single yellow flower embedded in a sea of red."
+    - text: ALT
+    - button "A photograph of a bunch of tulips that are separated from the row.":
+      - img "A photograph of a bunch of tulips that are separated from the row."
+    - text: ALT
+    - button "A photograph of colourful tulips in a field.":
+      - img "A photograph of colourful tulips in a field."
+    - text: ALT
+    - button "Reply (138 replies)":
+      - img
+      - text: "138"
+    - button "Repost or quote post":
+      - img
+      - text: "556"
+    - button "Like (4,496 likes)":
+      - img
+      - text: 4.4K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "flamby ✨🐝🔪's avatar View profileView profile · April 11, 2025 at 12:25 AM she's a 10 but with the body and personality of a 6 Reply (1 reply) Repost or quote post Like (13 likes) Open post options menu clusterv2:54362":
+    - link "flamby ✨🐝🔪's avatar"
+    - link "View profile": ‪flamby ✨🐝🔪‬
+    - link "View profile": ‪@flamby666.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 12:25 AM": 21h
+    - text: she's a 10 but with the body and personality of a 6
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+      - text: "1"
+    - button "Like (13 likes)":
+      - img
+      - text: "13"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - 'link "Indie Book Spotlight''s avatar View profileView profile · April 11, 2025 at 10:05 PM I’ve had requests over the years for my Enlil & Aris short story series to get a paperback release. WELL, I LISTENED 👀🙂‍↕️✨ Behold the paperback complete collection! All the stories in one! Cover by my queen, the amazing @rachelbowdler.bsky.social ! Coming as soon as I do final checks! 📚💙 A paperback held over grass, atop another paperback. Cover says ‘Enlil and Aris: The Complete Collection by Rebecca Crunden’. Cover is purple, yellow and orange with white font. Image shows two silhouettes of men with a crow above them, the sun behind. Reply (0 replies) Repost or quote post Like (16 likes) Open post options menu t-books"':
+    - link "Indie Book Spotlight's avatar"
+    - link "View profile": ‪Indie Book Spotlight‬
+    - link "View profile": ‪@bookspotlight.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 10:05 PM": 6m
+    - text: I’ve had requests over the years for my Enlil & Aris short story series to get a paperback release. WELL, I LISTENED 👀🙂‍↕️✨ Behold the paperback complete collection! All the stories in one! Cover by my queen, the amazing
+    - link "@rachelbowdler.bsky.social"
+    - text: "! Coming as soon as I do final checks! 📚💙"
+    - 'img "A paperback held over grass, atop another paperback. Cover says ‘Enlil and Aris: The Complete Collection by Rebecca Crunden’. Cover is purple, yellow and orange with white font. Image shows two silhouettes of men with a crow above them, the sun behind."'
+    - text: ALT
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+      - text: "8"
+    - button "Like (16 likes)":
+      - img
+      - text: "16"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - 'link "Nightdive Studios''s avatar View profileView profile · April 11, 2025 at 9:54 PM If you''re 555, then we''re 666... with 666 copies of DOOM + DOOM II - Will It Run Edition from @limitedrungames.com available for pre-order starting April 18 featuring a box that runs DOOM, Floating Cacodemon, and more! 🔥 limitedrungames.com/collections/... DOOM + DOOM II - Will It Run Edition which includes: Sigil & Sigil II, box that plays DOOM, certificate of authenticity, Handheld Cacodemon (plays DOOM), Digital Steam Code included (PC Only), 4 Cassette Tape Soundtrack Set with slipcase, Floating Cacodemon on a magnetic base, Trading Card Pack (includes 5 random cards), available on Nintendo Switch, PS5, Xbox Series X, and PC on LimitedRunGames.com. Limited to 666 copies. Reply (2 replies) Repost or quote post Like (27 likes) Open post options menu t-books"':
+    - link "Nightdive Studios's avatar"
+    - link "View profile": ‪Nightdive Studios‬
+    - link "View profile": ‪@nightdivestudios.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:54 PM": 17m
+    - text: If you're 555, then we're 666... with 666 copies of DOOM + DOOM II - Will It Run Edition from
+    - link "@limitedrungames.com"
+    - text: available for pre-order starting April 18 featuring a box that runs DOOM, Floating Cacodemon, and more! 🔥
+    - link "limitedrungames.com/collections/..."
+    - 'img "DOOM + DOOM II - Will It Run Edition which includes: Sigil & Sigil II, box that plays DOOM, certificate of authenticity, Handheld Cacodemon (plays DOOM), Digital Steam Code included (PC Only), 4 Cassette Tape Soundtrack Set with slipcase, Floating Cacodemon on a magnetic base, Trading Card Pack (includes 5 random cards), available on Nintendo Switch, PS5, Xbox Series X, and PC on LimitedRunGames.com. Limited to 666 copies."'
+    - text: ALT
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "8"
+    - button "Like (27 likes)":
+      - img
+      - text: "27"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - 'link "ProPublica''s avatar View profileView profile · April 11, 2025 at 1:00 AM THREAD: Under a new law, thousands of prisoners in Louisiana have been cut off from ever getting a chance at parole. Why? Because an algorithm said so. 1/ Reply (467 replies) Repost or quote post Like (10,074 likes) Open post options menu t-news"':
+    - link "ProPublica's avatar"
+    - link "View profile": ‪ProPublica‬
+    - link "View profile": ‪@propublica.org‬
+    - text: ·
+    - link "April 11, 2025 at 1:00 AM": 21h
+    - text: "THREAD: Under a new law, thousands of prisoners in Louisiana have been cut off from ever getting a chance at parole. Why? Because an algorithm said so. 1/"
+    - button "Reply (467 replies)":
+      - img
+      - text: "467"
+    - button "Repost or quote post":
+      - img
+      - text: 5K
+    - button "Like (10,074 likes)":
+      - img
+      - text: 10K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "salo's avatar View profileView profile · April 10, 2025 at 10:32 PM The bartender is eating yogurt :/ Reply (2 replies) Repost or quote post Like (17 likes) Open post options menu clusterv2:54362":
+    - link "salo's avatar"
+    - link "View profile": ‪salo‬
+    - link "View profile": ‪@itissalo.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 10:32 PM": 23h
+    - text: The bartender is eating yogurt :/
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "3"
+    - button "Like (17 likes)":
+      - img
+      - text: "17"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "Hannah Lock's avatar View profileView profile · April 11, 2025 at 4:37 PM May the Meowth of Wealth and Good Fortune visit you on this day. Reply (23 replies) Repost or quote post Like (1,087 likes) Open post options menu t-art":
+    - link "Hannah Lock's avatar"
+    - link "View profile": ‪Hannah Lock‬
+    - link "View profile": ‪@hannahlock.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 4:37 PM": 5h
+    - text: May the Meowth of Wealth and Good Fortune visit you on this day.
+    - button "Reply (23 replies)":
+      - img
+      - text: "23"
+    - button "Repost or quote post":
+      - img
+      - text: "355"
+    - button "Like (1,087 likes)":
+      - img
+      - text: 1K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - 'link "ACLU''s avatar View profileView profile · April 11, 2025 at 7:59 PM BREAKING: An immigration court determined our client Mahmoud Khalil to be removable from the U.S. based solely on his political speech. The fight isn''t over — we''ll keep fighting for Mahmoud''s freedom and all of our First Amendment rights in federal court. Reply (389 replies) Repost or quote post Like (12,855 likes) Open post options menu nettop"':
+    - link "ACLU's avatar"
+    - link "View profile": ‪ACLU‬
+    - link "View profile": ‪@aclu.org‬
+    - text: ·
+    - link "April 11, 2025 at 7:59 PM": 2h
+    - text: "BREAKING: An immigration court determined our client Mahmoud Khalil to be removable from the U.S. based solely on his political speech. The fight isn't over — we'll keep fighting for Mahmoud's freedom and all of our First Amendment rights in federal court."
+    - button "Reply (389 replies)":
+      - img
+      - text: "389"
+    - button "Repost or quote post":
+      - img
+      - text: 3.9K
+    - button "Like (12,855 likes)":
+      - img
+      - text: 12.8K
+    - button "Open post options menu":
+      - img
+    - text: nettop
+  - link "baby hag 🧸's avatar View profileView profile · April 11, 2025 at 12:11 AM got approved for a new apartment but wasn’t fast enough to get it before they rented it out in like an hour Reply (0 replies) Repost or quote post Like (13 likes) Open post options menu clusterv2:54362":
+    - link "baby hag 🧸's avatar"
+    - link "View profile": ‪baby hag 🧸‬
+    - link "View profile": ‪@babyhag.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 12:11 AM": 22h
+    - text: got approved for a new apartment but wasn’t fast enough to get it before they rented it out in like an hour
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (13 likes)":
+      - img
+      - text: "13"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "The Dansome's avatar View profileView profile · April 11, 2025 at 4:52 PM Dahlia’s official new look Hashtag art | Hashtag myart | Hashtag dahlia Reply (49 replies) Repost or quote post Like (1,101 likes) Open post options menu t-art":
+    - link "The Dansome's avatar"
+    - link "View profile": ‪The Dansome‬
+    - link "View profile": ‪@thedansome.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 4:52 PM": 5h
+    - text: Dahlia’s official new look
+    - link "Hashtag art": "#art"
+    - text: "|"
+    - link "Hashtag myart": "#myart"
+    - text: "|"
+    - link "Hashtag dahlia": "#dahlia"
+    - button "Reply (49 replies)":
+      - img
+      - text: "49"
+    - button "Repost or quote post":
+      - img
+      - text: "184"
+    - button "Like (1,101 likes)":
+      - img
+      - text: 1.1K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Fiasco the cat's avatar View profileView profile · April 11, 2025 at 6:40 PM Fiasco am on top of the Tall Cabbinet in the kitchen Stoopy New Baby Kitty cannot get up here! HA HA on her. Fiasco will sit here and contemplate... hims kingdom... in peace and quiets (until him gets hungry or bored and gets down again) me, fiasco, a fluffy grey tabby, very close to the ceiling, on top of a wooden cabinet and next to a black wooden tray Reply (14 replies) Repost or quote post Like (398 likes) Open post options menu t-pets":
+    - link "Fiasco the cat's avatar"
+    - link "View profile": ‪Fiasco the cat‬
+    - link "View profile": ‪@fiascothecat.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 6:40 PM": 3h
+    - text: Fiasco am on top of the Tall Cabbinet in the kitchen Stoopy New Baby Kitty cannot get up here! HA HA on her. Fiasco will sit here and contemplate... hims kingdom... in peace and quiets (until him gets hungry or bored and gets down again)
+    - img "me, fiasco, a fluffy grey tabby, very close to the ceiling, on top of a wooden cabinet and next to a black wooden tray"
+    - text: ALT
+    - button "Reply (14 replies)":
+      - img
+      - text: "14"
+    - button "Repost or quote post":
+      - img
+      - text: "19"
+    - button "Like (398 likes)":
+      - img
+      - text: "398"
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - 'link "Angela Collier''s avatar View profileView profile · April 11, 2025 at 8:34 PM I read and loved a bunch of books recently: books lately--reading nonfiction and knitting some socks Reply (11 replies) Repost or quote post Like (168 likes) Open post options menu t-books"':
+    - link "Angela Collier's avatar"
+    - link "View profile": ‪Angela Collier‬
+    - link "View profile": ‪@acollierastro.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 8:34 PM": 1h
+    - text: "I read and loved a bunch of books recently:"
+    - link "books lately--reading nonfiction and knitting some socks":
+      - img
+      - button "Play Video":
+        - img
+      - text: books lately--reading nonfiction and knitting some socks YouTube video by acollieralso
+      - img
+      - text: www.youtube.com
+    - button "Reply (11 replies)":
+      - img
+      - text: "11"
+    - button "Repost or quote post":
+      - img
+      - text: "7"
+    - button "Like (168 likes)":
+      - img
+      - text: "168"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Glizzy__Gobblin's avatar View profileView profile · April 10, 2025 at 11:03 PM After a month of terrible internet and unplugging everything just to have the same issues, I FINALLY called Spectrum and wouldn't you know they're sending a tech at my earliest convenience? It's ALMOST like contacting customer service is helpful/worth it. But who can never know 🤷‍♀️🤷‍♀️🤷‍♀️ Reply (0 replies) Repost or quote post Like (18 likes) Open post options menu clusterv2:54362":
+    - link "Glizzy__Gobblin's avatar"
+    - link "View profile": ‪Glizzy__Gobblin‬
+    - link "View profile": ‪@glizzygobblin.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 11:03 PM": 23h
+    - text: After a month of terrible internet and unplugging everything just to have the same issues, I FINALLY called Spectrum and wouldn't you know they're sending a tech at my earliest convenience? It's ALMOST like contacting customer service is helpful/worth it. But who can never know 🤷‍♀️🤷‍♀️🤷‍♀️
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (18 likes)":
+      - img
+      - text: "18"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - 'link "Acyn''s avatar View profileView profile · April 11, 2025 at 9:29 PM Raskin: If they can just sweep someone off the street, put them on an airplane, and send them to a torturer’s prison in an authoritarian state like El Salvador without due process… then they could do it to anybody. Reply (84 replies) Repost or quote post Like (2,150 likes) Open post options menu nettop"':
+    - link "Acyn's avatar"
+    - link "View profile": ‪Acyn‬
+    - link "View profile": ‪@acyn.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:29 PM": 42m
+    - text: "Raskin: If they can just sweep someone off the street, put them on an airplane, and send them to a torturer’s prison in an authoritarian state like El Salvador without due process… then they could do it to anybody."
+    - button "Reply (84 replies)":
+      - img
+      - text: "84"
+    - button "Repost or quote post":
+      - img
+      - text: "804"
+    - button "Like (2,150 likes)":
+      - img
+      - text: 2.1K
+    - button "Open post options menu":
+      - img
+    - text: nettop
+  - link "Sam Freedman's avatar View profileView profile · April 11, 2025 at 7:17 AM Me reading as sketched by my daughter. Reply (91 replies) Repost or quote post Like (3,618 likes) Open post options menu t-books":
+    - link "Sam Freedman's avatar"
+    - link "View profile": ‪Sam Freedman‬
+    - link "View profile": ‪@samfr.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 7:17 AM": 14h
+    - text: Me reading as sketched by my daughter.
+    - button "Reply (91 replies)":
+      - img
+      - text: "91"
+    - button "Repost or quote post":
+      - img
+      - text: "73"
+    - button "Like (3,618 likes)":
+      - img
+      - text: 3.6K
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "QuoProQuid's avatar View profileView profile · April 11, 2025 at 9:25 PM there's precious few, officially commissioned pieces of art depicting us presidents that i would consider \"good\" and unfortunately most of those are just jfk. Image Image Image Reply (13 replies) Repost or quote post Like (121 likes) Open post options menu t-art":
+    - link "QuoProQuid's avatar"
+    - link "View profile": ‪QuoProQuid‬
+    - link "View profile": ‪@quoproquid.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:25 PM": 46m
+    - text: there's precious few, officially commissioned pieces of art depicting us presidents that i would consider "good" and unfortunately most of those are just jfk.
+    - button "Image"
+    - button "Image"
+    - button "Image"
+    - button "Reply (13 replies)":
+      - img
+      - text: "13"
+    - button "Repost or quote post":
+      - img
+      - text: "12"
+    - button "Like (121 likes)":
+      - img
+      - text: "121"
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - text: Suggested for you
+  - img
+  - link "View Slime 💚🧪's profile":
+    - text: Slime 💚🧪 ‪@capernica.avoids.work‬
+    - button "Follow":
+      - img
+    - text: "She/they ~ 30 🧡🤍🩷 ✧ ˚ Certified yapper ✧ ˚ Anime enthusiast ✧ ˚ Book reader ✧ ˚ Single player story driven rpg player ✧ ˚ Animal lover ✧ ˚ Concert go-er. 🕹️PSN: Capernica"
+  - link "View Aly *japan arc*'s profile":
+    - text: Aly *japan arc* ‪@alyreadsmanga.bsky.social‬
+    - button "Follow":
+      - img
+    - text: "Hi friends!! I’m Aly - 29 years old. Good space for anime/manga/video games/tcg ❤️ MDNI Twitch affiliate ❤️ twitch.tv/alystreams_ Rest of my links: linktr.ee/alytcg"
+  - link "View clare 📖's profile":
+    - text: clare 📖 ‪@xkanrojis.bsky.social‬
+    - button "Follow":
+      - img
+    - text: 29 • an enjoyer of anime, pokémon, books, cosy games, cats and coffee • pastel pink • happily taken 🌷
+  - link "View Brie ✿'s profile":
+    - text: Brie ✿ ‪@riebrie.fears.men‬
+    - button "Follow":
+      - img
+    - text: Never home; leave a message ˚ʚ🧸ɞ˚ Stuffies & Strawberries🍓🍰 I survive off Life quotes & Shit posts. (25 and not thriving) MDNI ‼️
+  - link "Browse more suggestions"
+  - img
+  - link "Jazz The JRPG Queen 👑❤️🎮's avatar View profileView profile · April 11, 2025 at 6:34 PM This book came in today ❤️🥺🧙🏻🧹 🐈‍⬛ Hashtag StudioGhibli Hashtag BookSky Hashtag Kiki’sDeliveryService Kiki’s Delivery Service book 📖❤️🧹🐈‍⬛🧙🏻 Reply (22 replies) Repost or quote post Like (335 likes) Open post options menu t-books":
+    - link "Jazz The JRPG Queen 👑❤️🎮's avatar"
+    - link "View profile": ‪Jazz The JRPG Queen 👑❤️🎮‬
+    - link "View profile": ‪@jazzlikestogame.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 6:34 PM": 3h
+    - text: This book came in today ❤️🥺🧙🏻🧹 🐈‍⬛
+    - link "Hashtag StudioGhibli": "#StudioGhibli"
+    - link "Hashtag BookSky": "#BookSky"
+    - link "Hashtag Kiki’sDeliveryService": "#Kiki’sDeliveryService"
+    - img "Kiki’s Delivery Service book 📖❤️🧹🐈‍⬛🧙🏻"
+    - text: ALT
+    - button "Reply (22 replies)":
+      - img
+      - text: "22"
+    - button "Repost or quote post":
+      - img
+      - text: "14"
+    - button "Like (335 likes)":
+      - img
+      - text: "335"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "momo ˚ ༘♡ ⋆｡˚'s avatar View profileView profile · April 11, 2025 at 12:53 PM 3 more days until my birthday 🥳🥳 Reply (2 replies) Repost or quote post Like (28 likes) Open post options menu clusterv2:54540":
+    - link "momo ˚ ༘♡ ⋆｡˚'s avatar"
+    - link "View profile": ‪momo ˚ ༘♡ ⋆｡˚‬
+    - link "View profile": ‪@crossingmomo.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 12:53 PM": 9h
+    - text: 3 more days until my birthday 🥳🥳
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "1"
+    - button "Like (28 likes)":
+      - img
+      - text: "28"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "Slime 💚🧪's avatar View profileView profile · April 11, 2025 at 3:18 AM Did I completely ignore everything else I’ve been watching to watch and finish the Devil May Cry anime tonight? Maybeeee. Reply (2 replies) Repost or quote post Like (39 likes) Open post options menu clusterv2:54362":
+    - link "Slime 💚🧪's avatar"
+    - link "View profile": ‪Slime 💚🧪‬
+    - link "View profile": ‪@capernica.avoids.work‬
+    - text: ·
+    - link "April 11, 2025 at 3:18 AM": 18h
+    - text: Did I completely ignore everything else I’ve been watching to watch and finish the Devil May Cry anime tonight? Maybeeee.
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+    - button "Like (39 likes)":
+      - img
+      - text: "39"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "Camborghini's avatar View profileView profile · April 11, 2025 at 9:43 PM i been slacking but i'm back today. \"the South got something to say\" - Andre 3000 i can't rep Atlanta and not have not OutKast in my collection and if they not in yours, you slipping Reply (2 replies) Repost or quote post Like (20 likes) Open post options menu t-books":
+    - link "Camborghini's avatar"
+    - link "View profile": ‪Camborghini‬
+    - link "View profile": ‪@camborghini.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:43 PM": 28m
+    - text: i been slacking but i'm back today. "the South got something to say" - Andre 3000 i can't rep Atlanta and not have not OutKast in my collection and if they not in yours, you slipping
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "1"
+    - button "Like (20 likes)":
+      - img
+      - text: "20"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Bloomberg News's avatar View profileView profile · April 11, 2025 at 2:34 PM US hairdressers and aestheticians report clients are opting for less expensive services and canceling appointments—worrying signs that US consumers are retrenching The Beauty Salon Recession Indicator Reply (254 replies) Repost or quote post Like (3,906 likes) Open post options menu t-news":
+    - link "Bloomberg News's avatar"
+    - link "View profile": ‪Bloomberg News‬
+    - link "View profile": ‪@bloomberg.com‬
+    - text: ·
+    - link "April 11, 2025 at 2:34 PM": 7h
+    - text: US hairdressers and aestheticians report clients are opting for less expensive services and canceling appointments—worrying signs that US consumers are retrenching
+    - link "The Beauty Salon Recession Indicator":
+      - img
+      - text: The Beauty Salon Recession Indicator Hairdressers and aestheticians report clients are opting for less expensive services and stretching out the time between appointments—signs that US consumers are retrenching.
+      - img
+      - text: www.bloomberg.com
+    - button "Reply (254 replies)":
+      - img
+      - text: "254"
+    - button "Repost or quote post":
+      - img
+      - text: 1.1K
+    - button "Like (3,906 likes)":
+      - img
+      - text: 3.9K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Boston Celtics's avatar View profileView profile · April 11, 2025 at 9:04 PM Best point forward in basketball 🙌🏽 Jayson Tatum for First Team All-NBA Image Image Reply (7 replies) Repost or quote post Like (58 likes) Open post options menu t-sports":
+    - link "Boston Celtics's avatar"
+    - link "View profile": ‪Boston Celtics‬
+    - link "View profile": ‪@celticsnba.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:04 PM": 1h
+    - text: Best point forward in basketball 🙌🏽 Jayson Tatum for First Team All-NBA
+    - button "Image"
+    - button "Image"
+    - button "Reply (7 replies)":
+      - img
+      - text: "7"
+    - button "Repost or quote post":
+      - img
+      - text: "5"
+    - button "Like (58 likes)":
+      - img
+      - text: "58"
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "🌊🏄BlueWaveSurfer🏄🌊's avatar View profileView profile · April 11, 2025 at 2:45 PM Reply (125 replies) Repost or quote post Like (2,367 likes) Open post options menu t-animals":
+    - link "🌊🏄BlueWaveSurfer🏄🌊's avatar"
+    - link "View profile": ‪🌊🏄BlueWaveSurfer🏄🌊‬
+    - link "View profile": ‪@bluewavesurfer.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 2:45 PM": 7h
+    - button "Reply (125 replies)":
+      - img
+      - text: "125"
+    - button "Repost or quote post":
+      - img
+      - text: "232"
+    - button "Like (2,367 likes)":
+      - img
+      - text: 2.3K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Brie ✿'s avatar View profileView profile · April 11, 2025 at 3:23 AM I’m literally broke but I will buy Sabrina carpenter on Fortnite. Do I play it? No. Will I play it eventually? Yes. Reply (1 reply) Repost or quote post Like (26 likes) Open post options menu clusterv2:54362":
+    - link "Brie ✿'s avatar"
+    - link "View profile": ‪Brie ✿‬
+    - link "View profile": ‪@riebrie.fears.men‬
+    - text: ·
+    - link "April 11, 2025 at 3:23 AM": 18h
+    - text: I’m literally broke but I will buy Sabrina carpenter on Fortnite. Do I play it? No. Will I play it eventually? Yes.
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+    - button "Like (26 likes)":
+      - img
+      - text: "26"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - 'link "Retro Computers''s avatar View profileView profile · April 11, 2025 at 6:05 PM THE HULK HAS GONE SOFT In an ad that was printed on special flourescent paper to give it a \"radioactive\" green gradient (meaning, it scans very poorly), Commodore advertises a first party adventure game: \"QUESTPROBE: THe Hulk: A Marvel Adventure.\" Screenshots show Bruce Banner looking in the mirror, the Hulk looking in a morror, and a transformation scene. Reply (23 replies) Repost or quote post Like (195 likes) Open post options menu t-books"':
+    - link "Retro Computers's avatar"
+    - link "View profile": ‪Retro Computers‬
+    - link "View profile": ‪@retrocomps.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 6:05 PM": 4h
+    - text: THE HULK HAS GONE SOFT
+    - 'img "In an ad that was printed on special flourescent paper to give it a \"radioactive\" green gradient (meaning, it scans very poorly), Commodore advertises a first party adventure game: \"QUESTPROBE: THe Hulk: A Marvel Adventure.\" Screenshots show Bruce Banner looking in the mirror, the Hulk looking in a morror, and a transformation scene."'
+    - text: ALT
+    - button "Reply (23 replies)":
+      - img
+      - text: "23"
+    - button "Repost or quote post":
+      - img
+      - text: "36"
+    - button "Like (195 likes)":
+      - img
+      - text: "195"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "clare 📖's avatar View profileView profile · April 11, 2025 at 10:30 AM My birthday in 10 days! 🎊 I'll officially be joining the 30 club aha! 💖 Reply (15 replies) Repost or quote post Like (70 likes) Open post options menu clusterv2:54540":
+    - link "clare 📖's avatar"
+    - link "View profile": ‪clare 📖‬
+    - link "View profile": ‪@xkanrojis.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 10:30 AM": 11h
+    - text: My birthday in 10 days! 🎊 I'll officially be joining the 30 club aha! 💖
+    - button "Reply (15 replies)":
+      - img
+      - text: "15"
+    - button "Repost or quote post":
+      - img
+    - button "Like (70 likes)":
+      - img
+      - text: "70"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "Trash's avatar View profileView profile · April 11, 2025 at 1:59 PM Hi friends! Im gonna go ahead and cancel stream tonight. This week was incredibly tough, to the point where I even forgot to make a schedule. Im taking it as a sign I need to rest. Potentially may be doing a collab stream with @antinegative.bsky.social while Im in California. Details later. Reply (0 replies) Repost or quote post Like (12 likes) Open post options menu clusterv2:54540":
+    - link "Trash's avatar"
+    - link "View profile": ‪Trash‬
+    - link "View profile": ‪@trashrandicoot.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 1:59 PM": 8h
+    - text: Hi friends! Im gonna go ahead and cancel stream tonight. This week was incredibly tough, to the point where I even forgot to make a schedule. Im taking it as a sign I need to rest. Potentially may be doing a collab stream with
+    - link "@antinegative.bsky.social"
+    - text: while Im in California. Details later.
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (12 likes)":
+      - img
+      - text: "12"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "Ryan Marino, MD's avatar View profileView profile · April 11, 2025 at 7:33 PM 3 days ago RFK Jr. told the CDC to stop recommending water fluoridation, claiming it was a neurotoxin (this is a lie). Turns out he also just eliminated the CDC’s entire Lead Program, and now lead poisoned children in Milwaukee are just on their own. Lead IS a neurotoxin and harms brain development CDC denies help for lead poisoning in Milwaukee schools due to layoffs Reply (427 replies) Repost or quote post Like (9,173 likes) Open post options menu nettop":
+    - link "Ryan Marino, MD's avatar"
+    - link "View profile": ‪Ryan Marino, MD‬
+    - link "View profile": ‪@ryanmarino.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 7:33 PM": 2h
+    - text: 3 days ago RFK Jr. told the CDC to stop recommending water fluoridation, claiming it was a neurotoxin (this is a lie). Turns out he also just eliminated the CDC’s entire Lead Program, and now lead poisoned children in Milwaukee are just on their own. Lead IS a neurotoxin and harms brain development
+    - link "CDC denies help for lead poisoning in Milwaukee schools due to layoffs":
+      - img
+      - text: CDC denies help for lead poisoning in Milwaukee schools due to layoffs The CDC rejected a request for help "due to the complete loss" of their lead poisoning experts.
+      - img
+      - text: www.cbsnews.com
+    - button "Reply (427 replies)":
+      - img
+      - text: "427"
+    - button "Repost or quote post":
+      - img
+      - text: 5.3K
+    - button "Like (9,173 likes)":
+      - img
+      - text: 9.1K
+    - button "Open post options menu":
+      - img
+    - text: nettop
+  - link "‎‧₊˚✧Pixie✧˚₊‧'s avatar View profileView profile · April 11, 2025 at 2:06 PM Today is the day I go to six flags magic mountain with my friend!!! Also good morning Play a pink starfish with the words today 's the daaaay Reply (2 replies) Repost or quote post Like (7 likes) Open post options menu clusterv2:54540":
+    - link "‎‧₊˚✧Pixie✧˚₊‧'s avatar"
+    - link "View profile": ‪‧₊˚✧Pixie✧˚₊‧‬
+    - link "View profile": ‪@pixie.shares.games‬
+    - text: ·
+    - link "April 11, 2025 at 2:06 PM": 8h
+    - text: Today is the day I go to six flags magic mountain with my friend!!! Also good morning
+    - button "Play":
+      - img
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+    - button "Like (7 likes)":
+      - img
+      - text: "7"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "mooyuun 🌷's avatar View profileView profile · April 11, 2025 at 1:55 PM I also love the first color. Now I have 3 outfits completed as f2p, a Sweet one, Fresh and Elegant. Now waiting for Cool and Sexy. Hashtag InfinityNikki Image Image Reply (0 replies) Repost or quote post Like (7 likes) Open post options menu clusterv2:54540":
+    - link "mooyuun 🌷's avatar"
+    - link "View profile": ‪mooyuun 🌷‬
+    - link "View profile": ‪@mooyuun.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 1:55 PM": 8h
+    - text: I also love the first color. Now I have 3 outfits completed as f2p, a Sweet one, Fresh and Elegant. Now waiting for Cool and Sexy.
+    - link "Hashtag InfinityNikki": "#InfinityNikki"
+    - button "Image"
+    - button "Image"
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+      - text: "2"
+    - button "Like (7 likes)":
+      - img
+      - text: "7"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - 'link "Mina Kimes''s avatar View profileView profile · April 11, 2025 at 12:12 AM TreVeyon Henderson and Quinshon Judkins are both great—but which OSU RB should be drafted first? @benjaminsolak.bsky.social and I discussed the top skill players in the draft on the pod. 🎧: apple.co/4lprk8C 📺: youtu.be/P2Ig2eTymYc?... Reply (42 replies) Repost or quote post Like (353 likes) Open post options menu t-sports"':
+    - link "Mina Kimes's avatar"
+    - link "View profile": ‪Mina Kimes‬
+    - link "View profile": ‪@minakimes.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 12:12 AM": 21h
+    - text: TreVeyon Henderson and Quinshon Judkins are both great—but which OSU RB should be drafted first?
+    - link "@benjaminsolak.bsky.social"
+    - text: "and I discussed the top skill players in the draft on the pod. 🎧:"
+    - link "apple.co/4lprk8C"
+    - text: "📺:"
+    - link "youtu.be/P2Ig2eTymYc?..."
+    - button "Reply (42 replies)":
+      - img
+      - text: "42"
+    - button "Repost or quote post":
+      - img
+      - text: "32"
+    - button "Like (353 likes)":
+      - img
+      - text: "353"
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "Ghoul 💀🧪's avatar View profileView profile · April 11, 2025 at 3:01 AM So I got this cute chair, but it much shorter than I expected and for what I was planning on using it for. When I eventually get it downstairs, opinions on if I would ruin the vibe of it too much by putting leg extendors on it? Image Image Reply (7 replies) Repost or quote post Like (16 likes) Open post options menu clusterv2:54362":
+    - link "Ghoul 💀🧪's avatar"
+    - link "View profile": ‪Ghoul 💀🧪‬
+    - link "View profile": ‪@radiationghoul.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 3:01 AM": 19h
+    - text: So I got this cute chair, but it much shorter than I expected and for what I was planning on using it for. When I eventually get it downstairs, opinions on if I would ruin the vibe of it too much by putting leg extendors on it?
+    - button "Image"
+    - button "Image"
+    - button "Reply (7 replies)":
+      - img
+      - text: "7"
+    - button "Repost or quote post":
+      - img
+    - button "Like (16 likes)":
+      - img
+      - text: "16"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "Xiao Tong 🦋 CTC's avatar View profileView profile · April 11, 2025 at 12:56 AM A good dragon hoard must have a princess Hashtag ocs Original character piece of a humanoid dragon planting flowers around a statue of a princess playing a crescent moon-shaped lyre. Reply (54 replies) Repost or quote post Like (7,423 likes) Open post options menu t-art":
+    - link "Xiao Tong 🦋 CTC's avatar"
+    - link "View profile": ‪Xiao Tong 🦋 CTC‬
+    - link "View profile": ‪@velinxi.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 12:56 AM": 21h
+    - text: A good dragon hoard must have a princess
+    - link "Hashtag ocs": "#ocs"
+    - img "Original character piece of a humanoid dragon planting flowers around a statue of a princess playing a crescent moon-shaped lyre."
+    - text: ALT
+    - button "Reply (54 replies)":
+      - img
+      - text: "54"
+    - button "Repost or quote post":
+      - img
+      - text: 1.1K
+    - button "Like (7,423 likes)":
+      - img
+      - text: 7.4K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "glastomichelle.bsky.social's avatar View profileView profile · April 11, 2025 at 9:15 AM A funny one from this morning's misty sunrise on Glastonbury Tor. At first glance it looks like someone diving over the sun into the mist below. It is actually a bird heading straight for me and yes I did duck although I am sure it would have missed me. 😂 Reply (314 replies) Repost or quote post Like (9,240 likes) Open post options menu t-nature":
+    - link "glastomichelle.bsky.social's avatar"
+    - link "View profile": ‪glastomichelle.bsky.social‬
+    - link "View profile": ‪@glastomichelle.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:15 AM": 12h
+    - text: A funny one from this morning's misty sunrise on Glastonbury Tor. At first glance it looks like someone diving over the sun into the mist below. It is actually a bird heading straight for me and yes I did duck although I am sure it would have missed me. 😂
+    - button "Reply (314 replies)":
+      - img
+      - text: "314"
+    - button "Repost or quote post":
+      - img
+      - text: "767"
+    - button "Like (9,240 likes)":
+      - img
+      - text: 9.2K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "AS Paul's avatar View profileView profile · April 11, 2025 at 2:49 PM r/birdwatching u/FabulousCommittee602 • 1d saw one today. saw bird. outside Slight_Ad_3254 • 1d Is there a photo? FabulousCommittee602 OP • 1d no. flew away cbak9671 • 1d happens Reply (37 replies) Repost or quote post Like (2,187 likes) Open post options menu t-nature":
+    - link "AS Paul's avatar"
+    - link "View profile": ‪AS Paul‬
+    - link "View profile": ‪@aspaul.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 2:49 PM": 7h
+    - img "r/birdwatching u/FabulousCommittee602 • 1d saw one today. saw bird. outside Slight_Ad_3254 • 1d Is there a photo? FabulousCommittee602 OP • 1d no. flew away cbak9671 • 1d happens"
+    - text: ALT
+    - button "Reply (37 replies)":
+      - img
+      - text: "37"
+    - button "Repost or quote post":
+      - img
+      - text: "503"
+    - button "Like (2,187 likes)":
+      - img
+      - text: 2.1K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "graham's avatar View profileView profile · April 11, 2025 at 1:50 PM potaters some roasted baby yukon gold potatoes. i boiled them, cooled them overnight and then roughly broke them in half and roasted in a cast iron pan in the oven on 425. halfway through i dusted em with penzeys ozark seasoning blend. they're golden brown and crusty Reply (1 reply) Repost or quote post Like (10 likes) Open post options menu clusterv2:54540":
+    - link "graham's avatar"
+    - link "View profile": ‪graham‬
+    - link "View profile": ‪@grahamswebsite.neocities.org‬
+    - text: ·
+    - link "April 11, 2025 at 1:50 PM": 8h
+    - text: potaters
+    - img "some roasted baby yukon gold potatoes. i boiled them, cooled them overnight and then roughly broke them in half and roasted in a cast iron pan in the oven on 425. halfway through i dusted em with penzeys ozark seasoning blend. they're golden brown and crusty"
+    - text: ALT
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+    - button "Like (10 likes)":
+      - img
+      - text: "10"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "marina🌿 4/7 🎂's avatar View profileView profile · April 11, 2025 at 3:07 PM happy friday to the little proletarians who live in my phone marina standing in the greenhouse in a black baseball hat that says “daddy” and a UCSC banana slug sweater. they’re holding a large pink aeonium in their hands. Reply (48 replies) Repost or quote post Like (771 likes) Open post options menu t-nature":
+    - link "marina🌿 4/7 🎂's avatar"
+    - link "View profile": ‪marina🌿 4/7 🎂‬
+    - link "View profile": ‪@marinadove.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 3:07 PM": 7h
+    - text: happy friday to the little proletarians who live in my phone
+    - img "marina standing in the greenhouse in a black baseball hat that says “daddy” and a UCSC banana slug sweater. they’re holding a large pink aeonium in their hands."
+    - text: ALT
+    - button "Reply (48 replies)":
+      - img
+      - text: "48"
+    - button "Repost or quote post":
+      - img
+      - text: "17"
+    - button "Like (771 likes)":
+      - img
+      - text: "771"
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "amberkitty's avatar View profileView profile · April 11, 2025 at 1:23 AM Girl dinner Dr Pepper Zero Reply (3 replies) Repost or quote post Like (23 likes) Open post options menu clusterv2:54362":
+    - link "amberkitty's avatar"
+    - link "View profile": ‪amberkitty‬
+    - link "View profile": ‪@amberkitty.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 1:23 AM": 20h
+    - text: Girl dinner
+    - img "Dr Pepper Zero"
+    - text: ALT
+    - button "Reply (3 replies)":
+      - img
+      - text: "3"
+    - button "Repost or quote post":
+      - img
+    - button "Like (23 likes)":
+      - img
+      - text: "23"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "daily bunnies 🐇✨'s avatar View profileView profile · April 10, 2025 at 9:24 PM Reply (37 replies) Repost or quote post Like (3,787 likes) Open post options menu t-animals":
+    - link "daily bunnies 🐇✨'s avatar"
+    - link "View profile": ‪daily bunnies 🐇✨‬
+    - link "View profile": ‪@dailybunnies.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 9:24 PM": 1d
+    - button "Reply (37 replies)":
+      - img
+      - text: "37"
+    - button "Repost or quote post":
+      - img
+      - text: "279"
+    - button "Like (3,787 likes)":
+      - img
+      - text: 3.7K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Lev Parikian's avatar View profileView profile · April 11, 2025 at 9:08 PM Do not displease the pigeon. Very close-up shot of a feral pigeon. Grey head, orange eye, strange white lump of keratin at the base of its bill, faint glossy sheen of green on its neck. Attractive enough, if a little in-your-face, but also carrying a slight air of general greasiness. Reply (6 replies) Repost or quote post Like (61 likes) Open post options menu t-nature":
+    - link "Lev Parikian's avatar"
+    - link "View profile": ‪Lev Parikian‬
+    - link "View profile": ‪@levparikian.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:08 PM": 1h
+    - text: Do not displease the pigeon.
+    - img "Very close-up shot of a feral pigeon. Grey head, orange eye, strange white lump of keratin at the base of its bill, faint glossy sheen of green on its neck. Attractive enough, if a little in-your-face, but also carrying a slight air of general greasiness."
+    - text: ALT
+    - button "Reply (6 replies)":
+      - img
+      - text: "6"
+    - button "Repost or quote post":
+      - img
+      - text: "5"
+    - button "Like (61 likes)":
+      - img
+      - text: "61"
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "Lizzi ⚔️ @MHWilds's avatar View profileView profile · April 11, 2025 at 9:30 PM Holy shit I wish I could be this creative with my guild card Screenshot of a hunter with a birb head Reply (3 replies) Repost or quote post Like (31 likes) Open post options menu t-animals":
+    - link "Lizzi ⚔️ @MHWilds's avatar"
+    - link "View profile": ‪Lizzi ⚔️ @MHWilds‬
+    - link "View profile": ‪@violetmizutsune.bsky.social‬
+    - text: ·
+    - link "April 11, 2025 at 9:30 PM": 41m
+    - text: Holy shit I wish I could be this creative with my guild card
+    - img "Screenshot of a hunter with a birb head"
+    - text: ALT
+    - button "Reply (3 replies)":
+      - img
+      - text: "3"
+    - button "Repost or quote post":
+      - img
+      - text: "5"
+    - button "Like (31 likes)":
+      - img
+      - text: "31"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "the Well-Red Mage's avatar View profileView profile · April 10, 2025 at 11:17 PM ┏┓ ┃┃╱╲ in ┃╱╱╲╲ this ╱╱╭╮╲╲ house ▔▏┗┛▕▔ we always ╱▔▔▔▔▔▔▔▔▔▔╲ ensure we save the game twice ╱╱┏┳┓╭╮┏┳┓ ╲╲ ▔▏┗┻┛┃┃┗┻┛▕▔ Reply (7 replies) Repost or quote post Like (92 likes) Open post options menu ntpc:3000151":
+    - link "the Well-Red Mage's avatar"
+    - link "View profile": ‪the Well-Red Mage‬
+    - link "View profile": ‪@thewellredmage.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 11:17 PM": 22h
+    - text: ┏┓ ┃┃╱╲ in ┃╱╱╲╲ this ╱╱╭╮╲╲ house ▔▏┗┛▕▔ we always ╱▔▔▔▔▔▔▔▔▔▔╲ ensure we save the game twice ╱╱┏┳┓╭╮┏┳┓ ╲╲ ▔▏┗┻┛┃┃┗┻┛▕▔
+    - button "Reply (7 replies)":
+      - img
+      - text: "7"
+    - button "Repost or quote post":
+      - img
+      - text: "19"
+    - button "Like (92 likes)":
+      - img
+      - text: "92"
+    - button "Open post options menu":
+      - img
+    - text: ntpc:3000151
+  - button "New post":
+    - img
+- navigation:
+  - button "Switch accounts"
+  - link "Home"
+  - link "Explore"
+  - link "Notifications": "1"
+  - link "Chat"
+  - link "Feeds"
+  - link "Lists"
+  - link "Profile"
+  - link "Settings"
+- img
+- search "Search"
+- link "Discover"
+- link "Following"
+- link "More feeds"
+- img
+- text: Trending
+- button "Hide trending topics":
+  - img
+- link "Browse topic Khalil Case": Khalil Case
+- link "Browse topic Abrego Garcia": Abrego Garcia
+- link "Browse topic DOJ": DOJ
+- link "Browse topic Letterboxd": Letterboxd
+- link "Browse topic Canucks": Canucks
+- link "Browse topic Supreme Court": Supreme Court
+- link "Feedback"
+- text: •
+- link "Privacy"
+- text: •
+- link "Terms"
+- text: •
+- link "Help"
+```
+
+# Test source
+
+```ts
+   1 | import {expect, test} from '@playwright/test'
+   2 |
+   3 | test('user can follow and unfollow mercytum', async ({page}) => {
+   4 |   //Go to site and Login
+   5 |   await page.goto('http://localhost:19006/')
+   6 |   // await page.goto('https://bsky.app/')
+   7 |   await page.getByRole('button', {name: 'Sign in'}).click()
+   8 |   await page.getByTestId('loginUsernameInput').click()
+   9 |   await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
+  10 |   await page.getByTestId('loginPasswordInput').click()
+  11 |   await page.getByTestId('loginPasswordInput').fill('CIS565TestGroup')
+  12 |   await page.getByTestId('loginNextButton').click()
+  13 |
+  14 |   //Confirm Login was successful
+  15 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  16 |
+  17 |   //Search for user(mercytum)
+> 18 |   await page.getByRole('search', {name: 'Search'}).click()
+     |                                                    ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  19 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+  20 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  21 |
+  22 |   //Go to People tab and select the user
+  23 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+  24 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+  25 |
+  26 |   //Follow the user
+  27 |   await page.getByTestId('followBtn').click()
+  28 |
+  29 |   // Expect to see the "Unfollow" button now
+  30 |   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
+  31 |
+  32 |   //Navigate back Home
+  33 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  34 |
+  35 |   //Check if user is in your Following list
+  36 |   await page.getByTestId('homeScreenFeedTabs-Following').click()
+  37 |   // await page.goto('http://localhost:19006/')
+  38 |   // await page.goto('https://bsky.app/')
+  39 |   await page.locator('a').filter({hasText: '‪Mercy Tum‬'}).click()
+  40 |
+  41 |   //Unfollow user
+  42 |   await page.getByTestId('unfollowBtn').click()
+  43 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  44 | })
+  45 |
+```
+
+# Local changes
+
+```diff
+diff --git a/__tests__/lib/Playwright/login-validation.test.ts b/__tests__/lib/Playwright/login-validation.test.ts
+new file mode 100644
+index 000000000..4ff5c139b
+--- /dev/null
++++ b/__tests__/lib/Playwright/login-validation.test.ts
+@@ -0,0 +1,58 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = "https://bsky.app/";
++const BSKY_EMAIL = "cis565bskytests@gmail.com"; // TODO: Make these secret in GitHub
++const BSKY_PASS = "CIS565TestGroup"; // TODO: Make these secret in GitHub
++
++
++test.beforeEach(async ({ page }) => {
++    await page.goto(BLUESKY_WEB_URL);
++    await page.getByRole('button', {name: 'Sign in'}).click(); // Click Sign in button
++});
++
++test('Login Only Email Filled', async ({ page }) => {
++    await page.getByTestId('loginUsernameInput').click(); // Click the username input field
++    await page.getByTestId('loginUsernameInput').fill('test@gmail.com'); // Fill the username field
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger a login attempt
++    const TextLocator = page.getByText('Please enter your password');
++    await expect(TextLocator).toHaveText('Please enter your password'); // Find the error message and then assert on it
++});
++
++test('Login Only Password Filled', async ({ page }) => {
++    await page.getByTestId('loginPasswordInput').click(); // Click the password input field
++    await page.getByTestId('loginPasswordInput').fill('password'); // Find the error message and then assert on it
++
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger a login attempt
++    const TextLocator = page.getByText('Please enter your username');
++    await expect(TextLocator).toHaveText('Please enter your username'); // Find the error message and then assert on it
++});
++
++test('Login Bad Email Bad Password', async ({ page }) => {
++    await page.getByTestId('loginUsernameInput').click(); // Click the username input field
++    await page.getByTestId('loginUsernameInput').fill('test'); // Fill the username field
++
++    await page.getByTestId('loginPasswordInput').click(); // Click the password input field
++    await page.getByTestId('loginPasswordInput').fill('password'); // Find the error message and then assert on it
++
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger a login attempt
++    const TextLocator = page.getByText('Incorrect username or password');
++    await expect(TextLocator).toHaveText('Incorrect username or password'); // Find the error message and then assert on it
++});
++
++test('Forgot Password Login', async ({ page }) => {
++    await page.getByText('Forgot?').click(); // Click Forgot? button
++    const TextLocator = page.getByText('Enter the email you used to create your account. We\'ll send you a "reset code" so you can set a new password.');
++    await expect(TextLocator).toHaveText('Enter the email you used to create your account. We\'ll send you a "reset code" so you can set a new password.'); // Find the descriptor and assert on it
++});
++
++test('Successful Login', async ({ page }) => {
++    await page.getByTestId('loginUsernameInput').click(); // Click the username input field
++    await page.getByTestId('loginUsernameInput').fill(BSKY_EMAIL); // Fill the username field
++
++    await page.getByTestId('loginPasswordInput').click(); // Click the password input field
++    await page.getByTestId('loginPasswordInput').fill(BSKY_PASS); // Find the error message and then assert on it
++
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger a login attempt
++    page.getByRole('link', { name: 'Profile', exact: true }).click()
++    await expect(page).toHaveURL(BLUESKY_WEB_URL + "profile/cis565testgroup.bsky.social") // Check the URL after login
++});
+diff --git a/__tests__/lib/Playwright/registration.test.ts b/__tests__/lib/Playwright/registration.test.ts
+new file mode 100644
+index 000000000..5e7e956a7
+--- /dev/null
++++ b/__tests__/lib/Playwright/registration.test.ts
+@@ -0,0 +1,153 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = "https://bsky.app/"; // TODO: We should build a local version of bluesky. This way changes in the wroking repo can be tested
++const BSKY_HANDLE = "CIS565TestGroup"; // TODO: Make these secret in GitHub
++const GOOD_HANDLE = "12345--AFbth-wSDFe"
++
++const DID_NOT_MEET_REQUIREMENT_D_VALUE = "M4.293 4.293a1 1 0 0 1 1.414 0L12 10.586l6.293-6.293a1 1 0 1 1 1.414 1.414L13.414 12l6.293 6.293a1 1 0 0 1-1.414 1.414L12 13.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L10.586 12 4.293 5.707a1 1 0 0 1 0-1.414Z"
++
++test.beforeEach(async ({ page }) => {
++    await page.goto(BLUESKY_WEB_URL);
++    await page.getByRole('button', {name: 'Create Account'}).click(); // Click Sign in button
++});
++
++test('Register With No Credentials', async ({ page }) => {
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const ExpectedText = 'Please enter your email.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register With Only Email (valid)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const ExpectedText = 'Please choose your password.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register With Only Email (invalid)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test'); // Fill the email field
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const ExpectedText = 'Your email appears to be invalid.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register With Valid Email, Short Password)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('123456'); // Fill the password with 7 characters (minimum is 8)
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const ExpectedText = 'Your password must be at least 8 characters long.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register With Valid Email, Good Password)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('123456'); // Fill the password with 7 characters (minimum is 8)
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const ExpectedText = 'Your password must be at least 8 characters long.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register With Birth Date Under 13 Years)', async ({ browserName, page }) => {
++    const today = new Date();
++    await page.getByTestId('date').click(); // Click the birth date input field
++    await page.getByTestId('date').pressSequentially(today.toLocaleDateString('en-us')); // Type the date into the field (fill did not work here to sdoing a keyboard input instead)
++    const ExpectedText = 'You must be 13 years of age or older to create an account.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register Step 1 Valid)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const Placeholder = await page.locator("input.css-11aywtz").getAttribute("placeholder"); // Locator is placed on the input box for the handle
++    await expect(Placeholder).toEqual("Type your desired username"); // Find the text dispalyed for step 2
++})
++
++test('Register Step 1 Valid, Step 2 No Value)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
++    const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
++    await expect(NextButton).not.toBeEnabled(); // Find Next button should not be enabled without inputting text
++})
++
++test('Register Step 1 Valid, Step 2 Handle Already Taken)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
++    await page.locator("input.css-11aywtz").fill(BSKY_HANDLE); // Locator is placed on the input box for the handle
++    await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at completeing step 2
++    const ExpectedText = 'That handle is already taken.';
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
++})
++
++test('Register Step 1 Valid, Step 2 Handle Less Than 3 Characters)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
++    await page.locator("input.css-11aywtz").fill("12"); // Locator is placed on the input box for the handle
++    const dAttributeValue = await page.locator('path').nth(2).getAttribute("d") // This locator points to the SVG object for "At least 3 characters" requirement
++    await expect(dAttributeValue).toEqual(DID_NOT_MEET_REQUIREMENT_D_VALUE); // Find the error message and then assert on it
++    const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
++    await expect(NextButton).not.toBeEnabled(); // Find Next button should not be enabled without correct handle size
++})
++
++test('Register Step 1 Valid, Step 2 Handle Has Space)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
++    await page.locator("input.css-11aywtz").fill("1234 "); // Locator is placed on the input box for the handle
++    const dAttributeValue = await page.locator('path').nth(1).getAttribute("d") // This locator points to the SVG object for "Only contains letters, numbers, and hyphens" requirement
++    await expect(dAttributeValue).toEqual(DID_NOT_MEET_REQUIREMENT_D_VALUE); // Find the error message and then assert on it
++    const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
++    await expect(NextButton).not.toBeEnabled(); // Find Next button should not be enabled without correct handle types
++})
++
++test('Register Step 1 Valid, Step 2 Handle Over 18 Characters)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
++    await page.locator("input.css-11aywtz").fill("aaaaaaaaaaaaaaaaaaa"); // Locator is placed on the input box for the handle
++    const dAttributeValue = await page.locator('path').nth(2).getAttribute("d") // This locator points to the SVG object for "No longer than 18 characters" requirement
++    await expect(dAttributeValue).toEqual(DID_NOT_MEET_REQUIREMENT_D_VALUE); // Find the error message and then assert on it
++    const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
++    await expect(NextButton).not.toBeEnabled(); // Find Next button should not be enabled without correct handle size
++})
++
++test('Register Step 1 Valid, Step 2 Good Handle)', async ({ page }) => {
++    await page.getByTestId('emailInput').click(); // Click the email input field
++    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
++    await page.getByTestId('passwordInput').click(); // Click the password input field
++    await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
++    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
++    await page.locator("input.css-11aywtz").fill(GOOD_HANDLE); // Locator is placed on the input box for the handle
++    await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at registering
++    const ExpectedText = "Complete the challenge";
++    const LocatorText = page.getByText(ExpectedText);
++    await expect(LocatorText).toHaveText(ExpectedText); // Find Next button should not be enabled without correct handle size
++})
+```
