@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const BLUESKY_WEB_URL = "https://bsky.app/"; // TODO: We should build a local version of bluesky. This way changes in the wroking repo can be tested
+const BLUESKY_WEB_URL = "http://localhost:19006/"; // TODO: We should build a local version of bluesky. This way changes in the wroking repo can be tested
 const BSKY_HANDLE = "CIS565TestGroup"; // TODO: Make these secret in GitHub
 const GOOD_HANDLE = "12345--AFbth-wSDFe"
 
@@ -61,7 +61,14 @@ test('Register With Valid Email, Good Password)', async ({ page }) => {
 test('Register With Birth Date Under 13 Years)', async ({ browserName, page }) => {
     const today = new Date();
     await page.getByTestId('date').click(); // Click the birth date input field
-    await page.getByTestId('date').type(today.toLocaleDateString('en-us')); // Type the date into the field (fill did not work here to sdoing a keyboard input instead)
+    if(browserName.toLowerCase() !== 'webkit')
+    {
+        await page.getByTestId('date').pressSequentially(today.toLocaleDateString('en-us'));
+    }
+    else
+    {
+        await page.getByTestId('date').fill(today.toLocaleDateString('en-us'));
+    }
     const ExpectedText = 'You must be 13 years of age or older to create an account.';
     const LocatorText = page.getByText(ExpectedText);
     await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
