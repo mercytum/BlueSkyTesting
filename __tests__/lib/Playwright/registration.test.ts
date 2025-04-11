@@ -61,7 +61,7 @@ test('Register With Valid Email, Good Password)', async ({ page }) => {
 test('Register With Birth Date Under 13 Years)', async ({ browserName, page }) => {
     const today = new Date();
     await page.getByTestId('date').click(); // Click the birth date input field
-    await page.getByTestId('date').pressSequentially(today.toLocaleDateString('en-us')); // Type the date into the field (fill did not work here to sdoing a keyboard input instead)
+    await page.getByTestId('date').type(today.toLocaleDateString('en-us')); // Type the date into the field (fill did not work here to sdoing a keyboard input instead)
     const ExpectedText = 'You must be 13 years of age or older to create an account.';
     const LocatorText = page.getByText(ExpectedText);
     await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
