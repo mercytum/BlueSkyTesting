@@ -156,5 +156,5 @@ test('Register Step 1 Valid, Step 2 Good Handle)', async ({ page }) => {
     await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at registering
     const ExpectedText = "Complete the challenge";
     const LocatorText = page.getByText(ExpectedText);
-    await expect(LocatorText).toHaveText(ExpectedText); // Find Next button should not be enabled without correct handle size
+    await expect(LocatorText).toHaveText(ExpectedText); // Expect step 3 which is the captcha challenge
 })
