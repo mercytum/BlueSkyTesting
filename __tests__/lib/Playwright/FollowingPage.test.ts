@@ -1,14 +1,17 @@
 import {expect, test} from '@playwright/test'
 
+const username = process.env.BS_USERNAME
+const password = process.env.BS_PASSWORD
+
 test('user can follow and unfollow mercytum', async ({page}) => {
   //Go to site and Login
   await page.goto('http://localhost:19006/')
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
   await page.getByTestId('loginUsernameInput').click()
-  await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
+  await page.getByTestId('loginUsernameInput').fill(username)
   await page.getByTestId('loginPasswordInput').click()
-  await page.getByTestId('loginPasswordInput').fill('CIS565TestGroup')
+  await page.getByTestId('loginPasswordInput').fill(password)
   await page.getByTestId('loginNextButton').click()
 
   //Confirm Login was successful
