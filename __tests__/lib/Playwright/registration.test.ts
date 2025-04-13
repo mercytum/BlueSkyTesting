@@ -36,7 +36,7 @@ test('Register With Only Email (invalid)', async ({ page }) => {
     await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
-test('Register With Valid Email, Short Password)', async ({ page }) => {
+test('Register With Valid Email, Short Password', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
     await page.getByTestId('passwordInput').click(); // Click the password input field
@@ -47,18 +47,7 @@ test('Register With Valid Email, Short Password)', async ({ page }) => {
     await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
-test('Register With Valid Email, Good Password)', async ({ page }) => {
-    await page.getByTestId('emailInput').click(); // Click the email input field
-    await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
-    await page.getByTestId('passwordInput').click(); // Click the password input field
-    await page.getByTestId('passwordInput').fill('123456'); // Fill the password with 7 characters (minimum is 8)
-    await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    const ExpectedText = 'Your password must be at least 8 characters long.';
-    const LocatorText = page.getByText(ExpectedText);
-    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
-})
-
-test('Register With Birth Date Under 13 Years)', async ({ browserName, page }) => {
+test('Register With Birth Date Under 13 Years', async ({ browserName, page }) => {
     const today = new Date();
     await page.getByTestId('date').click(); // Click the birth date input field
     if(browserName.toLowerCase() !== 'webkit')
@@ -74,7 +63,7 @@ test('Register With Birth Date Under 13 Years)', async ({ browserName, page }) =
     await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
-test('Register Step 1 Valid)', async ({ page }) => {
+test('Register Step 1 Valid', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
     await page.getByTestId('passwordInput').click(); // Click the password input field
@@ -84,7 +73,7 @@ test('Register Step 1 Valid)', async ({ page }) => {
     await expect(Placeholder).toEqual("Type your desired username"); // Find the text dispalyed for step 2
 })
 
-test('Register Step 1 Valid, Step 2 No Value)', async ({ page }) => {
+test('Register Step 1 Valid, Step 2 No Value', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
     await page.getByTestId('passwordInput').click(); // Click the password input field
@@ -94,7 +83,7 @@ test('Register Step 1 Valid, Step 2 No Value)', async ({ page }) => {
     await expect(NextButton).not.toBeEnabled(); // Find Next button should not be enabled without inputting text
 })
 
-test('Register Step 1 Valid, Step 2 Handle Already Taken)', async ({ page }) => {
+test('Register Step 1 Valid, Step 2 Handle Already Taken', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
     await page.getByTestId('passwordInput').click(); // Click the password input field
@@ -107,7 +96,7 @@ test('Register Step 1 Valid, Step 2 Handle Already Taken)', async ({ page }) => 
     await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
-test('Register Step 1 Valid, Step 2 Handle Less Than 3 Characters)', async ({ page }) => {
+test('Register Step 1 Valid, Step 2 Handle Less Than 3 Characters', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
     await page.getByTestId('passwordInput').click(); // Click the password input field
