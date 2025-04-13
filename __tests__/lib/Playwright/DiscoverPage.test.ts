@@ -10,9 +10,9 @@ test('user can search and explore content from Discover page', async ({
   await page.goto('http://127.0.0.1:19006')
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
-  await page.getByTestId('loginUsernameInput').fill(username)
+  await page.getByTestId('loginUsernameInput').fill(`${username}`)
   await page.getByTestId('loginPasswordInput').click()
-  await page.getByTestId('loginPasswordInput').fill(password)
+  await page.getByTestId('loginPasswordInput').fill(`${password}`)
   await page.getByTestId('loginNextButton').click()
 
   // Expect Discover tab to be visible after login and click it

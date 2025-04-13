@@ -9,9 +9,9 @@ test('user can follow and unfollow mercytum', async ({page}) => {
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
   await page.getByTestId('loginUsernameInput').click()
-  await page.getByTestId('loginUsernameInput').fill(username)
+  await page.getByTestId('loginUsernameInput').fill(`${username}`)
   await page.getByTestId('loginPasswordInput').click()
-  await page.getByTestId('loginPasswordInput').fill(password)
+  await page.getByTestId('loginPasswordInput').fill(`${password}`)
   await page.getByTestId('loginNextButton').click()
 
   //Confirm Login was successful
