@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Sun Apr 13 22:49:07 GMT 2025","Sun Apr 13 22:49:10 GMT 2025","2963","webkit","FollowingPage.test.ts","","","","user can follow and unfollow mercytum",""
+"failed","Sun Apr 13 22:48:20 GMT 2025","Sun Apr 13 22:48:26 GMT 2025","5146","chromium","FollowingPage.test.ts","","","","user can follow and unfollow mercytum",""
+"failed","Sun Apr 13 22:48:31 GMT 2025","Sun Apr 13 22:48:45 GMT 2025","13790","firefox","DiscoverPage.test.ts","","","","user can search and explore content from Discover page",""
+"failed","Sun Apr 13 22:48:57 GMT 2025","Sun Apr 13 22:49:05 GMT 2025","7238","firefox","FollowingPage.test.ts","","","","user can follow and unfollow mercytum",""
+"failed","Sun Apr 13 22:48:20 GMT 2025","Sun Apr 13 22:48:26 GMT 2025","5825","chromium","DiscoverPage.test.ts","","","","user can search and explore content from Discover page",""
+"failed","Sun Apr 13 22:49:03 GMT 2025","Sun Apr 13 22:49:08 GMT 2025","4711","webkit","DiscoverPage.test.ts","","","","user can search and explore content from Discover page",""
