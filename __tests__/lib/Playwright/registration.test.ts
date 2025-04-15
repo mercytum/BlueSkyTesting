@@ -69,7 +69,7 @@ test('Register Step 1 Valid', async ({ page }) => {
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    const Placeholder = await page.locator("input.css-11aywtz").getAttribute("placeholder"); // Locator is placed on the input box for the handle
+    const Placeholder = await page.getByTestId('handleInput').getAttribute("placeholder"); // Locator is placed on the input box for the handle
     await expect(Placeholder).toEqual("Type your desired username"); // Find the text dispalyed for step 2
 })
 
@@ -89,7 +89,7 @@ test('Register Step 1 Valid, Step 2 Handle Already Taken', async ({ page }) => {
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
-    await page.locator("input.css-11aywtz").fill(BSKY_HANDLE); // Locator is placed on the input box for the handle
+    await page.getByTestId('handleInput').fill(BSKY_HANDLE); // Locator is placed on the input box for the handle
     await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at completeing step 2
     const ExpectedText = 'That handle is already taken.';
     const LocatorText = page.getByText(ExpectedText);
@@ -102,7 +102,7 @@ test('Register Step 1 Valid, Step 2 Handle Less Than 3 Characters', async ({ pag
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
-    await page.locator("input.css-11aywtz").fill("12"); // Locator is placed on the input box for the handle
+    await page.getByTestId('handleInput').fill("12"); // Locator is placed on the input box for the handle
     const dAttributeValue = await page.locator('path').nth(2).getAttribute("d") // This locator points to the SVG object for "At least 3 characters" requirement
     await expect(dAttributeValue).toEqual(DID_NOT_MEET_REQUIREMENT_D_VALUE); // Find the error message and then assert on it
     const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
@@ -115,7 +115,7 @@ test('Register Step 1 Valid, Step 2 Handle Has Space)', async ({ page }) => {
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
-    await page.locator("input.css-11aywtz").fill("1234 "); // Locator is placed on the input box for the handle
+    await page.getByTestId('handleInput').fill("1234 "); // Locator is placed on the input box for the handle
     const dAttributeValue = await page.locator('path').nth(1).getAttribute("d") // This locator points to the SVG object for "Only contains letters, numbers, and hyphens" requirement
     await expect(dAttributeValue).toEqual(DID_NOT_MEET_REQUIREMENT_D_VALUE); // Find the error message and then assert on it
     const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
@@ -128,7 +128,7 @@ test('Register Step 1 Valid, Step 2 Handle Over 18 Characters)', async ({ page }
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
-    await page.locator("input.css-11aywtz").fill("aaaaaaaaaaaaaaaaaaa"); // Locator is placed on the input box for the handle
+    await page.getByTestId('handleInput').fill("aaaaaaaaaaaaaaaaaaa"); // Locator is placed on the input box for the handle
     const dAttributeValue = await page.locator('path').nth(2).getAttribute("d") // This locator points to the SVG object for "No longer than 18 characters" requirement
     await expect(dAttributeValue).toEqual(DID_NOT_MEET_REQUIREMENT_D_VALUE); // Find the error message and then assert on it
     const NextButton = await page.getByRole('button', {name: 'Next'})// Click the next button to trigger an attempt at registering
@@ -141,7 +141,7 @@ test('Register Step 1 Valid, Step 2 Good Handle)', async ({ page }) => {
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('12345678'); // Fill the password with 8 characters
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
-    await page.locator("input.css-11aywtz").fill(GOOD_HANDLE); // Locator is placed on the input box for the handle
+    await page.getByTestId('handleInput').fill(GOOD_HANDLE); // Locator is placed on the input box for the handle
     await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at registering
     const ExpectedText = "Complete the challenge";
     const LocatorText = page.getByText(ExpectedText);
