@@ -2,8 +2,8 @@ import { test, expect, type Page } from '@playwright/test';
 
 const BLUESKY_WEB_URL = 'https://bsky.app';
 
-const BSKY_EMAIL = process.env.BS_USERNAME;
-const BSKY_PASS = process.env.BS_PASSWORD;
+const BSKY_EMAIL = process.env.SECRET_USR;
+const BSKY_PASS = process.env.SECRET_PWD;
 
 // Login function
 async function login(page: Page): Promise<void> {
