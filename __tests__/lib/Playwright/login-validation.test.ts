@@ -1,8 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 
 const BLUESKY_WEB_URL = "http://localhost:19006/";
-const BSKY_EMAIL = "cis565bskytests@gmail.com"; // TODO: Make these secret in GitHub
-const BSKY_PASS = "CIS565TestGroup"; // TODO: Make these secret in GitHub
+const BSKY_EMAIL = process.env.BS_USERNAME; // TODO: Make these secret in GitHub
+const BSKY_PASS = process.env.BS_PASSWORD; // TODO: Make these secret in GitHub
 
 
 test.beforeEach(async ({ page }) => {
