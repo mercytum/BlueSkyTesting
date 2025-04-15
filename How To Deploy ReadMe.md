@@ -15,9 +15,12 @@
 ##### 10. Build Allure Test Report using Github Pages
 ##### 11. Deploys Allure Test Report on Github Pages using 'gh-pages' branch, placing the reports within a dedicated directory called 'allure-history'
 
+***
+
 ### How to run CI/CD Pipeline?
 #### 1. Commit a change to the 'main' branch or create a 'pull request'
 
+***
 
 ### How to run Locally (without CI/CD Pipeline)?
 #### Prerequisites:
