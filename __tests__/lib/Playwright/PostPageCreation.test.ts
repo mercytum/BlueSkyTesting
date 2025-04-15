@@ -106,14 +106,14 @@ test('Create Post using 300 characters', {tag: '@post'}, async ({ page }) => {
     // Select the first post description seen
     let postText = await page.getByTestId('postText').first().textContent();
 
-    // Check that post has no than one word
+    // Check that post has more than one word
     let actual = await chkPostExist(postText);
 
     // Assertion
     // Expected length of post toBe 300
     await expect(postText?.length).toBe(300);
 
-    // Verify post description has no than one word
+    // Verify post description has more than one word
     await expect(actual).toEqual(true);
 
 });
