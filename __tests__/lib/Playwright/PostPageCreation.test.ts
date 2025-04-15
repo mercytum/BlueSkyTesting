@@ -3,8 +3,8 @@ import { promises } from "fs";
 
 const BLUESKY_WEB_URL = 'https://bsky.app';
 
-const BSKY_EMAIL = process.env.BS_USERNAME;
-const BSKY_PASS = process.env.BS_PASSWORD;
+const BSKY_EMAIL = "cis565bskytests@gmail.com";
+const BSKY_PASS = "CIS565TestGroup";
 
 // Global total post variable
 let TOTAL_POSTS = 0;
