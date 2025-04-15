@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Sample Tests (Non-Main Branch)
 on:
   push:
     branches: [ search-and-post-tests ]
