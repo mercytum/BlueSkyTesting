@@ -1,0 +1,454 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: user can open a post from Discover page
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/DiscoverPage.test.ts:22:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByTestId('homeScreenFeedTabs-Discover')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for getByTestId('homeScreenFeedTabs-Discover')
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/DiscoverPage.test.ts:24:65
+```
+
+# Page snapshot
+
+```yaml
+- text: Sign in Enter your username and password Hosting provider
+- button "Bluesky Social":
+  - img
+  - text: Bluesky Social
+  - img
+- text: Account
+- img
+- textbox "Username or email address": undefined
+- img
+- textbox "Password": undefined
+- button "Forgot password?": Forgot?
+- img
+- text: Rate Limit Exceeded
+- button "Back"
+- button "Next"
+```
+
+# Test source
+
+```ts
+   1 | import {expect, type Page,test} from '@playwright/test'
+   2 |
+   3 | const USERNAME = process.env.BS_USERNAME
+   4 | const PASSWORD = process.env.BS_PASSWORD
+   5 | const LOCALHOST = 'http://localhost:19006/'
+   6 |
+   7 | async function login(page: Page): Promise<void> {
+   8 |   //Go to site and Login
+   9 |   await page.goto(LOCALHOST)
+   10 |   await page.getByRole('button', {name: 'Sign in'}).click()
+   11 |   await page.getByTestId('loginUsernameInput').click()
+   12 |   await page.getByTestId('loginUsernameInput').fill(`${USERNAME}`)
+   13 |   await page.getByTestId('loginPasswordInput').click()
+   14 |   await page.getByTestId('loginPasswordInput').fill(`${PASSWORD}`)
+   15 |   await page.getByTestId('loginNextButton').click()
+   16 | }
+   17 |
+   18 | test.beforeEach(async ({page}) => {
+   19 |   await login(page)
+   20 | })
+   21 |
+   22 | test('user can open a post from Discover page', async ({page}) => {
+   23 |   // Expect Discover tab to be visible after login and click it
+>  24 |   await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
+      |                                                                 ^ Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+   25 |   await page.getByTestId('homeScreenFeedTabs-Discover').click()
+   26 |
+   27 |   //Search for user(mercytum)
+   28 |   await page.getByRole('search', {name: 'Search'}).click()
+   29 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+   30 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+   31 |
+   32 |   //Go to People tab and select the user
+   33 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+   34 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+   35 |
+   36 |   await page
+   37 |     .getByRole('link', {
+   38 |       name: "Mercy Tum's avatar View profileView profile · April 15, 2025 at 1:07 PM Testing",
+   39 |     })
+   40 |     .click()
+   41 |
+   42 |   // Check if you can see the post thread screen which includes the caht, repost, like, share and more icons/features
+   43 |   const postThreadScreen = page.getByTestId('postThreadScreen')
+   44 |   await expect(postThreadScreen).toBeVisible()
+   45 |
+   46 |   // Check if you can see the reply button
+   47 |   const reply = page.getByRole('button', {name: 'Compose reply'})
+   48 |   await expect(reply).toBeVisible()
+   49 |
+   50 |   //Go back Home
+   51 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+   52 | })
+   53 |
+   54 | test('user can search and open first post from Discover page', async ({
+   55 |   page,
+   56 | }) => {
+   57 |   // Expect Discover tab to be visible after login and click it
+   58 |   await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
+   59 |   await page.getByTestId('homeScreenFeedTabs-Discover').click()
+   60 |
+   61 |   // Search for "playwright.dev"
+   62 |   await page.getByRole('search', {name: 'Search'}).click()
+   63 |   await page.getByRole('search', {name: 'Search'}).fill('playwright')
+   64 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+   65 |
+   66 |   // Expect "Top" tab to be visible in search results and click it
+   67 |   await expect(page.getByTestId('undefined-selector-0').getByText('Top'))
+   68 |     .toBeVisible
+   69 |   await page.getByTestId('undefined-selector-0').getByText('Top').click()
+   70 |
+   71 |   //Click on the first profile of the first post in the Top feed
+   72 |   const topFeedContainer = page.locator(
+   73 |     'div:nth-child(2) > div:nth-child(3) > div > div:nth-child(2) > div > div',
+   74 |   )
+   75 |   const firstItem = topFeedContainer.locator('a').first()
+   76 |   await firstItem.click()
+   77 |
+   78 |   // Check if you can see the profile view
+   79 |   const profileView = page.getByTestId('profileView')
+   80 |   await expect(profileView).toBeVisible()
+   81 |
+   82 |   // Check if you can see the Posts menu
+   83 |   const posts = page.getByTestId('profilePager-Posts')
+   84 |   await expect(posts).toBeVisible()
+   85 |
+   86 |   // Check if you can see the Replies menu
+   87 |   const replies = page.getByTestId('profilePager-Replies')
+   88 |   await expect(replies).toBeVisible()
+   89 |
+   90 |   //Go back Home
+   91 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+   92 | })
+   93 |
+   94 | test('user can view trending post from Discover page', async ({page}) => {
+   95 |   // Expect Discover tab to be visible after login and click it
+   96 |   await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
+   97 |   await page.getByTestId('homeScreenFeedTabs-Discover').click()
+   98 |
+   99 |   //Check if Trending is visible
+  100 |   const trending = page.getByText('Trending')
+  101 |   await expect(trending).toBeVisible
+  102 |
+  103 |   //Go back Home
+  104 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  105 | })
+  106 |
+  107 | test('user can perform infinite scrolling from Discover page', async ({
+  108 |   page,
+  109 | }) => {
+  110 |   // Expect Discover tab to be visible after login and click it
+  111 |   await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
+  112 |   await page.getByTestId('homeScreenFeedTabs-Discover').click()
+  113 |
+  114 |   //scroll by 100000px
+  115 |   await page.pause()
+  116 |   await page.evaluate(() => {
+  117 |     window.scrollBy(0, 100000)
+  118 |   })
+  119 |
+  120 |   await page.pause()
+  121 | })
+  122 |
+```
+
+# Local changes
+
+```diff
+diff --git a/.github/workflows/playwright.yml b/.github/workflows/playwright.yml
+index eab7e8e45..b61160c77 100644
+--- a/.github/workflows/playwright.yml
++++ b/.github/workflows/playwright.yml
+@@ -19,6 +19,9 @@ jobs:
+       run: yarn playwright install --with-deps
+     - name: Run Playwright tests
+       run: yarn playwright test
++      env: 
++          SECRET_USR: ${{ secrets.BS_USERNAME}}
++          SECRET_PWD: ${{ secrets.BS_PASSWORD}}
+     - uses: actions/upload-artifact@v4
+       if: ${{ !cancelled() }}
+       with:
+@@ -45,4 +48,4 @@ jobs:
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_branch: gh-pages
+-        publish_dir: allure-history
+\ No newline at end of file
++        publish_dir: allure-history
+diff --git a/.gitignore b/.gitignore
+index d21029d57..7c91a3937 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -130,3 +130,4 @@ bskyogcard/src/assets/fonts/noto-*
+ /playwright-report/
+ /blob-report/
+ /playwright/.cache/
++.env
+diff --git a/__tests__/lib/Playwright/DiscoverPage.test.ts b/__tests__/lib/Playwright/DiscoverPage.test.ts
+index 3d7e7731d..c7f5b9b57 100644
+--- a/__tests__/lib/Playwright/DiscoverPage.test.ts
++++ b/__tests__/lib/Playwright/DiscoverPage.test.ts
+@@ -1,18 +1,121 @@
+-import {expect, test} from '@playwright/test'
++import {expect, type Page,test} from '@playwright/test'
+ 
+-test('has title', async ({page}) => {
+-  await page.goto('https://playwright.dev/')
++const USERNAME = process.env.BS_USERNAME
++const PASSWORD = process.env.BS_PASSWORD
++const LOCALHOST = 'http://localhost:19006/'
+ 
+-  // Expect a title "to contain" a substring.
+-  await expect(page).toHaveTitle(/Playwright/)
++async function login(page: Page): Promise<void> {
++  //Go to site and Login
++  await page.goto(LOCALHOST)
++  await page.getByRole('button', {name: 'Sign in'}).click()
++  await page.getByTestId('loginUsernameInput').click()
++  await page.getByTestId('loginUsernameInput').fill(`${USERNAME}`)
++  await page.getByTestId('loginPasswordInput').click()
++  await page.getByTestId('loginPasswordInput').fill(`${PASSWORD}`)
++  await page.getByTestId('loginNextButton').click()
++}
++
++test.beforeEach(async ({page}) => {
++  await login(page)
++})
++
++test('user can open a post from Discover page', async ({page}) => {
++  // Expect Discover tab to be visible after login and click it
++  await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
++  await page.getByTestId('homeScreenFeedTabs-Discover').click()
++
++  //Search for user(mercytum)
++  await page.getByRole('search', {name: 'Search'}).click()
++  await page.getByRole('search', {name: 'Search'}).fill('mercytum')
++  await page.getByRole('search', {name: 'Search'}).press('Enter')
++
++  //Go to People tab and select the user
++  await page.getByTestId('undefined-selector-2').getByText('People').click()
++  await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
++
++  await page
++    .getByRole('link', {
++      name: "Mercy Tum's avatar View profileView profile · April 15, 2025 at 1:07 PM Testing",
++    })
++    .click()
++
++  // Check if you can see the post thread screen which includes the caht, repost, like, share and more icons/features
++  const postThreadScreen = page.getByTestId('postThreadScreen')
++  await expect(postThreadScreen).toBeVisible()
++
++  // Check if you can see the reply button
++  const reply = page.getByRole('button', {name: 'Compose reply'})
++  await expect(reply).toBeVisible()
++
++  //Go back Home
++  await page.getByRole('link', {name: 'Home', exact: true}).click()
++})
++
++test('user can search and open first post from Discover page', async ({
++  page,
++}) => {
++  // Expect Discover tab to be visible after login and click it
++  await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
++  await page.getByTestId('homeScreenFeedTabs-Discover').click()
++
++  // Search for "playwright.dev"
++  await page.getByRole('search', {name: 'Search'}).click()
++  await page.getByRole('search', {name: 'Search'}).fill('playwright')
++  await page.getByRole('search', {name: 'Search'}).press('Enter')
++
++  // Expect "Top" tab to be visible in search results and click it
++  await expect(page.getByTestId('undefined-selector-0').getByText('Top'))
++    .toBeVisible
++  await page.getByTestId('undefined-selector-0').getByText('Top').click()
++
++  //Click on the first profile of the first post in the Top feed
++  const topFeedContainer = page.locator(
++    'div:nth-child(2) > div:nth-child(3) > div > div:nth-child(2) > div > div',
++  )
++  const firstItem = topFeedContainer.locator('a').first()
++  await firstItem.click()
++
++  // Check if you can see the profile view
++  const profileView = page.getByTestId('profileView')
++  await expect(profileView).toBeVisible()
++
++  // Check if you can see the Posts menu
++  const posts = page.getByTestId('profilePager-Posts')
++  await expect(posts).toBeVisible()
++
++  // Check if you can see the Replies menu
++  const replies = page.getByTestId('profilePager-Replies')
++  await expect(replies).toBeVisible()
++
++  //Go back Home
++  await page.getByRole('link', {name: 'Home', exact: true}).click()
++})
++
++test('user can view trending post from Discover page', async ({page}) => {
++  // Expect Discover tab to be visible after login and click it
++  await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
++  await page.getByTestId('homeScreenFeedTabs-Discover').click()
++
++  //Check if Trending is visible
++  const trending = page.getByText('Trending')
++  await expect(trending).toBeVisible
++
++  //Go back Home
++  await page.getByRole('link', {name: 'Home', exact: true}).click()
+ })
+ 
+-test('get started link', async ({page}) => {
+-  await page.goto('https://playwright.dev/')
++test('user can perform infinite scrolling from Discover page', async ({
++  page,
++}) => {
++  // Expect Discover tab to be visible after login and click it
++  await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
++  await page.getByTestId('homeScreenFeedTabs-Discover').click()
+ 
+-  // Click the get started link.
+-  await page.getByRole('link', {name: 'Get started'}).click()
++  //scroll by 100000px
++  await page.pause()
++  await page.evaluate(() => {
++    window.scrollBy(0, 100000)
++  })
+ 
+-  // Expects page to have a heading with the name of Installation.
+-  await expect(page.getByRole('heading', {name: 'Installation'})).toBeVisible()
++  await page.pause()
+ })
+diff --git a/__tests__/lib/Playwright/FollowingPage.test.ts b/__tests__/lib/Playwright/FollowingPage.test.ts
+index da1665294..e586aec3e 100644
+--- a/__tests__/lib/Playwright/FollowingPage.test.ts
++++ b/__tests__/lib/Playwright/FollowingPage.test.ts
+@@ -1,16 +1,25 @@
+-import {expect, test} from '@playwright/test'
++import {expect, type Page,test} from '@playwright/test'
+ 
+-test('user can follow and unfollow mercytum', async ({page}) => {
++const USERNAME = process.env.BS_USERNAME
++const PASSWORD = process.env.BS_PASSWORD
++const LOCALHOST = 'http://localhost:19006/'
++
++async function login(page: Page): Promise<void> {
+   //Go to site and Login
+-  await page.goto('http://localhost:19006/')
+-  // await page.goto('https://bsky.app/')
++  await page.goto(LOCALHOST)
+   await page.getByRole('button', {name: 'Sign in'}).click()
+   await page.getByTestId('loginUsernameInput').click()
+-  await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
++  await page.getByTestId('loginUsernameInput').fill(`${USERNAME}`)
+   await page.getByTestId('loginPasswordInput').click()
+-  await page.getByTestId('loginPasswordInput').fill('CIS565TestGroup')
++  await page.getByTestId('loginPasswordInput').fill(`${PASSWORD}`)
+   await page.getByTestId('loginNextButton').click()
++}
++
++test.beforeEach(async ({page}) => {
++  await login(page)
++})
+ 
++test('user can follow mercytum', async ({page}) => {
+   //Confirm Login was successful
+   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+ 
+@@ -23,22 +32,66 @@ test('user can follow and unfollow mercytum', async ({page}) => {
+   await page.getByTestId('undefined-selector-2').getByText('People').click()
+   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+ 
++  if (await page.getByTestId('unfollowBtn').isVisible()) {
++    // Follow the user
++    await page.getByTestId('unfollowBtn').click()
++  }
++
+   //Follow the user
+   await page.getByTestId('followBtn').click()
+ 
+   // Expect to see the "Unfollow" button now
+   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
++})
+ 
+-  //Navigate back Home
+-  await page.getByRole('link', {name: 'Home', exact: true}).click()
++test('user can load the Following list', async ({page}) => {
++  //Confirm Login was successful
++  await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+ 
+   //Check if user is in your Following list
+   await page.getByTestId('homeScreenFeedTabs-Following').click()
+-  // await page.goto('http://localhost:19006/')
+-  // await page.goto('https://bsky.app/')
+-  await page.locator('a').filter({hasText: '‪Mercy Tum‬'}).click()
++  await page.getByTestId('feedItem-by-mercytum.bsky.social').isVisible
++})
+ 
+-  //Unfollow user
++test('user can navigate to followed user profile', async ({page}) => {
++  //Confirm Login was successful
++  await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
++
++  //Search for user(mercytum)
++  await page.getByRole('search', {name: 'Search'}).click()
++  await page.getByRole('search', {name: 'Search'}).fill('mercytum')
++  await page.getByRole('search', {name: 'Search'}).press('Enter')
++
++  //Go to People tab and select the user
++  await page.getByTestId('undefined-selector-2').getByText('People').click()
++  await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
++})
++
++test('user can unfollow mercytum', async ({page}) => {
++  //Confirm Login was successful
++  await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
++
++  //Search for user(mercytum)
++  await page.getByRole('search', {name: 'Search'}).click()
++  await page.getByRole('search', {name: 'Search'}).fill('mercytum')
++  await page.getByRole('search', {name: 'Search'}).press('Enter')
++
++  //Go to People tab and select the user
++  await page.getByTestId('undefined-selector-2').getByText('People').click()
++  await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
++
++  await page.waitForTimeout(1000)
++
++  if (await page.getByTestId('followBtn').isVisible()) {
++    // Follow the user
++    await page.getByTestId('followBtn').click()
++  }
++  // Expect to see the "Unfollow" button now
++  await expect(page.getByTestId('unfollowBtn')).toBeVisible()
++
++  //Unfollow the user
+   await page.getByTestId('unfollowBtn').click()
++
++  //Navigate back Home
+   await page.getByRole('link', {name: 'Home', exact: true}).click()
+ })
+```
