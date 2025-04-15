@@ -1,8 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 
 const BLUESKY_WEB_URL = "http://localhost:19006/";
-const BSKY_EMAIL = process.env.BS_USERNAME; // TODO: Make these secret in GitHub
-const BSKY_PASS = process.env.BS_PASSWORD; // TODO: Make these secret in GitHub
+const BSKY_EMAIL = "cis565bskytests@gmail.com"; // TODO: Make these secret in GitHub
+const BSKY_PASS = "CIS565TestGroup"; // TODO: Make these secret in GitHub
 
 
 test.beforeEach(async ({ page }) => {
@@ -47,10 +47,10 @@ test('Forgot Password Login', async ({ page }) => {
 
 test('Successful Login', async ({ page }) => {
     await page.getByTestId('loginUsernameInput').click(); // Click the username input field
-    await page.getByTestId('loginUsernameInput').fill('${BSKY_EMAIL}'); // Fill the username field
+    await page.getByTestId('loginUsernameInput').fill(BSKY_EMAIL); // Fill the username field
 
     await page.getByTestId('loginPasswordInput').click(); // Click the password input field
-    await page.getByTestId('loginPasswordInput').fill('${BSKY_PASS}'); // Find the error message and then assert on it
+    await page.getByTestId('loginPasswordInput').fill(BSKY_PASS); // Find the error message and then assert on it
 
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger a login attempt
     page.getByRole('link', { name: 'Profile', exact: true }).click()
