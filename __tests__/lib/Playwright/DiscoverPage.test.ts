@@ -33,11 +33,12 @@ test('user can open a post from Discover page', async ({page}) => {
   await page.getByTestId('undefined-selector-2').getByText('People').click()
   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
 
-  await page
-    .getByRole('link', {
-      name: "Mercy Tum's avatar View profileView profile · April 15, 2025 at 1:07 PM Testing",
-    })
-    .click()
+  // Wait for the post containing the specific text to be visible
+  const post = page.getByText('Testing on #Playwright')
+  await expect(post).toBeVisible()
+
+  // Click on the post
+  await post.click()
 
   // Check if you can see the post thread screen which includes the caht, repost, like, share and more icons/features
   const postThreadScreen = page.getByTestId('postThreadScreen')
