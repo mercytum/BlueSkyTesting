@@ -1,0 +1,829 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: user can follow and unfollow mercytum
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('a').filter({ hasText: '‪Mercy Tum‬' })
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:39:60
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - img
+  - link "View your feeds and explore more":
+    - img
+  - tablist:
+    - tab "Discover"
+    - tab "Following"
+  - link "cis565testgroup.bsky.social's avatar View profileView profile · April 15, 2025 at 2:38 AM A Reply (0 replies) Repost or quote post Like (0 likes) Open post options menu":
+    - link "cis565testgroup.bsky.social's avatar"
+    - link "View profile": ‪cis565testgroup.bsky.social‬
+    - link "View profile": ‪@cis565testgroup.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 2:38 AM": 14h
+    - text: A
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (0 likes)":
+      - img
+    - button "Open post options menu":
+      - img
+  - link "cis565testgroup.bsky.social's avatar View profileView profile · April 15, 2025 at 2:31 AM Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdums. Reply (0 replies) Repost or quote post Like (0 likes) Open post options menu":
+    - link "cis565testgroup.bsky.social's avatar"
+    - link "View profile": ‪cis565testgroup.bsky.social‬
+    - link "View profile": ‪@cis565testgroup.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 2:31 AM": 14h
+    - text: Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdums.
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (0 likes)":
+      - img
+    - button "Open post options menu":
+      - img
+  - link "cis565testgroup.bsky.social's avatar View profileView profile · April 15, 2025 at 2:31 AM A Reply (0 replies) Repost or quote post Like (0 likes) Open post options menu":
+    - link "cis565testgroup.bsky.social's avatar"
+    - link "View profile": ‪cis565testgroup.bsky.social‬
+    - link "View profile": ‪@cis565testgroup.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 2:31 AM": 14h
+    - text: A
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (0 likes)":
+      - img
+    - button "Open post options menu":
+      - img
+  - link "cis565testgroup.bsky.social's avatar View profileView profile · April 15, 2025 at 2:31 AM Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdums. Reply (0 replies) Repost or quote post Like (0 likes) Open post options menu":
+    - link "cis565testgroup.bsky.social's avatar"
+    - link "View profile": ‪cis565testgroup.bsky.social‬
+    - link "View profile": ‪@cis565testgroup.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 2:31 AM": 14h
+    - text: Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdums.
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (0 likes)":
+      - img
+    - button "Open post options menu":
+      - img
+  - link "cis565testgroup.bsky.social's avatar View profileView profile · April 15, 2025 at 2:31 AM A Reply (0 replies) Repost or quote post Like (0 likes) Open post options menu":
+    - link "cis565testgroup.bsky.social's avatar"
+    - link "View profile": ‪cis565testgroup.bsky.social‬
+    - link "View profile": ‪@cis565testgroup.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 2:31 AM": 14h
+    - text: A
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (0 likes)":
+      - img
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · April 10, 2025 at 6:00 PM 📢 App Version 1.100 is rolling out now (1/2) Chat reactions are here! You can now respond to chat messages (aka “direct messages”) with an emoji ❤️ Bluesky 1.100. A screenshot of a chat message that says “Nice”. The response picker is open. Reply (837 replies) Repost or quote post Like (19,082 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "April 10, 2025 at 6:00 PM": 4d
+    - text: 📢 App Version 1.100 is rolling out now (1/2) Chat reactions are here! You can now respond to chat messages (aka “direct messages”) with an emoji ❤️
+    - img "Bluesky 1.100. A screenshot of a chat message that says “Nice”. The response picker is open."
+    - text: ALT
+    - button "Reply (837 replies)":
+      - img
+      - text: "837"
+    - button "Repost or quote post":
+      - img
+      - text: 2.8K
+    - button "Like (19,082 likes)":
+      - img
+      - text: 19K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · April 10, 2025 at 6:00 PM 📢 App Version 1.100 is rolling out now (2/2) Trying to find more on Bluesky? The search page is now \"Explore,\" with updated trends, suggested accounts, and more! A screenshot of the new \"Trending Topics\" in the Explore page. The trends are Survivor, Luka Doncic, PSG, Aston Villa, and Murderbot. ALT The new \"Suggested Accounts\" module. The categories shown are \"For You\", \"Software Dev\", \"Comedy\", and \"Tech.\" Suggested accounts are Rémi Verschelde, Abigail Thorn, and Paris Martineau ALT Reply (149 replies) Repost or quote post Like (3,884 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "April 10, 2025 at 6:00 PM": 4d
+    - text: 📢 App Version 1.100 is rolling out now (2/2) Trying to find more on Bluesky? The search page is now "Explore," with updated trends, suggested accounts, and more!
+    - button "A screenshot of the new \"Trending Topics\" in the Explore page. The trends are Survivor, Luka Doncic, PSG, Aston Villa, and Murderbot.":
+      - img "A screenshot of the new \"Trending Topics\" in the Explore page. The trends are Survivor, Luka Doncic, PSG, Aston Villa, and Murderbot."
+    - text: ALT
+    - button "The new \"Suggested Accounts\" module. The categories shown are \"For You\", \"Software Dev\", \"Comedy\", and \"Tech.\" Suggested accounts are Rémi Verschelde, Abigail Thorn, and Paris Martineau":
+      - img "The new \"Suggested Accounts\" module. The categories shown are \"For You\", \"Software Dev\", \"Comedy\", and \"Tech.\" Suggested accounts are Rémi Verschelde, Abigail Thorn, and Paris Martineau"
+    - text: ALT
+    - button "Reply (149 replies)":
+      - img
+      - text: "149"
+    - button "Repost or quote post":
+      - img
+      - text: "461"
+    - button "Like (3,884 likes)":
+      - img
+      - text: 3.8K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · April 4, 2025 at 10:18 PM Wish that you spent your Friday doing something besides checking if TikTok was banned or not? Try out @skylight.social — a video app built upon the same open network as Bluesky. You can login with your Bluesky account, and all of your followers seamlessly come with you. Post by skylight.social Reply (545 replies) Repost or quote post Like (11,909 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "April 4, 2025 at 10:18 PM": 10d
+    - text: Wish that you spent your Friday doing something besides checking if TikTok was banned or not? Try out
+    - link "@skylight.social"
+    - text: — a video app built upon the same open network as Bluesky. You can login with your Bluesky account, and all of your followers seamlessly come with you.
+    - link "Post by skylight.social":
+      - link "Skylight Social's avatar"
+      - link "View profile": ‪Skylight Social‬
+      - link "View profile": ‪@skylight.social‬
+      - text: ·
+      - link "April 4, 2025 at 10:08 PM": 10d
+      - text: "🎉 150,000+ USERS!! 🎉 Huge thanks to everyone who's supported us as we build this unbannable TikTok! There's still so much more we want to build— your support makes it possible. You all are the best 🥰 Join: skylight.social Follow Skylight Squad: @reedharmeyer.bsky.social @buildwithtori.com"
+      - img "a picture with a purple background that reads Skylight Social 150,000 users! There are celebratory emojis on each side of the picture"
+      - text: ALT
+    - button "Reply (545 replies)":
+      - img
+      - text: "545"
+    - button "Repost or quote post":
+      - img
+      - text: 2.6K
+    - button "Like (11,909 likes)":
+      - img
+      - text: 11.9K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · April 1, 2025 at 1:06 PM We're listening to your feedback and updating the character count for posts on Bluesky. Posts can now be 299 characters long! New Character Limit Now Available! - Bluesky Reply (2,757 replies) Repost or quote post Like (39,481 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "April 1, 2025 at 1:06 PM": 14d
+    - text: We're listening to your feedback and updating the character count for posts on Bluesky. Posts can now be 299 characters long!
+    - link "New Character Limit Now Available! - Bluesky":
+      - img
+      - text: New Character Limit Now Available! - Bluesky You asked, we listened.
+      - img
+      - text: Bluesky Social
+    - button "Reply (2,757 replies)":
+      - img
+      - text: 2.7K
+    - button "Repost or quote post":
+      - img
+      - text: 5.6K
+    - button "Like (39,481 likes)":
+      - img
+      - text: 39.4K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 25, 2025 at 7:59 PM Thank you to everyone who ordered a shirt! The preorder window is now closed. Our team is hard at work bringing them to life. We expect to start shipping by mid April. You will receive a confirmation email as soon as your order is on its way. We appreciate your patience and support! Bluesky's \"Mundus Sine Caesaribus\" shirt website Reply (242 replies) Repost or quote post Like (5,875 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 25, 2025 at 7:59 PM": 20d
+    - text: Thank you to everyone who ordered a shirt! The preorder window is now closed. Our team is hard at work bringing them to life. We expect to start shipping by mid April. You will receive a confirmation email as soon as your order is on its way. We appreciate your patience and support!
+    - img "Bluesky's \"Mundus Sine Caesaribus\" shirt website"
+    - text: ALT
+    - button "Reply (242 replies)":
+      - img
+      - text: "242"
+    - button "Repost or quote post":
+      - img
+      - text: "385"
+    - button "Like (5,875 likes)":
+      - img
+      - text: 5.8K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 24, 2025 at 5:56 PM Only one day left to place an order! worldwithoutcaesars.com MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Reply (167 replies) Repost or quote post Like (4,038 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 24, 2025 at 5:56 PM": 21d
+    - text: Only one day left to place an order!
+    - link "worldwithoutcaesars.com"
+    - link "MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS":
+      - img
+      - text: MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Support an open internet.
+      - img
+      - text: worldwithoutcaesars.com
+    - button "Reply (167 replies)":
+      - img
+      - text: "167"
+    - button "Repost or quote post":
+      - img
+      - text: "430"
+    - button "Like (4,038 likes)":
+      - img
+      - text: 4K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 21, 2025 at 4:59 PM Only four days left to place an order! worldwithoutcaesars.com MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Reply (244 replies) Repost or quote post Like (5,600 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 21, 2025 at 4:59 PM": 25d
+    - text: Only four days left to place an order!
+    - link "worldwithoutcaesars.com"
+    - link "MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS":
+      - img
+      - text: MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Support an open internet.
+      - img
+      - text: worldwithoutcaesars.com
+    - button "Reply (244 replies)":
+      - img
+      - text: "244"
+    - button "Repost or quote post":
+      - img
+      - text: "711"
+    - button "Like (5,600 likes)":
+      - img
+      - text: 5.6K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 20, 2025 at 8:57 PM We 💙 links! Starting this week, we've made it even easier for newsrooms and more to track how much traffic Bluesky is sending to their sites. For those setting up analytics, Bluesky's referrer is go.bsky.app. Reply (401 replies) Repost or quote post Like (28,320 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 20, 2025 at 8:57 PM": 25d
+    - text: We 💙 links! Starting this week, we've made it even easier for newsrooms and more to track how much traffic Bluesky is sending to their sites. For those setting up analytics, Bluesky's referrer is
+    - link "go.bsky.app"
+    - text: .
+    - button "Reply (401 replies)":
+      - img
+      - text: "401"
+    - button "Repost or quote post":
+      - img
+      - text: 3.3K
+    - button "Like (28,320 likes)":
+      - img
+      - text: 28.3K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 20, 2025 at 8:57 PM We view the Bluesky app as a lobby to the open social web, and we don't demote or throttle links. We believe it should be easy for you to connect your social following here with your web presence elsewhere. Reply (29 replies) Repost or quote post Like (4,597 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 20, 2025 at 8:57 PM": 25d
+    - text: We view the Bluesky app as a lobby to the open social web, and we don't demote or throttle links. We believe it should be easy for you to connect your social following here with your web presence elsewhere.
+    - button "Reply (29 replies)":
+      - img
+      - text: "29"
+    - button "Repost or quote post":
+      - img
+      - text: "359"
+    - button "Like (4,597 likes)":
+      - img
+      - text: 4.5K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 20, 2025 at 8:57 PM Publishers have already shared that they're receiving more and higher-quality engagement on Bluesky compared to legacy platforms. Referral metrics help newsrooms more accurately measure Bluesky's role in reaching their audiences. The Engagement Is Better on Bluesky - Bluesky Reply (68 replies) Repost or quote post Like (4,033 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 20, 2025 at 8:57 PM": 25d
+    - text: Publishers have already shared that they're receiving more and higher-quality engagement on Bluesky compared to legacy platforms. Referral metrics help newsrooms more accurately measure Bluesky's role in reaching their audiences.
+    - link "The Engagement Is Better on Bluesky - Bluesky":
+      - img
+      - text: The Engagement Is Better on Bluesky - Bluesky Bluesky is the lobby to the open web. Find and build your community here.
+      - img
+      - text: Bluesky Social
+    - button "Reply (68 replies)":
+      - img
+      - text: "68"
+    - button "Repost or quote post":
+      - img
+      - text: "302"
+    - button "Like (4,033 likes)":
+      - img
+      - text: 4K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 18, 2025 at 6:55 PM THE SHIRTS ARE BACK IN STOCK worldwithoutcaesars.com MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Reply (703 replies) Repost or quote post Like (17,711 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 18, 2025 at 6:55 PM": 27d
+    - text: THE SHIRTS ARE BACK IN STOCK
+    - link "worldwithoutcaesars.com"
+    - link "MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS":
+      - img
+      - text: MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Support an open internet.
+      - img
+      - text: worldwithoutcaesars.com
+    - button "Reply (703 replies)":
+      - img
+      - text: "703"
+    - button "Repost or quote post":
+      - img
+      - text: 3.3K
+    - button "Like (17,711 likes)":
+      - img
+      - text: 17.7K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 18, 2025 at 6:55 PM • Be sure to place an order within 7 days. • Added a XXL size. • To accommodate the high demand and ensure that everyone who wants a shirt can get one, we're unable to subsidize shipping costs for this drop. Thanks for understanding! worldwithoutcaesars.com MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Reply (92 replies) Repost or quote post Like (1,608 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 18, 2025 at 6:55 PM": 27d
+    - text: • Be sure to place an order within 7 days. • Added a XXL size. • To accommodate the high demand and ensure that everyone who wants a shirt can get one, we're unable to subsidize shipping costs for this drop. Thanks for understanding!
+    - link "worldwithoutcaesars.com"
+    - link "MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS":
+      - img
+      - text: MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Support an open internet.
+      - img
+      - text: worldwithoutcaesars.com
+    - button "Reply (92 replies)":
+      - img
+      - text: "92"
+    - button "Repost or quote post":
+      - img
+      - text: "131"
+    - button "Like (1,608 likes)":
+      - img
+      - text: 1.6K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 13, 2025 at 6:39 PM worldwithoutcaesars.com MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Post by emilyliu.me Reply (803 replies) Repost or quote post Like (20,742 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 13, 2025 at 6:39 PM": 1mo
+    - link "worldwithoutcaesars.com"
+    - link "MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS":
+      - img
+      - text: MUNDUS SINE CAESARIBUS — A WORLD WITHOUT CAESARS Support an open internet.
+      - img
+      - text: worldwithoutcaesars.com
+    - link "Post by emilyliu.me":
+      - link "Emily Liu's avatar"
+      - link "View profile": ‪Emily Liu‬
+      - link "View profile": ‪@emilyliu.me‬
+      - text: ·
+      - link "March 10, 2025 at 6:09 PM": 1mo
+      - button "zuck wearing a shirt that says \"aut zuck aut nihil\"":
+        - img "zuck wearing a shirt that says \"aut zuck aut nihil\""
+      - text: ALT
+      - button "jay graber, bluesky ceo, wearing a shirt that says \"mundus sine caesaribus\"":
+        - img "jay graber, bluesky ceo, wearing a shirt that says \"mundus sine caesaribus\""
+      - text: ALT
+    - button "Reply (803 replies)":
+      - img
+      - text: "803"
+    - button "Repost or quote post":
+      - img
+      - text: 3K
+    - button "Like (20,742 likes)":
+      - img
+      - text: 20.7K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 13, 2025 at 7:24 PM ... and 30 minutes later, we've already sold out of shirts in all sizes! 🤯 Reply (379 replies) Repost or quote post Like (7,518 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 13, 2025 at 7:24 PM": 1mo
+    - text: ... and 30 minutes later, we've already sold out of shirts in all sizes! 🤯
+    - button "Reply (379 replies)":
+      - img
+      - text: "379"
+    - button "Repost or quote post":
+      - img
+      - text: "254"
+    - button "Like (7,518 likes)":
+      - img
+      - text: 7.5K
+    - button "Open post options menu":
+      - img
+  - link "Reposted by Bluesky TwoLine Studios's avatar View profileView profile · March 10, 2025 at 11:32 PM @jay.bsky.team visual notes from her keynote today at @sxsw! Community! Open source! Creativity! Connection! Graphic recording by @heatherwillems.bsky.social of Hashtag twolinestudios Hashtag sxsw Hashtag sxsw2025 Hashtag graphicrecording Reply (42 replies) Repost or quote post Like (2,731 likes) Open post options menu":
+    - link "Reposted by Bluesky":
+      - img
+      - text: Reposted by
+      - link "Bluesky"
+    - link "TwoLine Studios's avatar"
+    - link "View profile": ‪TwoLine Studios‬
+    - link "View profile": ‪@twolinestudios.bsky.social‬
+    - text: ·
+    - link "March 10, 2025 at 11:32 PM": 1mo
+    - link "@jay.bsky.team"
+    - text: visual notes from her keynote today at @sxsw! Community! Open source! Creativity! Connection! Graphic recording by
+    - link "@heatherwillems.bsky.social"
+    - text: of
+    - link "Hashtag twolinestudios": "#twolinestudios"
+    - link "Hashtag sxsw": "#sxsw"
+    - link "Hashtag sxsw2025": "#sxsw2025"
+    - link "Hashtag graphicrecording": "#graphicrecording"
+    - button "Reply (42 replies)":
+      - img
+      - text: "42"
+    - button "Repost or quote post":
+      - img
+      - text: "275"
+    - button "Like (2,731 likes)":
+      - img
+      - text: 2.7K
+    - button "Open post options menu":
+      - img
+  - link "Reposted by Bluesky SXSW's avatar View profileView profile · March 10, 2025 at 10:03 PM @bsky.app CEO @jay.bsky.team details how the platform utilizes open networks to allow users to craft their own social media experience while maintaining their personal privacy. Reply (91 replies) Repost or quote post Like (7,012 likes) Open post options menu":
+    - link "Reposted by Bluesky":
+      - img
+      - text: Reposted by
+      - link "Bluesky"
+    - link "SXSW's avatar"
+    - link "View profile": ‪SXSW‬
+    - link "View profile": ‪@sxsw.com‬
+    - text: ·
+    - link "March 10, 2025 at 10:03 PM": 1mo
+    - link "@bsky.app"
+    - text: CEO
+    - link "@jay.bsky.team"
+    - text: details how the platform utilizes open networks to allow users to craft their own social media experience while maintaining their personal privacy.
+    - button "Reply (91 replies)":
+      - img
+      - text: "91"
+    - button "Repost or quote post":
+      - img
+      - text: "722"
+    - button "Like (7,012 likes)":
+      - img
+      - text: 7K
+    - button "Open post options menu":
+      - img
+  - 'link "Reposted by Bluesky Jay 🦋''s avatar View profileView profile · March 10, 2025 at 10:57 PM the feminine urge to Bluesky CEO: imagine a ''world without Caesars'' Reply (1,314 replies) Repost or quote post Like (75,295 likes) Open post options menu"':
+    - link "Reposted by Bluesky":
+      - img
+      - text: Reposted by
+      - link "Bluesky"
+    - link "Jay 🦋's avatar"
+    - link "View profile": ‪Jay 🦋‬
+    - link "View profile": ‪@jay.bsky.team‬
+    - text: ·
+    - link "March 10, 2025 at 10:57 PM": 1mo
+    - text: the feminine urge to
+    - 'link "Bluesky CEO: imagine a ''world without Caesars''"':
+      - img
+      - text: "Bluesky CEO: imagine a 'world without Caesars' Jay Graber dunks on Mark Zuckerberg without mentioning his name."
+      - img
+      - text: mashable.com
+    - button "Reply (1,314 replies)":
+      - img
+      - text: 1.3K
+    - button "Repost or quote post":
+      - img
+      - text: 10.9K
+    - button "Like (75,295 likes)":
+      - img
+      - text: 75.2K
+    - button "Open post options menu":
+      - img
+  - 'link "Bluesky''s avatar View profileView profile · March 10, 2025 at 6:28 PM 📢 App Version 1.99 is rolling out now (1/5) With every update, we’re aiming to make the Internet less toxic, more fun, and more in your control. • 3 minute videos! • A separate request inbox for DMs from unknown users • Mute accounts more quickly Bluesky 1.99. Improvements: Videos are now up to 3 minutes long! A DMs \"inbox\" to approve or reject new direct messages. You can now mute accounts from a post''s \"...\" menu. An improved moderation reporting flow. Better tablet-size layouts on Web. Better error reporting during signup. Reply (1,916 replies) Repost or quote post Like (42,410 likes) Open post options menu"':
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 10, 2025 at 6:28 PM": 1mo
+    - text: 📢 App Version 1.99 is rolling out now (1/5) With every update, we’re aiming to make the Internet less toxic, more fun, and more in your control. • 3 minute videos! • A separate request inbox for DMs from unknown users • Mute accounts more quickly
+    - 'img "Bluesky 1.99. Improvements: Videos are now up to 3 minutes long! A DMs \"inbox\" to approve or reject new direct messages. You can now mute accounts from a post''s \"...\" menu. An improved moderation reporting flow. Better tablet-size layouts on Web. Better error reporting during signup."'
+    - text: ALT
+    - button "Reply (1,916 replies)":
+      - img
+      - text: 1.9K
+    - button "Repost or quote post":
+      - img
+      - text: 10.4K
+    - button "Like (42,410 likes)":
+      - img
+      - text: 42.4K
+    - button "Open post options menu":
+      - img
+  - link "View full thread":
+    - link "View full thread":
+      - img
+      - text: View full thread
+  - link "Bluesky's avatar View profileView profile · March 10, 2025 at 6:32 PM 📢 1.99 is rolling out now (4/5) Mute accounts more quickly! Tap the “…” three-dot menu and select \"Mute account\" to mute directly from a post. A screenshot of a post by Bluesky. The post says “Hello, world!”. A big blue arrow is pointed at the three-dot menu button. ALT A screenshot of the post menu. “Mute account” is highlighted. ALT Reply (59 replies) Repost or quote post Like (4,456 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 10, 2025 at 6:32 PM": 1mo
+    - text: 📢 1.99 is rolling out now (4/5) Mute accounts more quickly! Tap the “…” three-dot menu and select "Mute account" to mute directly from a post.
+    - button "A screenshot of a post by Bluesky. The post says “Hello, world!”. A big blue arrow is pointed at the three-dot menu button.":
+      - img "A screenshot of a post by Bluesky. The post says “Hello, world!”. A big blue arrow is pointed at the three-dot menu button."
+    - text: ALT
+    - button "A screenshot of the post menu. “Mute account” is highlighted.":
+      - img "A screenshot of the post menu. “Mute account” is highlighted."
+    - text: ALT
+    - button "Reply (59 replies)":
+      - img
+      - text: "59"
+    - button "Repost or quote post":
+      - img
+      - text: "501"
+    - button "Like (4,456 likes)":
+      - img
+      - text: 4.4K
+    - button "Open post options menu":
+      - img
+  - 'link "Bluesky''s avatar View profileView profile · March 10, 2025 at 6:32 PM 📢 1.99 is rolling out now (5/5) We’re also pleased to include 3 new community translations: Welsh, Scottish Gaelic, and Esperanto. As always, we’d like to thank our contributors and translators, including new contributors NicolasBorlet and seth-wood! Reply (197 replies) Repost or quote post Like (4,810 likes) Open post options menu"':
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 10, 2025 at 6:32 PM": 1mo
+    - text: "📢 1.99 is rolling out now (5/5) We’re also pleased to include 3 new community translations: Welsh, Scottish Gaelic, and Esperanto. As always, we’d like to thank our contributors and translators, including new contributors NicolasBorlet and seth-wood!"
+    - button "Reply (197 replies)":
+      - img
+      - text: "197"
+    - button "Repost or quote post":
+      - img
+      - text: "493"
+    - button "Like (4,810 likes)":
+      - img
+      - text: 4.8K
+    - button "Open post options menu":
+      - img
+  - 'link "Bluesky''s avatar View profileView profile · March 10, 2025 at 5:38 PM Every few years, we sign up for yet another platform just to keep in touch with our friends. Private platforms have locked users in for too long, causing a lack of innovation & competition in social media. Bluesky aims to fundamentally change this. Live in 20 min with @jay.bsky.team : Bluesky''s CEO on the Future of Social Media | SXSW LIVE Reply (630 replies) Repost or quote post Like (32,764 likes) Open post options menu"':
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 10, 2025 at 5:38 PM": 1mo
+    - text: Every few years, we sign up for yet another platform just to keep in touch with our friends. Private platforms have locked users in for too long, causing a lack of innovation & competition in social media. Bluesky aims to fundamentally change this. Live in 20 min with
+    - link "@jay.bsky.team"
+    - text: ":"
+    - link "Bluesky's CEO on the Future of Social Media | SXSW LIVE":
+      - img
+      - button "Play Video":
+        - img
+      - text: Bluesky's CEO on the Future of Social Media | SXSW LIVE YouTube video by SXSW
+      - img
+      - text: www.youtube.com
+    - button "Reply (630 replies)":
+      - img
+      - text: "630"
+    - button "Repost or quote post":
+      - img
+      - text: 4.8K
+    - button "Like (32,764 likes)":
+      - img
+      - text: 32.7K
+    - button "Open post options menu":
+      - img
+  - 'link "Bluesky''s avatar View profileView profile · March 7, 2025 at 10:27 PM Finally, social media that''s billionaire-proof. ⚡ Bluesky''s first IRL ads spotted in @boston.gov @mbta.com . Digital billboard in Boston''s subway station that reads: \"Finally, social media that''s billionaire-proof.\" Reply (793 replies) Repost or quote post Like (54,857 likes) Open post options menu"':
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 7, 2025 at 10:27 PM": 1mo
+    - text: Finally, social media that's billionaire-proof. ⚡ Bluesky's first IRL ads spotted in
+    - link "@boston.gov"
+    - link "@mbta.com"
+    - text: .
+    - 'img "Digital billboard in Boston''s subway station that reads: \"Finally, social media that''s billionaire-proof.\""'
+    - text: ALT
+    - button "Reply (793 replies)":
+      - img
+      - text: "793"
+    - button "Repost or quote post":
+      - img
+      - text: 5.4K
+    - button "Like (54,857 likes)":
+      - img
+      - text: 54.8K
+    - button "Open post options menu":
+      - img
+  - 'link "Bluesky''s avatar View profileView profile · March 7, 2025 at 10:29 PM Follow Boston on Bluesky: Navigate to Boston on Bluesky Reply (51 replies) Repost or quote post Like (2,729 likes) Open post options menu"':
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 7, 2025 at 10:29 PM": 1mo
+    - text: "Follow Boston on Bluesky:"
+    - link "Navigate to Boston on Bluesky":
+      - img
+      - img
+      - text: Boston on Bluesky Starter pack by ‪@bsky.app‬ Follow accounts local to Boston, including news, sports, and more.
+    - button "Reply (51 replies)":
+      - img
+      - text: "51"
+    - button "Repost or quote post":
+      - img
+      - text: "162"
+    - button "Like (2,729 likes)":
+      - img
+      - text: 2.7K
+    - button "Open post options menu":
+      - img
+  - link "Bluesky's avatar View profileView profile · March 5, 2025 at 7:19 PM Catch us in Austin, TX for @sxsw.com ! On Monday, March 10, tune in for @jay.bsky.team 's keynote with @mmasnick.bsky.social on the future of social and how we can take back control of our experience online. Jay Graber's headshot for her SXSW keynote Reply (274 replies) Repost or quote post Like (12,352 likes) Open post options menu":
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 5, 2025 at 7:19 PM": 1mo
+    - text: Catch us in Austin, TX for
+    - link "@sxsw.com"
+    - text: "! On Monday, March 10, tune in for"
+    - link "@jay.bsky.team"
+    - text: "'s keynote with"
+    - link "@mmasnick.bsky.social"
+    - text: on the future of social and how we can take back control of our experience online.
+    - img "Jay Graber's headshot for her SXSW keynote"
+    - text: ALT
+    - button "Reply (274 replies)":
+      - img
+      - text: "274"
+    - button "Repost or quote post":
+      - img
+      - text: 1.4K
+    - button "Like (12,352 likes)":
+      - img
+      - text: 12.3K
+    - button "Open post options menu":
+      - img
+  - 'link "Bluesky''s avatar View profileView profile · March 5, 2025 at 7:19 PM This Saturday, March 8, come hang out with us here: Post by bencollins.bsky.social Reply (32 replies) Repost or quote post Like (1,887 likes) Open post options menu"':
+    - link "Bluesky's avatar"
+    - link "View profile": ‪Bluesky‬
+    - link "View profile": ‪@bsky.app‬
+    - text: ·
+    - link "March 5, 2025 at 7:19 PM": 1mo
+    - text: "This Saturday, March 8, come hang out with us here:"
+    - link "Post by bencollins.bsky.social":
+      - link "Tim Onion's avatar"
+      - link "View profile": ‪Tim Onion‬
+      - link "View profile": ‪@bencollins.bsky.social‬
+      - text: ·
+      - link "March 4, 2025 at 6:42 PM": 1mo
+      - text: Extremely rare good news! The Onion, Bluesky and Project Liberty are throwing a party for sickos on Saturday in Austin at South by Southwest. It's a Good Party for Bad Times. Sign up for a spot in the link below. (Onion subscribers get first dibs, btw.) docs.google.com/forms/d/1pG-...
+      - img "A Good Party for Bad Times, brought to you by The Onion, Project Liberty and Bluesky. March 8th, 5-9 p.m. in Austin, TX."
+      - text: ALT
+    - button "Reply (32 replies)":
+      - img
+      - text: "32"
+    - button "Repost or quote post":
+      - img
+      - text: "153"
+    - button "Like (1,887 likes)":
+      - img
+      - text: 1.8K
+    - button "Open post options menu":
+      - img
+  - 'link "Reposted by Bluesky Knight Foundation''s avatar View profileView profile · February 20, 2025 at 12:15 AM Jay Graber, @jay.bsky.team , CEO of @bsky.app joined @maribel-wadsworth.bsky.social on the Hashtag KMF25 stage for a timely conversation on the social network’s rapid growth, unique algorithm and how journalists can leverage it effectively. Watch the full conversation here: kf.org/419MKgK Reply (73 replies) Repost or quote post Like (3,106 likes) Open post options menu"':
+    - link "Reposted by Bluesky":
+      - img
+      - text: Reposted by
+      - link "Bluesky"
+    - link "Knight Foundation's avatar"
+    - link "View profile": ‪Knight Foundation‬
+    - link "View profile": ‪@knightfoundation.org‬
+    - text: ·
+    - link "February 20, 2025 at 12:15 AM": 1mo
+    - text: Jay Graber,
+    - link "@jay.bsky.team"
+    - text: ", CEO of"
+    - link "@bsky.app"
+    - text: joined
+    - link "@maribel-wadsworth.bsky.social"
+    - text: on the
+    - link "Hashtag KMF25": "#KMF25"
+    - text: "stage for a timely conversation on the social network’s rapid growth, unique algorithm and how journalists can leverage it effectively. Watch the full conversation here:"
+    - link "kf.org/419MKgK"
+    - button "Reply (73 replies)":
+      - img
+      - text: "73"
+    - button "Repost or quote post":
+      - img
+      - text: "322"
+    - button "Like (3,106 likes)":
+      - img
+      - text: 3.1K
+    - button "Open post options menu":
+      - img
+  - text: You've reached the end of your feed! Find some more accounts to follow.
+  - button "Find accounts to follow":
+    - text: Find accounts to follow
+    - img
+  - text: You can also discover new Custom Feeds to follow.
+  - button "Discover new custom feeds":
+    - text: Discover new custom feeds
+    - img
+  - button "New post":
+    - img
+- navigation:
+  - button "Switch accounts"
+  - link "Home"
+  - link "Explore"
+  - link "Notifications"
+  - link "Chat"
+  - link "Feeds"
+  - link "Lists"
+  - link "Profile"
+  - link "Settings"
+- img
+- search "Search"
+- link "Discover"
+- link "Following"
+- link "More feeds"
+- img
+- text: Trending
+- button "Hide trending topics":
+  - img
+- link "Browse topic 4chan Hack": 4chan Hack
+- link "Browse topic Jackie Robinson": Jackie Robinson
+- link "Browse topic Mohsen Mahdawi": Mohsen Mahdawi
+- link "Browse topic Phillies": Phillies
+- link "Browse topic JD Vance": JD Vance
+- link "Browse topic Harvard": Harvard
+- link "Feedback"
+- text: •
+- link "Privacy"
+- text: •
+- link "Terms"
+- text: •
+- link "Help"
+```
+
+# Test source
+
+```ts
+   1 | import {expect, test} from '@playwright/test'
+   2 |
+   3 | test('user can follow and unfollow mercytum', async ({page}) => {
+   4 |   //Go to site and Login
+   5 |   await page.goto('http://localhost:19006/')
+   6 |   // await page.goto('https://bsky.app/')
+   7 |   await page.getByRole('button', {name: 'Sign in'}).click()
+   8 |   await page.getByTestId('loginUsernameInput').click()
+   9 |   await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
+  10 |   await page.getByTestId('loginPasswordInput').click()
+  11 |   await page.getByTestId('loginPasswordInput').fill('CIS565TestGroup')
+  12 |   await page.getByTestId('loginNextButton').click()
+  13 |
+  14 |   //Confirm Login was successful
+  15 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  16 |
+  17 |   //Search for user(mercytum)
+  18 |   await page.getByRole('search', {name: 'Search'}).click()
+  19 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+  20 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  21 |
+  22 |   //Go to People tab and select the user
+  23 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+  24 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+  25 |
+  26 |   //Follow the user
+  27 |   await page.getByTestId('followBtn').click()
+  28 |
+  29 |   // Expect to see the "Unfollow" button now
+  30 |   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
+  31 |
+  32 |   //Navigate back Home
+  33 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  34 |
+  35 |   //Check if user is in your Following list
+  36 |   await page.getByTestId('homeScreenFeedTabs-Following').click()
+  37 |   // await page.goto('http://localhost:19006/')
+  38 |   // await page.goto('https://bsky.app/')
+> 39 |   await page.locator('a').filter({hasText: '‪Mercy Tum‬'}).click()
+     |                                                            ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  40 |
+  41 |   //Unfollow user
+  42 |   await page.getByTestId('unfollowBtn').click()
+  43 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  44 | })
+  45 |
+```
