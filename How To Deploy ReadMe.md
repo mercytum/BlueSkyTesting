@@ -29,4 +29,9 @@
 ###### 3. Open the clone repo project within VS Code
 ###### 4. Within VS Code Extensions, install the 'Playwright Test for VSCode by Microsoft" (v1.1.13 or later)
 ###### 5. Enable the plugin once installed
-###### 6. 
+###### 6. Open terminal within VSCode and run "yarn" to install dependencies
+###### 7. Run "yarn web" to start local server instance and note the localhost url plus port being used to run the application
+###### 8. Open the playwright.config.ts file and set the webserver url attribute to equal the url indicated in Step 7 (in most cases it will run on http://127.0.0.1:19006)
+###### 9. Save changes within the playwright.config.ts file
+###### 10. Open another terminal instance, and run the following cmd: npx playwright test
+###### 11. [Optional] you can run the tests with parallelization by adding '--workers=3' 
