@@ -88,8 +88,11 @@ test('Delete Last Created Post', {tag: '@post'}, async ({ page }) => {
     // Navigate to Profile
     await page.getByRole('link', { name: 'Profile', exact: true }).click();
 
+    // Wait for 5 secs for page elems to full load
+    await page.waitForTimeout(5000);
+
     // Get the number of posts
-    const post = await page.locator('xpath=//*[@id="root"]/div/div/div/div/div/main/div/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div[2]/div[3]/div/div').innerHTML();
+    const post = await page.locator('xpath=//*[@id="root"]/div/div/div/div/div/main/div/div/div/div/div/div[2]/div/div[1]/div[1]/div/div[2]/div[3]/div/div').innerHTML();
 
     // Split off the first element of variable
     let postNum: number = parseInt(post.split("")[0]);
@@ -128,7 +131,7 @@ test('Delete Last Created Post', {tag: '@post'}, async ({ page }) => {
     let expectedPosts = postNum -=1;
 
     // Expected posts number to have decremented as latest post was deleted
-    await expect(actualNum).toEqual(expectedPosts);    
+    await expect(actualNum).toEqual(expectedPosts);   
 
 
 });
