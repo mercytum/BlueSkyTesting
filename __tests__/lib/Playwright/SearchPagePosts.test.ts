@@ -2,10 +2,8 @@ import { test, expect, type Page } from '@playwright/test';
 
 const BLUESKY_WEB_URL = 'https://bsky.app';
 
-//const BSKY_EMAIL = process.env.CIS565_EMAIL;
-//const BSKY_PASS = process.env.CIS565_PASSWORD;
-const BSKY_EMAIL = "cis565bskytests@gmail.com";
-const BSKY_PASS = "CIS565TestGroup"; 
+const BSKY_EMAIL = process.env.BS_USERNAME;
+const BSKY_PASS = process.env.BS_PASSWORD;
 
 
 // Login function
@@ -101,11 +99,11 @@ test('Search for post within user profile', {tag: '@search'}, async ({ page }) =
     // Select the first post description seen
     let postText = await page.getByTestId('postText').first().textContent();
 
-    // Check that post has no than one word
+    // Check that post has more than one word
     let actual = await chkPostExist(postText);
 
     // Assertion
-    // Verify post description has no than one word
+    // Verify post description has more than one word
     await expect(actual).toEqual(true);
 
 });
