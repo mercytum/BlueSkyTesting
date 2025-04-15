@@ -1,0 +1,1014 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create Post using greater than 300 characters
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts:60:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByTestId('customFeedPage').getByTestId('composeFAB')
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts:63:72
+```
+
+# Page snapshot
+
+```yaml
+- text: Sign in Enter your username and password Hosting provider
+- button "Bluesky Social":
+  - img
+  - text: Bluesky Social
+  - img
+- text: Account
+- img
+- textbox "Username or email address": undefined
+- img
+- textbox "Password": undefined
+- button "Forgot password?": Forgot?
+- img
+- text: Rate Limit Exceeded
+- button "Back"
+- button "Next"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect, type Page } from '@playwright/test';
+   2 |
+   3 | const BLUESKY_WEB_URL = 'https://bsky.app';
+   4 |
+   5 | const BSKY_EMAIL = process.env.BS_USERNAME;
+   6 | const BSKY_PASS = process.env.BS_PASSWORD;
+   7 |
+   8 |
+   9 | // Login function
+  10 | async function login(page: Page): Promise<void> {
+  11 |
+  12 |   // Navigate to the login page
+  13 |   await page.goto(`${BLUESKY_WEB_URL}`);
+  14 |
+  15 |   // Click the sign-in button
+  16 |   await page.getByRole('button', { name: 'Sign in' }).click();
+  17 |
+  18 |   // Click on username field
+  19 |   await page.getByTestId('loginUsernameInput').click();
+  20 |
+  21 |   // Enter username
+  22 |   await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
+  23 |
+  24 |   // Click on password field
+  25 |   await page.getByTestId('loginPasswordInput').click();
+  26 |
+  27 |   // Enter pswd
+  28 |   await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
+  29 |
+  30 |   // Click on next button to sign-in
+  31 |   await page.getByTestId('loginNextButton').click();
+  32 |
+  33 | }
+  34 |
+  35 | // Setup functionality
+  36 | test.beforeEach(async ({ page }) => {
+  37 |
+  38 |     // Call login function
+  39 |     await login(page);
+  40 |
+  41 | });
+  42 |
+  43 | // Create Post using less than 0 characters
+  44 | test('Create Post using less than 0 characters', {tag: '@post'}, async ({ page }) => {
+  45 |
+  46 |     // Click on the create new post fab button
+  47 |     await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
+  48 |
+  49 |     // Click in post paragraph field
+  50 |     await page.getByRole('paragraph').click();
+  51 |
+  52 |     // Assertions
+  53 |     // Verify post button is disabled due to min no.of characters not met
+  54 |     const postBtn = await page.getByTestId('composerPublishBtn');
+  55 |     await expect(postBtn).toHaveAttribute('disabled','');
+  56 |
+  57 | });
+  58 |
+  59 | // Create Post using greater than 300 characters
+  60 | test('Create Post using greater than 300 characters', {tag: '@post'}, async ({ page }) => {
+  61 |
+  62 |     // Click on the create new post fab button
+> 63 |     await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
+     |                                                                        ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  64 |
+  65 |     // Click in post paragraph field
+  66 |     await page.getByRole('paragraph').click();
+  67 |
+  68 |     // Type post message with 388 characters
+  69 |     await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdum. Hi');
+  70 |
+  71 |     // Assertions
+  72 |     // Verify post button is disabled due to max no.of characters exceeded
+  73 |     const postBtn = await page.getByTestId('composerPublishBtn');
+  74 |     await expect(postBtn).toHaveAttribute('disabled','');
+  75 |
+  76 | });
+  77 |
+```
+
+# Local changes
+
+```diff
+diff --git a/__tests__/lib/Playwright/PostPageCancellation.test.ts b/__tests__/lib/Playwright/PostPageCancellation.test.ts
+new file mode 100644
+index 000000000..8e19d7ef5
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageCancellation.test.ts
+@@ -0,0 +1,90 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Cancel post without typing any text
++test('Cancel Post without typing any text', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click on the cancel button within the create new post popup box
++    await page.getByRole('button', { name: 'Cancel' }).click();
++
++    // Assertion
++    // Verify that home screen is displayed by checking for Discovery & Following tabs
++    const discoveryTab = await page.getByTestId('homeScreenFeedTabs-Discover');
++    await expect(discoveryTab).toBeVisible();
++
++    const followingTab = await page.getByTestId('homeScreenFeedTabs-Following');
++    await expect(followingTab).toBeVisible();
++
++});
++
++// Cancel post during its creation
++test('Cancel Post during its creation', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click in post paragraph field
++    await page.getByRole('paragraph').click();
++
++    // Type post message
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('My first BlueSky post');
++
++    // Click on the cancel button within the create new post popup box
++    await page.getByRole('button', { name: 'Cancel' }).click();
++
++    await page.waitForTimeout(3000);
++
++    // Verify discard button is visible
++    await page.getByTestId('confirmBtn').click();
++
++    // Verify that home screen is displayed by checking for Discovery & Following tabs
++    const discoveryTab = await page.getByTestId('homeScreenFeedTabs-Discover');
++    await expect(discoveryTab).toBeVisible();
++
++    const followingTab = await page.getByTestId('homeScreenFeedTabs-Following');
++    await expect(followingTab).toBeVisible();
++
++});
+diff --git a/__tests__/lib/Playwright/PostPageCreation.test.ts b/__tests__/lib/Playwright/PostPageCreation.test.ts
+new file mode 100644
+index 000000000..ff7ae7b46
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageCreation.test.ts
+@@ -0,0 +1,119 @@
++import { test, expect, type Page } from '@playwright/test';
++import { promises } from "fs";
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++// Global total post variable
++let TOTAL_POSTS = 0;
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Check if post exists, return boolean 
++async function chkPostExist(postText: string): Promise<boolean> {
++
++    // If postText is not a string, return false
++    if (typeof postText !== 'string' || !postText) {
++        return false;
++    }
++
++    // Else return
++    return postText.trim().includes(' ');
++}
++
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++// Create Post using one character
++test('Create Post using one character', {tag: '@post'}, async ({ page }) => {
++
++    // Navigate to profile page
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Click on the compose button
++    await page.getByTestId('profileView').getByTestId('composeFAB').click();
++
++    // Click on the post textbox and type 1 character post msg
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('A');
++    
++    // Click the publish / post button to create post
++    await page.getByTestId('composerPublishBtn').click();
++
++    // Initiate a page reload to show upated post numbers
++    await page.reload();
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Assertion
++    // Expected length of post toBe 1
++    await expect(postText?.length).toBe(1);
++
++});
++
++
++// Create Post using 300 character
++test('Create Post using 300 characters', {tag: '@post'}, async ({ page }) => {
++
++    // Navigate to profile page
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Click on the compose button
++    await page.getByTestId('profileView').getByTestId('composeFAB').click();
++
++    // Click on the post textbox and type 300 character post msg
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdums.');
++    
++    // Click the publish / post button to create post
++    await page.getByTestId('composerPublishBtn').click();
++
++    // Initiate a page reload to show upated post numbers
++    await page.reload();
++
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has more than one word
++    let actual = await chkPostExist(postText);
++
++    // Assertion
++    // Expected length of post toBe 300
++    await expect(postText?.length).toBe(300);
++
++    // Verify post description has more than one word
++    await expect(actual).toEqual(true);
++
++});
+diff --git a/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts b/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts
+new file mode 100644
+index 000000000..d65c67fa2
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts
+@@ -0,0 +1,76 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++// Create Post using less than 0 characters
++test('Create Post using less than 0 characters', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click in post paragraph field
++    await page.getByRole('paragraph').click();
++
++    // Assertions
++    // Verify post button is disabled due to min no.of characters not met
++    const postBtn = await page.getByTestId('composerPublishBtn');
++    await expect(postBtn).toHaveAttribute('disabled','');
++
++});
++
++// Create Post using greater than 300 characters
++test('Create Post using greater than 300 characters', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click in post paragraph field
++    await page.getByRole('paragraph').click();
++
++    // Type post message with 388 characters
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdum. Hi');
++
++    // Assertions
++    // Verify post button is disabled due to max no.of characters exceeded
++    const postBtn = await page.getByTestId('composerPublishBtn');
++    await expect(postBtn).toHaveAttribute('disabled','');
++
++});
+diff --git a/__tests__/lib/Playwright/PostPageDeletion.test.ts b/__tests__/lib/Playwright/PostPageDeletion.test.ts
+new file mode 100644
+index 000000000..9ac86c6f7
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageDeletion.test.ts
+@@ -0,0 +1,136 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++//const BSKY_EMAIL = process.env.CIS565_EMAIL;
++//const BSKY_PASS = process.env.CIS565_PASSWORD;
++const BSKY_EMAIL = "cis565bskytests@gmail.com";
++const BSKY_PASS = "CIS565TestGroup"; 
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// getDate function
++async function getDate() {
++
++  // Get current date
++  const currentDate = new Date();
++
++  // Extract month, day and year from currentDate obj
++  const monthIndex = currentDate.getMonth();
++  const day = currentDate.getDate();
++  const year = currentDate.getFullYear();
++
++  // Months of the year array list
++  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
++
++  // Assign month name based on current month index
++  const monthOfYr = monthNames[monthIndex];
++
++  // Format the date in mm dd, yyyy format
++  const formatDate = `${monthOfYr} ${day}, ${year}`
++
++  // Return currentDate
++  return formatDate;
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++// Delete last created Post
++test('Delete Last Created Post', {tag: '@post'}, async ({ page }) => {
++
++    // Get current date
++    const currentDate = new Date();
++
++    // Extract month, day and year from currentDate obj
++    const monthIndex = currentDate.getMonth();
++    const day = currentDate.getDate();
++    const year = currentDate.getFullYear();
++
++    // Months of the year array list
++    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
++
++    // Assign month name based on current month index
++    const monthOfYr = monthNames[monthIndex];
++
++    // Format the date in mm dd, yyyy format
++    const formatDate = `${monthOfYr} ${day}, ${year}`;
++
++    // Navigate to Profile
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Get the number of posts
++    const post = await page.locator('xpath=//*[@id="root"]/div/div/div/div/div/main/div/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div[2]/div[3]/div/div').innerHTML();
++
++    // Split off the first element of variable
++    let postNum: number = parseInt(post.split("")[0]);
++
++    // Select Post tab
++    await page.getByTestId('profilePager-Posts').click();
++
++    // Wait for 5 secs for page elems to full load
++    await page.waitForTimeout(5000);
++
++    // Select ellipses for post based on current date
++    await page.getByRole('link', { name: `cis565testgroup.bsky.social\'s avatar View profileView profile · ${formatDate}` }).first().getByTestId('postDropdownBtn').click();
++
++    // Click delete this post
++    await page.getByTestId('postDropdownDeleteBtn').click();
++
++    // Confirm post deletion
++    await page.getByRole('button', { name: 'Delete' }).click();
++
++    // Wait for 5 secs for page elems to full load
++    await page.waitForTimeout(5000);
++
++    // Initiate a page reload to show upated post numbers
++    await page.reload();
++
++    // Navigate to profile (click on profile nav link)
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Get the number of posts
++    const postChk2 = await page.locator('xpath=//*[@id="root"]/div/div/div/div/div/main/div/div/div/div/div/div[2]/div/div[1]/div[1]/div/div[2]/div[3]/div/div').innerHTML();
++
++    // Split off the first element of variable
++    let actualNum: number = parseInt(postChk2.split("")[0]);
++ 
++    // Assertions
++    let expectedPosts = postNum -=1;
++
++    // Expected posts number to have decremented as latest post was deleted
++    await expect(actualNum).toEqual(expectedPosts);    
++
++
++});
+\ No newline at end of file
+diff --git a/__tests__/lib/Playwright/SearchPageErrorCase.test.ts b/__tests__/lib/Playwright/SearchPageErrorCase.test.ts
+new file mode 100644
+index 000000000..7e3ded22e
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPageErrorCase.test.ts
+@@ -0,0 +1,72 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++//const BSKY_EMAIL = process.env.CIS565_EMAIL;
++//const BSKY_PASS = process.env.CIS565_PASSWORD;
++const BSKY_EMAIL = "cis565bskytests@gmail.com";
++const BSKY_PASS = "CIS565TestGroup"; 
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for empty term
++test('Search for empty term', {tag: '@search'}, async ({ page }) => {
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Get Discovery text
++    let discoveryTabExt = await page.getByTestId('homeScreenFeedTabs-Discover').textContent();
++
++    // Get Following text
++    let followTabExt = await page.getByTestId('homeScreenFeedTabs-Following').textContent();
++
++    // Get current url
++    let currentUrl: string = page.url();
++
++    // Assertion
++    // Verify empty search remains on search page where elements: Discover, Following are seen
++    await expect(discoveryTabExt).toContain('Discover');
++    await expect(followTabExt).toContain('Following');
++
++    // Verify current url searched matches default home url
++    await expect(currentUrl).toContain('https://bsky.app');
++        
++});
++
+diff --git a/__tests__/lib/Playwright/SearchPageFeeds.test.ts b/__tests__/lib/Playwright/SearchPageFeeds.test.ts
+new file mode 100644
+index 000000000..491a55f0a
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPageFeeds.test.ts
+@@ -0,0 +1,123 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++//const BSKY_EMAIL = process.env.CIS565_EMAIL;
++//const BSKY_PASS = process.env.CIS565_PASSWORD;
++const BSKY_EMAIL = "cis565bskytests@gmail.com";
++const BSKY_PASS = "CIS565TestGroup"; 
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Check if post exists, return boolean 
++async function chkPostExist(postText: string): Promise<boolean> {
++
++    // If postText is not a string, return false
++    if (typeof postText !== 'string' || !postText) {
++        return false;
++    }
++
++    // Else return
++    return postText.trim().includes(' ');
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for feeds by using term
++test('Search for feeds using search term', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const searchTerm = 'weather';
++
++    // Search for Feeds
++    await page.getByRole('link', { name: 'Feeds', exact: true }).click();
++
++    // Click on search bar in feeds page
++    await page.getByTestId('FeedsScreen').getByRole('search', { name: 'Search' }).click();
++
++    // Type searchTerm
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).fill(searchTerm);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on a predefined weather feed
++    await page.getByRole('link', { name: 'Ontario Weather #ONstorm' }).click();
++
++    // Select the first feed description seen
++    let feedText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has no than one word
++    let actual = await chkPostExist(feedText);
++
++    // Assertion
++    // Verify post description has no than one word
++    await expect(actual).toEqual(true);
++
++});
++
++
++// Search for feeds using hashtag
++test('Search for feeds using hashtag', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const hashtag = '#nba';
++
++    // Search for Feeds
++    await page.getByRole('link', { name: 'Feeds', exact: true }).click();
++
++    // Click on search bar in feeds page
++    await page.getByTestId('FeedsScreen').getByRole('search', { name: 'Search' }).click();
++
++    // Type searchTerm
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).fill(hashtag);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on a predefined feed
++    await page.getByRole('link', { name: hashtag }).click();
++
++    // Select the first feed description seen
++    let feedText = await page.getByTestId('postText').first().innerText();
++
++    // Check that post has no than one word
++    let actual = await chkPostExist(feedText);
++
++    // Assertion
++    // Verify post description has no than one word
++    await expect(actual).toEqual(true);
++
++});
+\ No newline at end of file
+diff --git a/__tests__/lib/Playwright/SearchPagePosts.test.ts b/__tests__/lib/Playwright/SearchPagePosts.test.ts
+new file mode 100644
+index 000000000..f41378a67
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPagePosts.test.ts
+@@ -0,0 +1,111 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++//const BSKY_EMAIL = process.env.CIS565_EMAIL;
++//const BSKY_PASS = process.env.CIS565_PASSWORD;
++const BSKY_EMAIL = "cis565bskytests@gmail.com";
++const BSKY_PASS = "CIS565TestGroup"; 
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Check if post exists, return boolean 
++async function chkPostExist(postText: string): Promise<boolean> {
++
++    // If postText is not a string, return false
++    if (typeof postText !== 'string' || !postText) {
++        return false;
++    }
++
++    // Else return
++    return postText.trim().includes(' ');
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for posts using general search
++test('Search for posts using general search', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const searchTerm = 'pickleball';
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Type searchTerm
++    await page.getByRole('search', { name: 'Search' }).fill(searchTerm);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has no than one word
++    let actual = await chkPostExist(postText);
++
++    // Assertion
++    // Verify post description has no than one word
++    await expect(actual).toEqual(true);
++
++});
++
++
++// Search for post within user profile
++test('Search for post within user profile', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const profile = '@majorleaguepb.bsky.social'
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Search using profile handle
++    await page.getByRole('search', { name: 'Search' }).fill(profile);
++    
++    // Click on exact profile handle
++    await page.getByRole('link', { name: 'majorleaguepb.bsky.social', exact: true }).click();
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has no than one word
++    let actual = await chkPostExist(postText);
++
++    // Assertion
++    // Verify post description has no than one word
++    await expect(actual).toEqual(true);
++
++});
+\ No newline at end of file
+diff --git a/__tests__/lib/Playwright/SearchPageUsers.test.ts b/__tests__/lib/Playwright/SearchPageUsers.test.ts
+new file mode 100644
+index 000000000..7f8036c35
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPageUsers.test.ts
+@@ -0,0 +1,108 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++//const BSKY_EMAIL = process.env.CIS565_EMAIL;
++//const BSKY_PASS = process.env.CIS565_PASSWORD;
++const BSKY_EMAIL = "cis565bskytests@gmail.com";
++const BSKY_PASS = "CIS565TestGroup"; 
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for user profile using username handle
++test('Search for user using username handle', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const userHandle = 'mcuban.bsky.social';
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Type userHandle
++    await page.getByRole('search', { name: 'Search' }).fill(userHandle);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on the "People" tab for search for persons
++    await page.getByTestId('undefined-selector-2').getByText('People').click();
++
++    // Click on people based on user handle
++    await page.getByRole('link', { name: userHandle }).click();
++
++    // Get current url
++    let currenUrl: string = page.url();
++
++    // Assertion
++    // Verify currect profile searched matches based on url
++    await expect(currenUrl).toContain(`https://bsky.app/profile/${userHandle}`);
++        
++});
++
++
++// Search for user profile using first and last name
++test('Search for user using first and last name', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const firstname = 'Barack';
++    const lastname = 'Obama';
++    const fullname = firstname + lastname;
++    const handlename = fullname + '.bsky.social';
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Type fullname
++    await page.getByRole('search', { name: 'Search' }).fill(fullname);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on the "People" tab for search for persons
++    await page.getByTestId('undefined-selector-2').getByText('People').click();
++
++    // Click on people based on user handle
++    await page.getByRole('link', { name: handlename }).click();
++
++    // Get current url
++    let currentUrl: string = page.url();
++
++    // Assertion
++    // Verify current profile searched matches based on url
++    await expect(currentUrl).toContain(`https://bsky.app/profile/${handlename.toLowerCase()}`);
++        
++});
++
+```
