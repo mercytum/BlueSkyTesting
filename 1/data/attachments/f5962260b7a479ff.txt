@@ -1,0 +1,123 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create Post using less than 0 characters
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts:44:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByTestId('customFeedPage').getByTestId('composeFAB')
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts:47:72
+```
+
+# Page snapshot
+
+```yaml
+- text: Sign in Enter your username and password Hosting provider
+- button "Bluesky Social":
+  - img
+  - text: Bluesky Social
+  - img
+- text: Account
+- img
+- textbox "Username or email address": undefined
+- img
+- textbox "Password": CIS565TestGroup
+- button "Forgot password?": Forgot?
+- img
+- text: Rate Limit Exceeded
+- button "Back"
+- button "Next"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect, type Page } from '@playwright/test';
+   2 |
+   3 | const BLUESKY_WEB_URL = 'https://bsky.app';
+   4 |
+   5 | const BSKY_EMAIL = process.env.BS_USERNAME;
+   6 | const BSKY_PASS = process.env.BS_PASSWORD;
+   7 |
+   8 |
+   9 | // Login function
+  10 | async function login(page: Page): Promise<void> {
+  11 |
+  12 |   // Navigate to the login page
+  13 |   await page.goto(`${BLUESKY_WEB_URL}`);
+  14 |
+  15 |   // Click the sign-in button
+  16 |   await page.getByRole('button', { name: 'Sign in' }).click();
+  17 |
+  18 |   // Click on username field
+  19 |   await page.getByTestId('loginUsernameInput').click();
+  20 |
+  21 |   // Enter username
+  22 |   await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
+  23 |
+  24 |   // Click on password field
+  25 |   await page.getByTestId('loginPasswordInput').click();
+  26 |
+  27 |   // Enter pswd
+  28 |   await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
+  29 |
+  30 |   // Click on next button to sign-in
+  31 |   await page.getByTestId('loginNextButton').click();
+  32 |
+  33 | }
+  34 |
+  35 | // Setup functionality
+  36 | test.beforeEach(async ({ page }) => {
+  37 |
+  38 |     // Call login function
+  39 |     await login(page);
+  40 |
+  41 | });
+  42 |
+  43 | // Create Post using less than 0 characters
+  44 | test('Create Post using less than 0 characters', {tag: '@post'}, async ({ page }) => {
+  45 |
+  46 |     // Click on the create new post fab button
+> 47 |     await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
+     |                                                                        ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  48 |
+  49 |     // Click in post paragraph field
+  50 |     await page.getByRole('paragraph').click();
+  51 |
+  52 |     // Assertions
+  53 |     // Verify post button is disabled due to min no.of characters not met
+  54 |     const postBtn = await page.getByTestId('composerPublishBtn');
+  55 |     await expect(postBtn).toHaveAttribute('disabled','');
+  56 |
+  57 | });
+  58 |
+  59 | // Create Post using greater than 300 characters
+  60 | test('Create Post using greater than 300 characters', {tag: '@post'}, async ({ page }) => {
+  61 |
+  62 |     // Click on the create new post fab button
+  63 |     await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
+  64 |
+  65 |     // Click in post paragraph field
+  66 |     await page.getByRole('paragraph').click();
+  67 |
+  68 |     // Type post message with 388 characters
+  69 |     await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdum. Hi');
+  70 |
+  71 |     // Assertions
+  72 |     // Verify post button is disabled due to max no.of characters exceeded
+  73 |     const postBtn = await page.getByTestId('composerPublishBtn');
+  74 |     await expect(postBtn).toHaveAttribute('disabled','');
+  75 |
+  76 | });
+  77 |
+```
