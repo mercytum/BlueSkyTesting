@@ -1,9 +1,9 @@
-## Github Actions CI/CD Pipeline
+## Github Actions CI/CD Pipeline Setup
 
 ### How it works?
 #### Whenever a pull request (PR) or a commit to the 'main' branch is initiated, the Github Actions CI/CD pipeline runs the Playwright Tests.yml which house all of the job configurations.
 #### Once triggered the pipeline:
-##### 1. Starts by setting a maximum time limit for which the entire pipeline should be completed (i.e. 1hr). After that 1hr limit, the pipeline is programmed to stop the job(s) running if not yet completed
+##### - 1. Starts by setting a maximum time limit for which the entire pipeline should be completed (i.e. 1hr). After that 1hr limit, the pipeline is programmed to stop the job(s) running if not yet completed
 ##### 2. Setup it's virtual env runner to use the latest version of ubuntu
 ##### 3. Checks out the git repo
 ##### 4. Setup Node.js using version 20 (compatible version to enable yarn to run)
@@ -22,7 +22,7 @@
 
 ***
 
-### How to run Locally (without CI/CD Pipeline)?
+## How to run Locally (without CI/CD Pipeline)?
 #### Prerequisites:
 ##### 1. Ensure VS Code (v1.97.1 or later) is installed on your local machine 
 ##### 2. Git clone this repo
