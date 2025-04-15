@@ -1,7 +1,7 @@
-import {expect, type Page,test} from '@playwright/test'
+import {expect, type Page, test} from '@playwright/test'
 
-const USERNAME = process.env.BS_USERNAME
-const PASSWORD = process.env.BS_PASSWORD
+const USERNAME = process.env.SECRET_USR
+const PASSWORD = process.env.SECRET_PWD
 const LOCALHOST = 'http://localhost:19006/'
 
 async function login(page: Page): Promise<void> {
