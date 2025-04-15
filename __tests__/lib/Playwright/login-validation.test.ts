@@ -47,10 +47,10 @@ test('Forgot Password Login', async ({ page }) => {
 
 test('Successful Login', async ({ page }) => {
     await page.getByTestId('loginUsernameInput').click(); // Click the username input field
-    await page.getByTestId('loginUsernameInput').fill(BSKY_EMAIL); // Fill the username field
+    await page.getByTestId('loginUsernameInput').fill('${BSKY_EMAIL}'); // Fill the username field
 
     await page.getByTestId('loginPasswordInput').click(); // Click the password input field
-    await page.getByTestId('loginPasswordInput').fill(BSKY_PASS); // Find the error message and then assert on it
+    await page.getByTestId('loginPasswordInput').fill('${BSKY_PASS}'); // Find the error message and then assert on it
 
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger a login attempt
     page.getByRole('link', { name: 'Profile', exact: true }).click()
