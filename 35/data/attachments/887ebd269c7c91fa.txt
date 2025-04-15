@@ -1,0 +1,2311 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: user can follow and unfollow mercytum
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Sign in' })
+    - locator resolved to <button tabindex="0" role="button" type="button" aria-label="Sign in" aria-pressed="false" class="css-view-175oi2r r-cursor-1loqt21 r-touchAction-1otgn73">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    46 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:7:53
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - tablist:
+    - tab "Discover"
+    - tab "Feeds ✨"
+  - link "Carmen 📚 Latinx Book Influencer 📚's avatar View profileView profile · April 15, 2025 at 1:45 AM If you love your library, listen up… An error occurred while loading the video. Please try again. Retry Reply (2 replies) Repost or quote post Like (517 likes) Open post options menu t-books":
+    - link "Carmen 📚 Latinx Book Influencer 📚's avatar"
+    - link "View profile": ‪Carmen 📚 Latinx Book Influencer 📚‬
+    - link "View profile": ‪@tomesandtextiles.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 1:45 AM": 44m
+    - text: If you love your library, listen up… An error occurred while loading the video. Please try again.
+    - button "Retry"
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "199"
+    - button "Like (517 likes)":
+      - img
+      - text: "517"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Tim Onion's avatar View profileView profile · April 15, 2025 at 1:07 AM There we go. Post by eoinhiggins.bsky.social Reply (69 replies) Repost or quote post Like (3,767 likes) Open post options menu frontpage":
+    - link "Tim Onion's avatar"
+    - link "View profile": ‪Tim Onion‬
+    - link "View profile": ‪@bencollins.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 1:07 AM": 1h
+    - text: There we go.
+    - link "Post by eoinhiggins.bsky.social":
+      - link "Eoin Higgins's avatar"
+      - link "View profile": ‪Eoin Higgins‬
+      - link "View profile": ‪@eoinhiggins.bsky.social‬
+      - text: ·
+      - link "April 15, 2025 at 1:07 AM": 1h
+      - text: MIT following Harvard's lead here
+      - button "Image"
+      - button "Image"
+    - button "Reply (69 replies)":
+      - img
+      - text: "69"
+    - button "Repost or quote post":
+      - img
+      - text: "547"
+    - button "Like (3,767 likes)":
+      - img
+      - text: 3.7K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Emily Carter's avatar View profileView profile · April 14, 2025 at 7:28 PM In Hashtag Okinawa, coastal fishermen now farm Hashtag coral, restoring Hashtag reefs like planting trees in a forest. With Hashtag ocean temperatures rising, half the world’s coral reefs have already vanished. These farmers are fighting back, one fragment at a time. [Heppoko Taylor] Reply (106 replies) Repost or quote post Like (4,597 likes) Open post options menu t-books":
+    - link "Emily Carter's avatar"
+    - link "View profile": ‪Emily Carter‬
+    - link "View profile": ‪@emilycurates.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 7:28 PM": 7h
+    - text: In
+    - link "Hashtag Okinawa": "#Okinawa"
+    - text: ", coastal fishermen now farm"
+    - link "Hashtag coral": "#coral"
+    - text: ", restoring"
+    - link "Hashtag reefs": "#reefs"
+    - text: like planting trees in a forest. With
+    - link "Hashtag ocean": "#ocean"
+    - text: temperatures rising, half the world’s coral reefs have already vanished. These farmers are fighting back, one fragment at a time. [Heppoko Taylor]
+    - button "Reply (106 replies)":
+      - img
+      - text: "106"
+    - button "Repost or quote post":
+      - img
+      - text: "922"
+    - button "Like (4,597 likes)":
+      - img
+      - text: 4.5K
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Mike Melton's avatar View profileView profile · April 14, 2025 at 11:31 PM Some hungry baby American Dippers this morning. These birds have been nesting in the same spot for four years (that I know of and probably much longer than that). They'll probably fledge on Friday, so guess where I'll be? Hashtag birds Hashtag nature 🌿 Baby birds with wide-open bright orange beaks in a moss-covered nest. The gray-feathered nestlings are huddled together with their mouths open for feeding, surrounded by twigs and plant material in their natural woodland habitat. Reply (36 replies) Repost or quote post Like (1,745 likes) Open post options menu t-nature":
+    - link "Mike Melton's avatar"
+    - link "View profile": ‪Mike Melton‬
+    - link "View profile": ‪@mikemelton.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 11:31 PM": 2h
+    - text: Some hungry baby American Dippers this morning. These birds have been nesting in the same spot for four years (that I know of and probably much longer than that). They'll probably fledge on Friday, so guess where I'll be?
+    - link "Hashtag birds": "#birds"
+    - link "Hashtag nature": "#nature"
+    - text: 🌿
+    - img "Baby birds with wide-open bright orange beaks in a moss-covered nest. The gray-feathered nestlings are huddled together with their mouths open for feeding, surrounded by twigs and plant material in their natural woodland habitat."
+    - text: ALT
+    - button "Reply (36 replies)":
+      - img
+      - text: "36"
+    - button "Repost or quote post":
+      - img
+      - text: "136"
+    - button "Like (1,745 likes)":
+      - img
+      - text: 1.7K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "Cats of Yore's avatar View profileView profile · April 14, 2025 at 10:14 PM Illustration from Baba Yaga’s Cat - a story in My Big Book of Cat Stories, written by various authors and illustrated by Adrienne Ségur. 1965. Color illustration of a beautiful young blonde white girl with her arms crossed, looking affectionately down at a shorthaired black tuxedo cat. The cat is standing up anthropomorphically looking back at her, holding a comb and embroidered handkerchief. Reply (34 replies) Repost or quote post Like (3,533 likes) Open post options menu t-pets":
+    - link "Cats of Yore's avatar"
+    - link "View profile": ‪Cats of Yore‬
+    - link "View profile": ‪@catsofyore.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 10:14 PM": 4h
+    - text: Illustration from Baba Yaga’s Cat - a story in My Big Book of Cat Stories, written by various authors and illustrated by Adrienne Ségur. 1965.
+    - img "Color illustration of a beautiful young blonde white girl with her arms crossed, looking affectionately down at a shorthaired black tuxedo cat. The cat is standing up anthropomorphically looking back at her, holding a comb and embroidered handkerchief."
+    - text: ALT
+    - button "Reply (34 replies)":
+      - img
+      - text: "34"
+    - button "Repost or quote post":
+      - img
+      - text: "370"
+    - button "Like (3,533 likes)":
+      - img
+      - text: 3.5K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "daily bunnies 🐇✨'s avatar View profileView profile · April 14, 2025 at 7:09 PM Reply (64 replies) Repost or quote post Like (4,388 likes) Open post options menu t-animals":
+    - link "daily bunnies 🐇✨'s avatar"
+    - link "View profile": ‪daily bunnies 🐇✨‬
+    - link "View profile": ‪@dailybunnies.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 7:09 PM": 7h
+    - button "Reply (64 replies)":
+      - img
+      - text: "64"
+    - button "Repost or quote post":
+      - img
+      - text: "398"
+    - button "Like (4,388 likes)":
+      - img
+      - text: 4.3K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - 'link "Richard Branson''s avatar View profileView profile · April 14, 2025 at 8:21 PM \"The security of the world is at stake.\" Well worth watching President Zelenskyy''s interview on 60 Minutes www.cbsnews.com/news/ukraine... Ukrainian President Volodymyr Zelenskyy: The 2025 60 Minutes Interview transcript Reply (413 replies) Repost or quote post Like (18,348 likes) Open post options menu frontpage"':
+    - link "Richard Branson's avatar"
+    - link "View profile": ‪Richard Branson‬
+    - link "View profile": ‪@richardbranson.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 8:21 PM": 6h
+    - text: "\"The security of the world is at stake.\" Well worth watching President Zelenskyy's interview on 60 Minutes"
+    - link "www.cbsnews.com/news/ukraine..."
+    - 'link "Ukrainian President Volodymyr Zelenskyy: The 2025 60 Minutes Interview transcript"':
+      - img
+      - text: "Ukrainian President Volodymyr Zelenskyy: The 2025 60 Minutes Interview transcript As Russia's war with Ukraine continues, President Volodymyr Zelenskyy sits down with Scott Pelley to discuss U.S. support for Ukraine, the war, the Oval Office meeting, and the latest attacks on civil..."
+      - img
+      - text: www.cbsnews.com
+    - button "Reply (413 replies)":
+      - img
+      - text: "413"
+    - button "Repost or quote post":
+      - img
+      - text: 5.3K
+    - button "Like (18,348 likes)":
+      - img
+      - text: 18.3K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - 'link "Financial Times''s avatar View profileView profile · April 14, 2025 at 12:13 PM Breaking news: The European Commission is issuing burner phones and basic laptops to some US-bound staff to avoid the risk of espionage — a measure traditionally reserved for trips to China www.ft.com/content/20d0... Old mobile phones and keyboards. Overlaid text reads: FT Exclusive: EU issues US-bound staff with burner phones to avoid espionage Reply (738 replies) Repost or quote post Like (22,707 likes) Open post options menu t-news"':
+    - link "Financial Times's avatar"
+    - link "View profile": ‪Financial Times‬
+    - link "View profile": ‪@financialtimes.com‬
+    - text: ·
+    - link "April 14, 2025 at 12:13 PM": 14h
+    - text: "Breaking news: The European Commission is issuing burner phones and basic laptops to some US-bound staff to avoid the risk of espionage — a measure traditionally reserved for trips to China"
+    - link "www.ft.com/content/20d0..."
+    - 'img "Old mobile phones and keyboards. Overlaid text reads: FT Exclusive: EU issues US-bound staff with burner phones to avoid espionage"'
+    - text: ALT
+    - button "Reply (738 replies)":
+      - img
+      - text: "738"
+    - button "Repost or quote post":
+      - img
+      - text: 8.3K
+    - button "Like (22,707 likes)":
+      - img
+      - text: 22.7K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Bodega Cats's avatar View profileView profile · April 14, 2025 at 1:42 PM Reply (149 replies) Repost or quote post Like (17,095 likes) Open post options menu t-pets":
+    - link "Bodega Cats's avatar"
+    - link "View profile": ‪Bodega Cats‬
+    - link "View profile": ‪@bodegacats.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 1:42 PM": 12h
+    - button "Reply (149 replies)":
+      - img
+      - text: "149"
+    - button "Repost or quote post":
+      - img
+      - text: 1.1K
+    - button "Like (17,095 likes)":
+      - img
+      - text: 17K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - 'link "Maria Avdeeva''s avatar View profileView profile · April 14, 2025 at 6:53 PM People are lining up for hours at Kharkiv blood center to donate for Sumy, because it’s the closest option. How can anyone think we’d give up even an inch to Russia? Photo: Anna Gin Reply (122 replies) Repost or quote post Like (7,185 likes) Open post options menu t-art"':
+    - link "Maria Avdeeva's avatar"
+    - link "View profile": ‪Maria Avdeeva‬
+    - link "View profile": ‪@mariainkharkiv.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 6:53 PM": 7h
+    - text: "People are lining up for hours at Kharkiv blood center to donate for Sumy, because it’s the closest option. How can anyone think we’d give up even an inch to Russia? Photo: Anna Gin"
+    - button "Reply (122 replies)":
+      - img
+      - text: "122"
+    - button "Repost or quote post":
+      - img
+      - text: 1.1K
+    - button "Like (7,185 likes)":
+      - img
+      - text: 7.1K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Carlow Weather's avatar View profileView profile · April 14, 2025 at 7:22 PM Just captured the most amazing rainbow I have ever seen! Reply (146 replies) Repost or quote post Like (3,073 likes) Open post options menu t-nature":
+    - link "Carlow Weather's avatar"
+    - link "View profile": ‪Carlow Weather‬
+    - link "View profile": ‪@carlowweather.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 7:22 PM": 7h
+    - text: Just captured the most amazing rainbow I have ever seen!
+    - button "Reply (146 replies)":
+      - img
+      - text: "146"
+    - button "Repost or quote post":
+      - img
+      - text: "371"
+    - button "Like (3,073 likes)":
+      - img
+      - text: 3K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "Kara Swisher's avatar View profileView profile · April 14, 2025 at 4:19 AM Watch a major campaign being born. Post by aoc.bsky.social Reply (451 replies) Repost or quote post Like (25,053 likes) Open post options menu frontpage":
+    - link "Kara Swisher's avatar"
+    - link "View profile": ‪Kara Swisher‬
+    - link "View profile": ‪@karaswisher.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 4:19 AM": 22h
+    - text: Watch a major campaign being born.
+    - link "Post by aoc.bsky.social":
+      - link "Alexandria Ocasio-Cortez's avatar"
+      - link "View profile": ‪Alexandria Ocasio-Cortez‬
+      - link "View profile": ‪@aoc.bsky.social‬
+      - text: ·
+      - link "April 14, 2025 at 1:25 AM": 1d
+      - text: 20,000 in ruby red Utah on their feet, in community, and ready to organize for a better world. A better world is possible.
+    - button "Reply (451 replies)":
+      - img
+      - text: "451"
+    - button "Repost or quote post":
+      - img
+      - text: 2.9K
+    - button "Like (25,053 likes)":
+      - img
+      - text: 25K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Wolf Conservation Center 🐺's avatar View profileView profile · April 14, 2025 at 1:03 AM The best howls inspire others 🐺 Reply (147 replies) Repost or quote post Like (7,771 likes) Open post options menu t-animals":
+    - link "Wolf Conservation Center 🐺's avatar"
+    - link "View profile": ‪Wolf Conservation Center 🐺‬
+    - link "View profile": ‪@nywolforg.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 1:03 AM": 1d
+    - text: The best howls inspire others 🐺
+    - button "Reply (147 replies)":
+      - img
+      - text: "147"
+    - button "Repost or quote post":
+      - img
+      - text: 1.1K
+    - button "Like (7,771 likes)":
+      - img
+      - text: 7.7K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Corey Atad's avatar View profileView profile · April 14, 2025 at 6:54 PM this is Mohsen Mahdawi, the green card holder who was just arrested by ICE for rendition at his citizenship interview Reply (199 replies) Repost or quote post Like (9,508 likes) Open post options menu t-sports":
+    - link "Corey Atad's avatar"
+    - link "View profile": ‪Corey Atad‬
+    - link "View profile": ‪@coreyatad.com‬
+    - text: ·
+    - link "April 14, 2025 at 6:54 PM": 7h
+    - text: this is Mohsen Mahdawi, the green card holder who was just arrested by ICE for rendition at his citizenship interview
+    - button "Reply (199 replies)":
+      - img
+      - text: "199"
+    - button "Repost or quote post":
+      - img
+      - text: 3.5K
+    - button "Like (9,508 likes)":
+      - img
+      - text: 9.5K
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "Rob J ✝️🇺🇦🌊🌊's avatar View profileView profile · April 14, 2025 at 1:26 PM Reply (144 replies) Repost or quote post Like (6,736 likes) Open post options menu t-photography":
+    - link "Rob J ✝️🇺🇦🌊🌊's avatar"
+    - link "View profile": ‪Rob J ✝️🇺🇦🌊🌊‬
+    - link "View profile": ‪@robjenson.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 1:26 PM": 13h
+    - button "Reply (144 replies)":
+      - img
+      - text: "144"
+    - button "Repost or quote post":
+      - img
+      - text: 1.4K
+    - button "Like (6,736 likes)":
+      - img
+      - text: 6.7K
+    - button "Open post options menu":
+      - img
+    - text: t-photography
+  - link "drewtoothpaste's avatar View profileView profile · April 15, 2025 at 1:01 AM drove up over the mountain today to pick up some logs from a guy on a different mountain... shouts out to trees for giving us so many logs. also sorry to trees Reply (8 replies) Repost or quote post Like (418 likes) Open post options menu t-photography":
+    - link "drewtoothpaste's avatar"
+    - link "View profile": ‪drewtoothpaste‬
+    - link "View profile": ‪@drewtoothpaste.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 1:01 AM": 1h
+    - text: drove up over the mountain today to pick up some logs from a guy on a different mountain... shouts out to trees for giving us so many logs. also sorry to trees
+    - button "Reply (8 replies)":
+      - img
+      - text: "8"
+    - button "Repost or quote post":
+      - img
+      - text: "15"
+    - button "Like (418 likes)":
+      - img
+      - text: "418"
+    - button "Open post options menu":
+      - img
+    - text: t-photography
+  - link "NPR's avatar View profileView profile · April 15, 2025 at 12:48 AM It is the fourth calf born to the southern resident orcas since December. Two of the four have died already. (via @kuow.org ) Another baby orca spotted with Northwest's endangered J Pod Reply (32 replies) Repost or quote post Like (1,707 likes) Open post options menu t-news":
+    - link "NPR's avatar"
+    - link "View profile": ‪NPR‬
+    - link "View profile": ‪@npr.org‬
+    - text: ·
+    - link "April 15, 2025 at 12:48 AM": 1h
+    - text: It is the fourth calf born to the southern resident orcas since December. Two of the four have died already. (via
+    - link "@kuow.org"
+    - text: )
+    - link "Another baby orca spotted with Northwest's endangered J Pod":
+      - img
+      - text: Another baby orca spotted with Northwest's endangered J Pod It is the fourth calf born to the southern resident orcas since December. Two of the four have died already.
+      - img
+      - text: www.kuow.org
+    - button "Reply (32 replies)":
+      - img
+      - text: "32"
+    - button "Repost or quote post":
+      - img
+      - text: "290"
+    - button "Like (1,707 likes)":
+      - img
+      - text: 1.7K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Kobold Factory 🏳️‍⚧️'s avatar View profileView profile · April 14, 2025 at 8:56 PM Always been told I work well in a pinch Reply (20 replies) Repost or quote post Like (1,316 likes) Open post options menu t-art":
+    - link "Kobold Factory 🏳️‍⚧️'s avatar"
+    - link "View profile": ‪Kobold Factory 🏳️‍⚧️‬
+    - link "View profile": ‪@koboldfactory.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 8:56 PM": 5h
+    - text: Always been told I work well in a pinch
+    - button "Reply (20 replies)":
+      - img
+      - text: "20"
+    - button "Repost or quote post":
+      - img
+      - text: "177"
+    - button "Like (1,316 likes)":
+      - img
+      - text: 1.3K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Elizabeth Sofia 💙🐈🐶's avatar View profileView profile · April 14, 2025 at 2:37 AM Reply (438 replies) Repost or quote post Like (31,979 likes) Open post options menu t-sports":
+    - link "Elizabeth Sofia 💙🐈🐶's avatar"
+    - link "View profile": ‪Elizabeth Sofia 💙🐈🐶‬
+    - link "View profile": ‪@skippjon1.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 2:37 AM": 23h
+    - button "Reply (438 replies)":
+      - img
+      - text: "438"
+    - button "Repost or quote post":
+      - img
+      - text: 5.3K
+    - button "Like (31,979 likes)":
+      - img
+      - text: 31.9K
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "forgiven whimsy💌's avatar View profileView profile · April 14, 2025 at 7:02 PM repost of the emet-selch gender comic by request Reply (10 replies) Repost or quote post Like (980 likes) Open post options menu t-art":
+    - link "forgiven whimsy💌's avatar"
+    - link "View profile": ‪forgiven whimsy💌‬
+    - link "View profile": ‪@daintyprotag.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 7:02 PM": 7h
+    - text: repost of the emet-selch gender comic by request
+    - button "Reply (10 replies)":
+      - img
+      - text: "10"
+    - button "Repost or quote post":
+      - img
+      - text: "437"
+    - button "Like (980 likes)":
+      - img
+      - text: "980"
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "I'm Uni :3's avatar View profileView profile · April 14, 2025 at 12:45 PM Yay! Let'eat! :3 A black and white cat with flattened ears and a tiny bit of tongue sticking out, sitting in front of a bowl of dry food, about to eat. Reply (75 replies) Repost or quote post Like (7,005 likes) Open post options menu t-pets":
+    - link "I'm Uni :3's avatar"
+    - link "View profile": ‪I'm Uni :3‬
+    - link "View profile": ‪@unicouniuni3.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 12:45 PM": 13h
+    - text: Yay! Let'eat! :3
+    - img "A black and white cat with flattened ears and a tiny bit of tongue sticking out, sitting in front of a bowl of dry food, about to eat."
+    - text: ALT
+    - button "Reply (75 replies)":
+      - img
+      - text: "75"
+    - button "Repost or quote post":
+      - img
+      - text: "681"
+    - button "Like (7,005 likes)":
+      - img
+      - text: 7K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "John Scalzi's avatar View profileView profile · April 13, 2025 at 10:26 PM Back home. Here's Smudge, curious as to where I've been, and also if I brought him snacks. Smudge looking up into the camera, politely interested. Reply (264 replies) Repost or quote post Like (12,814 likes) Open post options menu t-pets":
+    - link "John Scalzi's avatar"
+    - link "View profile": ‪John Scalzi‬
+    - link "View profile": ‪@scalzi.com‬
+    - text: ·
+    - link "April 13, 2025 at 10:26 PM": 1d
+    - text: Back home. Here's Smudge, curious as to where I've been, and also if I brought him snacks.
+    - img "Smudge looking up into the camera, politely interested."
+    - text: ALT
+    - button "Reply (264 replies)":
+      - img
+      - text: "264"
+    - button "Repost or quote post":
+      - img
+      - text: "481"
+    - button "Like (12,814 likes)":
+      - img
+      - text: 12.8K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "jamelle's avatar View profileView profile · April 14, 2025 at 12:45 PM you know, it was annoying to have to spend a chunk of my morning at the DMV to get a REAL ID but shoutout to the people at my local location, who are clear, *very* efficient and quite polite (if necessarily a bit stern) Reply (310 replies) Repost or quote post Like (15,285 likes) Open post options menu frontpage":
+    - link "jamelle's avatar"
+    - link "View profile": ‪jamelle‬
+    - link "View profile": ‪@jamellebouie.net‬
+    - text: ·
+    - link "April 14, 2025 at 12:45 PM": 13h
+    - text: you know, it was annoying to have to spend a chunk of my morning at the DMV to get a REAL ID but shoutout to the people at my local location, who are clear, *very* efficient and quite polite (if necessarily a bit stern)
+    - button "Reply (310 replies)":
+      - img
+      - text: "310"
+    - button "Repost or quote post":
+      - img
+      - text: "971"
+    - button "Like (15,285 likes)":
+      - img
+      - text: 15.2K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "John Scalzi's avatar View profileView profile · April 14, 2025 at 6:09 PM The 1920s were the \"Roaring 20s\"; I suspect this decade will be the \"Ruined 20s.\" Reply (133 replies) Repost or quote post Like (3,568 likes) Open post options menu frontpage":
+    - link "John Scalzi's avatar"
+    - link "View profile": ‪John Scalzi‬
+    - link "View profile": ‪@scalzi.com‬
+    - text: ·
+    - link "April 14, 2025 at 6:09 PM": 8h
+    - text: The 1920s were the "Roaring 20s"; I suspect this decade will be the "Ruined 20s."
+    - button "Reply (133 replies)":
+      - img
+      - text: "133"
+    - button "Repost or quote post":
+      - img
+      - text: "371"
+    - button "Like (3,568 likes)":
+      - img
+      - text: 3.5K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Carmen 📚 Latinx Book Influencer 📚's avatar View profileView profile · April 14, 2025 at 1:17 PM The Librarians is a must-see documentary about the recent history of book banning in the US Reply (28 replies) Repost or quote post Like (7,398 likes) Open post options menu t-books":
+    - link "Carmen 📚 Latinx Book Influencer 📚's avatar"
+    - link "View profile": ‪Carmen 📚 Latinx Book Influencer 📚‬
+    - link "View profile": ‪@tomesandtextiles.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 1:17 PM": 13h
+    - text: The Librarians is a must-see documentary about the recent history of book banning in the US
+    - button "Reply (28 replies)":
+      - img
+      - text: "28"
+    - button "Repost or quote post":
+      - img
+      - text: 1.9K
+    - button "Like (7,398 likes)":
+      - img
+      - text: 7.3K
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Jasmine 🌌🔭's avatar View profileView profile · April 15, 2025 at 1:48 AM i know i live in the city so it isn’t much, but nothing can describe the immense feeling of peace i experience when i step outside onto my balcony and see a starry night sky. look up more, it’ll do you good. A starry night sky above the trees on the right side of the image. This view is from my balcony. Reply (6 replies) Repost or quote post Like (132 likes) Open post options menu t-photography":
+    - link "Jasmine 🌌🔭's avatar"
+    - link "View profile": ‪Jasmine 🌌🔭‬
+    - link "View profile": ‪@astrojaz.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 1:48 AM": 42m
+    - text: i know i live in the city so it isn’t much, but nothing can describe the immense feeling of peace i experience when i step outside onto my balcony and see a starry night sky. look up more, it’ll do you good.
+    - img "A starry night sky above the trees on the right side of the image. This view is from my balcony."
+    - text: ALT
+    - button "Reply (6 replies)":
+      - img
+      - text: "6"
+    - button "Repost or quote post":
+      - img
+      - text: "16"
+    - button "Like (132 likes)":
+      - img
+      - text: "132"
+    - button "Open post options menu":
+      - img
+    - text: t-photography
+  - link "Hank Green's avatar View profileView profile · April 14, 2025 at 4:50 PM I hate fraud so much. I was lucky to be raised by a deeply ethical dad who worked in the real estate industry in Florida and so was constantly bringing home stories of the worst kinds of guys getting rich in ways that they felt were \"illegal but fine\" but were actually the worst kinds of theft. Reply (157 replies) Repost or quote post Like (9,825 likes) Open post options menu frontpage":
+    - link "Hank Green's avatar"
+    - link "View profile": ‪Hank Green‬
+    - link "View profile": ‪@hankgreen.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 4:50 PM": 9h
+    - text: I hate fraud so much. I was lucky to be raised by a deeply ethical dad who worked in the real estate industry in Florida and so was constantly bringing home stories of the worst kinds of guys getting rich in ways that they felt were "illegal but fine" but were actually the worst kinds of theft.
+    - button "Reply (157 replies)":
+      - img
+      - text: "157"
+    - button "Repost or quote post":
+      - img
+      - text: "620"
+    - button "Like (9,825 likes)":
+      - img
+      - text: 9.8K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Tim Onion's avatar View profileView profile · April 14, 2025 at 6:07 PM There we go. Support this man. Post by monaburns.bsky.social Reply (845 replies) Repost or quote post Like (38,600 likes) Open post options menu frontpage":
+    - link "Tim Onion's avatar"
+    - link "View profile": ‪Tim Onion‬
+    - link "View profile": ‪@bencollins.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 6:07 PM": 8h
+    - text: There we go. Support this man.
+    - link "Post by monaburns.bsky.social":
+      - link "Mona Burns's avatar"
+      - link "View profile": ‪Mona Burns‬
+      - link "View profile": ‪@monaburns.bsky.social‬
+      - text: ·
+      - link "April 14, 2025 at 2:45 PM": 11h
+      - text: Letter from Dem Senator Chris Van Hollen (MD) requesting a meeting with Salvadoran President Nayib Bukele To discuss MD father Kilmar Abrego Garcia's return "If Kilmar is not home by midweek – I plan to travel to El Salvador this week to check on his condition and discuss his release."
+    - button "Reply (845 replies)":
+      - img
+      - text: "845"
+    - button "Repost or quote post":
+      - img
+      - text: 8.5K
+    - button "Like (38,600 likes)":
+      - img
+      - text: 38.6K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Colleen Crone's avatar View profileView profile · April 14, 2025 at 11:23 AM Reply (136 replies) Repost or quote post Like (8,575 likes) Open post options menu t-sports":
+    - link "Colleen Crone's avatar"
+    - link "View profile": ‪Colleen Crone‬
+    - link "View profile": ‪@witchycronegirl.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 11:23 AM": 15h
+    - button "Reply (136 replies)":
+      - img
+      - text: "136"
+    - button "Repost or quote post":
+      - img
+      - text: 1.2K
+    - button "Like (8,575 likes)":
+      - img
+      - text: 8.5K
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "/r/Habs's avatar View profileView profile · April 15, 2025 at 12:13 AM Ivan Demidov is the first player in Montreal Canadiens history to score an assist and a goal in the first period of his first NHL game Reply (6 replies) Repost or quote post Like (454 likes) Open post options menu t-sports":
+    - link "/r/Habs's avatar"
+    - link "View profile": ‪/r/Habs‬
+    - link "View profile": ‪@habsonreddit.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 12:13 AM": 2h
+    - text: Ivan Demidov is the first player in Montreal Canadiens history to score an assist and a goal in the first period of his first NHL game
+    - button "Reply (6 replies)":
+      - img
+      - text: "6"
+    - button "Repost or quote post":
+      - img
+      - text: "43"
+    - button "Like (454 likes)":
+      - img
+      - text: "454"
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "daily bunnies 🐇✨'s avatar View profileView profile · April 15, 2025 at 2:03 AM Reply (0 replies) Repost or quote post Like (237 likes) Open post options menu t-animals":
+    - link "daily bunnies 🐇✨'s avatar"
+    - link "View profile": ‪daily bunnies 🐇✨‬
+    - link "View profile": ‪@dailybunnies.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 2:03 AM": 27m
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+      - text: "31"
+    - button "Like (237 likes)":
+      - img
+      - text: "237"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Rat Squinks 🐀's avatar View profileView profile · April 14, 2025 at 8:53 PM woagh!! meet papaya and yuzu!! these 9 month old girls were being rehomed by someone who no longer had time for them so they're gonna be joining my little family of gremlins! Image Image Reply (36 replies) Repost or quote post Like (944 likes) Open post options menu t-animals":
+    - link "Rat Squinks 🐀's avatar"
+    - link "View profile": ‪Rat Squinks 🐀‬
+    - link "View profile": ‪@ratsquinks.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 8:53 PM": 5h
+    - text: woagh!! meet papaya and yuzu!! these 9 month old girls were being rehomed by someone who no longer had time for them so they're gonna be joining my little family of gremlins!
+    - button "Image"
+    - button "Image"
+    - button "Reply (36 replies)":
+      - img
+      - text: "36"
+    - button "Repost or quote post":
+      - img
+      - text: "60"
+    - button "Like (944 likes)":
+      - img
+      - text: "944"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "jamelle's avatar View profileView profile · April 14, 2025 at 12:14 PM rfk jr wants you dead Post by danarubinsteinbsky.bsky.social Reply (665 replies) Repost or quote post Like (15,358 likes) Open post options menu frontpage":
+    - link "jamelle's avatar"
+    - link "View profile": ‪jamelle‬
+    - link "View profile": ‪@jamellebouie.net‬
+    - text: ·
+    - link "April 14, 2025 at 12:14 PM": 14h
+    - text: rfk jr wants you dead
+    - link "Post by danarubinsteinbsky.bsky.social":
+      - link "Dana Rubinstein 's avatar"
+      - link "View profile": ‪Dana Rubinstein‬
+      - link "View profile": ‪@danarubinsteinbsky.bsky.social‬
+      - text: ·
+      - link "April 13, 2025 at 3:10 PM": 1d
+      - text: “According to an email obtained by The New York Times, H.H.S. intends to revise its web pages to include statements like ‘The decision to vaccinate is a personal one’ and ‘People should also be informed about the potential adverse events associated with vaccines’” www.nytimes.com/2025/04/13/h...
+      - link "The Many Ways Kennedy Is Already Undermining Vaccines":
+        - img
+        - text: The Many Ways Kennedy Is Already Undermining Vaccines The health secretary has chipped away at the idea that immunizing children against measles and other diseases is a public health good.
+        - img
+        - text: www.nytimes.com
+    - button "Reply (665 replies)":
+      - img
+      - text: "665"
+    - button "Repost or quote post":
+      - img
+      - text: 3.8K
+    - button "Like (15,358 likes)":
+      - img
+      - text: 15.3K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "John Scalzi's avatar View profileView profile · April 14, 2025 at 1:25 PM I mean, yes, I would too bsky.app/profile/fina... Post by financialtimes.com Reply (28 replies) Repost or quote post Like (1,444 likes) Open post options menu frontpage":
+    - link "John Scalzi's avatar"
+    - link "View profile": ‪John Scalzi‬
+    - link "View profile": ‪@scalzi.com‬
+    - text: ·
+    - link "April 14, 2025 at 1:25 PM": 13h
+    - text: I mean, yes, I would too
+    - link "bsky.app/profile/fina..."
+    - link "Post by financialtimes.com":
+      - link "Financial Times's avatar"
+      - link "View profile": ‪Financial Times‬
+      - link "View profile": ‪@financialtimes.com‬
+      - text: ·
+      - link "April 14, 2025 at 12:13 PM": 14h
+      - text: "Breaking news: The European Commission is issuing burner phones and basic laptops to some US-bound staff to avoid the risk of espionage — a measure traditionally reserved for trips to China www.ft.com/content/20d0..."
+      - 'img "Old mobile phones and keyboards. Overlaid text reads: FT Exclusive: EU issues US-bound staff with burner phones to avoid espionage"'
+      - text: ALT
+    - button "Reply (28 replies)":
+      - img
+      - text: "28"
+    - button "Repost or quote post":
+      - img
+      - text: "231"
+    - button "Like (1,444 likes)":
+      - img
+      - text: 1.4K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Claire McCaskill's avatar View profileView profile · April 14, 2025 at 11:22 PM New York in the spring. ❤️ Reply (47 replies) Repost or quote post Like (2,052 likes) Open post options menu t-photography":
+    - link "Claire McCaskill's avatar"
+    - link "View profile": ‪Claire McCaskill‬
+    - link "View profile": ‪@clairecmc.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 11:22 PM": 3h
+    - text: New York in the spring. ❤️
+    - button "Reply (47 replies)":
+      - img
+      - text: "47"
+    - button "Repost or quote post":
+      - img
+      - text: "116"
+    - button "Like (2,052 likes)":
+      - img
+      - text: 2K
+    - button "Open post options menu":
+      - img
+    - text: t-photography
+  - link "Emily Carter's avatar View profileView profile · April 14, 2025 at 7:30 PM The Monarch Hashtag butterfly embarks on one of nature's most incredible journeys, migrating up to 3,000 miles from Hashtag Canada to central Hashtag Mexico. These tiny travelers, with wings of vibrant orange, navigate the vast distances using the sun and Earth’s magnetic fields, defying the odds Reply (307 replies) Repost or quote post Like (10,321 likes) Open post options menu t-books":
+    - link "Emily Carter's avatar"
+    - link "View profile": ‪Emily Carter‬
+    - link "View profile": ‪@emilycurates.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 7:30 PM": 6h
+    - text: The Monarch
+    - link "Hashtag butterfly": "#butterfly"
+    - text: embarks on one of nature's most incredible journeys, migrating up to 3,000 miles from
+    - link "Hashtag Canada": "#Canada"
+    - text: to central
+    - link "Hashtag Mexico": "#Mexico"
+    - text: . These tiny travelers, with wings of vibrant orange, navigate the vast distances using the sun and Earth’s magnetic fields, defying the odds
+    - button "Reply (307 replies)":
+      - img
+      - text: "307"
+    - button "Repost or quote post":
+      - img
+      - text: 1.9K
+    - button "Like (10,321 likes)":
+      - img
+      - text: 10.3K
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Haus of Decline's avatar View profileView profile · April 15, 2025 at 12:23 AM I'm selling some original art for $120 apiece! If I get more famous (or infamous) it may become valuable! Own a piece of my labour! I sign it and it comes in fun packaging. hausofdecline.bigcartel.com Original Haus of Decline art for the strip \"Crymaxxing.\" A muscular man approaches a workout bench. He affixes some headphones to his ears and proceeds to bawl his eyes out while doing curls. He says \"you're right, Sarah McLachlan. We are born innocent.\" Reply (11 replies) Repost or quote post Like (962 likes) Open post options menu t-art":
+    - link "Haus of Decline's avatar"
+    - link "View profile": ‪Haus of Decline‬
+    - link "View profile": ‪@hausofdecline.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 12:23 AM": 2h
+    - text: I'm selling some original art for $120 apiece! If I get more famous (or infamous) it may become valuable! Own a piece of my labour! I sign it and it comes in fun packaging.
+    - link "hausofdecline.bigcartel.com"
+    - img "Original Haus of Decline art for the strip \"Crymaxxing.\" A muscular man approaches a workout bench. He affixes some headphones to his ears and proceeds to bawl his eyes out while doing curls. He says \"you're right, Sarah McLachlan. We are born innocent.\""
+    - text: ALT
+    - button "Reply (11 replies)":
+      - img
+      - text: "11"
+    - button "Repost or quote post":
+      - img
+      - text: "86"
+    - button "Like (962 likes)":
+      - img
+      - text: "962"
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Jay 🦋's avatar View profileView profile · April 14, 2025 at 7:37 PM Saw two miniature horses out on a walk around a suburban neighborhood this weekend two miniature horses on leashes eating grass Reply (157 replies) Repost or quote post Like (5,406 likes) Open post options menu frontpage":
+    - link "Jay 🦋's avatar"
+    - link "View profile": ‪Jay 🦋‬
+    - link "View profile": ‪@jay.bsky.team‬
+    - text: ·
+    - link "April 14, 2025 at 7:37 PM": 6h
+    - text: Saw two miniature horses out on a walk around a suburban neighborhood this weekend
+    - img "two miniature horses on leashes eating grass"
+    - text: ALT
+    - button "Reply (157 replies)":
+      - img
+      - text: "157"
+    - button "Repost or quote post":
+      - img
+      - text: "332"
+    - button "Like (5,406 likes)":
+      - img
+      - text: 5.4K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Kara Swisher's avatar View profileView profile · April 14, 2025 at 4:20 AM Absolutely Post by harrylitman.bsky.social Reply (356 replies) Repost or quote post Like (10,174 likes) Open post options menu frontpage":
+    - link "Kara Swisher's avatar"
+    - link "View profile": ‪Kara Swisher‬
+    - link "View profile": ‪@karaswisher.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 4:20 AM": 22h
+    - text: Absolutely
+    - link "Post by harrylitman.bsky.social":
+      - link "Harry Litman's avatar"
+      - link "View profile": ‪Harry Litman‬
+      - link "View profile": ‪@harrylitman.bsky.social‬
+      - text: ·
+      - link "April 14, 2025 at 12:58 AM": 1d
+      - text: "Tomorrow’s going to be a good stress test of the press. El Salvadoran President Bukele will visit the White House. At the press availability, every Q ought to be about Abrego Garcia: where is he now? Did US ask you to return him? etc. WH will hate, maybe try to prevent, so all should band together."
+    - button "Reply (356 replies)":
+      - img
+      - text: "356"
+    - button "Repost or quote post":
+      - img
+      - text: 1.6K
+    - button "Like (10,174 likes)":
+      - img
+      - text: 10.1K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Joe Beda's avatar View profileView profile · April 14, 2025 at 3:55 AM This is the message! A better world *is* possible. Life is not a zero sum game. Post by aoc.bsky.social Reply (20 replies) Repost or quote post Like (6,041 likes) Open post options menu frontpage":
+    - link "Joe Beda's avatar"
+    - link "View profile": ‪Joe Beda‬
+    - link "View profile": ‪@h.olysh.it‬
+    - text: ·
+    - link "April 14, 2025 at 3:55 AM": 22h
+    - text: This is the message! A better world *is* possible. Life is not a zero sum game.
+    - link "Post by aoc.bsky.social":
+      - link "Alexandria Ocasio-Cortez's avatar"
+      - link "View profile": ‪Alexandria Ocasio-Cortez‬
+      - link "View profile": ‪@aoc.bsky.social‬
+      - text: ·
+      - link "April 14, 2025 at 1:25 AM": 1d
+      - text: 20,000 in ruby red Utah on their feet, in community, and ready to organize for a better world. A better world is possible.
+    - button "Reply (20 replies)":
+      - img
+      - text: "20"
+    - button "Repost or quote post":
+      - img
+      - text: "772"
+    - button "Like (6,041 likes)":
+      - img
+      - text: 6K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Joshua J. Friedman's avatar View profileView profile · April 14, 2025 at 9:15 PM Gritting my teeth and watching the clock as DOJ misses its daily 5 p.m. ET deadline for giving Judge Xinis an update in the Abrego Garcia case ... 15 minutes late so far ... Reply (60 replies) Repost or quote post Like (3,970 likes) Open post options menu frontpage":
+    - link "Joshua J. Friedman's avatar"
+    - link "View profile": ‪Joshua J. Friedman‬
+    - link "View profile": ‪@joshuajfriedman.com‬
+    - text: ·
+    - link "April 14, 2025 at 9:15 PM": 5h
+    - text: Gritting my teeth and watching the clock as DOJ misses its daily 5 p.m. ET deadline for giving Judge Xinis an update in the Abrego Garcia case ... 15 minutes late so far ...
+    - button "Reply (60 replies)":
+      - img
+      - text: "60"
+    - button "Repost or quote post":
+      - img
+      - text: "616"
+    - button "Like (3,970 likes)":
+      - img
+      - text: 3.9K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Politico's avatar View profileView profile · April 14, 2025 at 9:05 PM The FDA is asking laid-off employees to temporarily return after mass cuts decimated the agency’s ability to penalize stores that sell cigarettes and vapes to minors. The FDA fired its tobacco enforcers. Now it wants them back. Reply (412 replies) Repost or quote post Like (3,456 likes) Open post options menu t-news":
+    - link "Politico's avatar"
+    - link "View profile": ‪Politico‬
+    - link "View profile": ‪@politico.com‬
+    - text: ·
+    - link "April 14, 2025 at 9:05 PM": 5h
+    - text: The FDA is asking laid-off employees to temporarily return after mass cuts decimated the agency’s ability to penalize stores that sell cigarettes and vapes to minors.
+    - link "The FDA fired its tobacco enforcers. Now it wants them back.":
+      - img
+      - text: The FDA fired its tobacco enforcers. Now it wants them back. The agency asked laid-off workers to return after gutting the office that penalizes stores for selling tobacco to minors.
+      - img
+      - text: www.politico.com
+    - button "Reply (412 replies)":
+      - img
+      - text: "412"
+    - button "Repost or quote post":
+      - img
+      - text: 1.2K
+    - button "Like (3,456 likes)":
+      - img
+      - text: 3.4K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "c3rmen's avatar View profileView profile · April 15, 2025 at 12:58 AM 🐉 Hashtag art Hashtag ink Hashtag doodle Ink drawing of a dragon breathing smoke Reply (5 replies) Repost or quote post Like (475 likes) Open post options menu t-art":
+    - link "c3rmen's avatar"
+    - link "View profile": ‪c3rmen‬
+    - link "View profile": ‪@c3rmen.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 12:58 AM": 1h
+    - text: 🐉
+    - link "Hashtag art": "#art"
+    - link "Hashtag ink": "#ink"
+    - link "Hashtag doodle": "#doodle"
+    - img "Ink drawing of a dragon breathing smoke"
+    - text: ALT
+    - button "Reply (5 replies)":
+      - img
+      - text: "5"
+    - button "Repost or quote post":
+      - img
+      - text: "44"
+    - button "Like (475 likes)":
+      - img
+      - text: "475"
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "The New Yorker's avatar View profileView profile · April 14, 2025 at 6:14 PM In a new report, Sarah Stillman investigates deaths related to starvation, dehydration, and neglect in county jails across the U.S.—a crisis that at times has been covered up by private health companies and government officials. nyer.cm/hMT7u9R A quote from Sarah Stillman that reads, “What I found . . . is hard to describe as anything other than a pattern of widespread torture of people with mental-health issues in county jails.” Reply (83 replies) Repost or quote post Like (3,178 likes) Open post options menu t-news":
+    - link "The New Yorker's avatar"
+    - link "View profile": ‪The New Yorker‬
+    - link "View profile": ‪@newyorker.com‬
+    - text: ·
+    - link "April 14, 2025 at 6:14 PM": 8h
+    - text: In a new report, Sarah Stillman investigates deaths related to starvation, dehydration, and neglect in county jails across the U.S.—a crisis that at times has been covered up by private health companies and government officials.
+    - link "nyer.cm/hMT7u9R"
+    - img "A quote from Sarah Stillman that reads, “What I found . . . is hard to describe as anything other than a pattern of widespread torture of people with mental-health issues in county jails.”"
+    - text: ALT
+    - button "Reply (83 replies)":
+      - img
+      - text: "83"
+    - button "Repost or quote post":
+      - img
+      - text: 1.2K
+    - button "Like (3,178 likes)":
+      - img
+      - text: 3.1K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Patton Oswalt's avatar View profileView profile · April 14, 2025 at 8:15 PM We’re living in an apocalypse as imagined by a jock rapist who’s only seen the first 30 minutes of EL TOPO. Reply (102 replies) Repost or quote post Like (3,522 likes) Open post options menu frontpage":
+    - link "Patton Oswalt's avatar"
+    - link "View profile": ‪Patton Oswalt‬
+    - link "View profile": ‪@pattonoswalt.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 8:15 PM": 6h
+    - text: We’re living in an apocalypse as imagined by a jock rapist who’s only seen the first 30 minutes of EL TOPO.
+    - button "Reply (102 replies)":
+      - img
+      - text: "102"
+    - button "Repost or quote post":
+      - img
+      - text: "299"
+    - button "Like (3,522 likes)":
+      - img
+      - text: 3.5K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Bodega Cats's avatar View profileView profile · April 13, 2025 at 9:10 PM Reply (110 replies) Repost or quote post Like (18,462 likes) Open post options menu t-pets":
+    - link "Bodega Cats's avatar"
+    - link "View profile": ‪Bodega Cats‬
+    - link "View profile": ‪@bodegacats.bsky.social‬
+    - text: ·
+    - link "April 13, 2025 at 9:10 PM": 1d
+    - button "Reply (110 replies)":
+      - img
+      - text: "110"
+    - button "Repost or quote post":
+      - img
+      - text: 1.4K
+    - button "Like (18,462 likes)":
+      - img
+      - text: 18.4K
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "Hank Green's avatar View profileView profile · April 14, 2025 at 2:01 PM Humans are very weird and mostly do things because the people around them do them. This is true for me and you and everyone. Interpreting bland, default human weirdnesses as repugnant, intentional immoralities will 100% make you miserable while alienating people from your ideas. Reply (117 replies) Repost or quote post Like (3,958 likes) Open post options menu frontpage":
+    - link "Hank Green's avatar"
+    - link "View profile": ‪Hank Green‬
+    - link "View profile": ‪@hankgreen.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 2:01 PM": 12h
+    - text: Humans are very weird and mostly do things because the people around them do them. This is true for me and you and everyone. Interpreting bland, default human weirdnesses as repugnant, intentional immoralities will 100% make you miserable while alienating people from your ideas.
+    - button "Reply (117 replies)":
+      - img
+      - text: "117"
+    - button "Repost or quote post":
+      - img
+      - text: "267"
+    - button "Like (3,958 likes)":
+      - img
+      - text: 3.9K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - 'link "Chris Geidner''s avatar View profileView profile · April 13, 2025 at 10:47 PM Barnes & Noble in Georgetown with a stark “Bohemian Rhapsody”-referencing book display this weekend. Sign: IS THIS THE REAL LIFE? Books include: Erasing History, Autocracy, Inc, Fascism: A Warning, How Democracies Die ALT Sign: IS THIS JUST FANTASY? Books include; It Can’t Happen Here, 1984, Fahrenheit 451, The Handmaid’s Tale ALT Reply (242 replies) Repost or quote post Like (10,254 likes) Open post options menu t-books"':
+    - link "Chris Geidner's avatar"
+    - link "View profile": ‪Chris Geidner‬
+    - link "View profile": ‪@chrisgeidner.bsky.social‬
+    - text: ·
+    - link "April 13, 2025 at 10:47 PM": 1d
+    - text: Barnes & Noble in Georgetown with a stark “Bohemian Rhapsody”-referencing book display this weekend.
+    - 'button "Sign: IS THIS THE REAL LIFE? Books include: Erasing History, Autocracy, Inc, Fascism: A Warning, How Democracies Die"':
+      - 'img "Sign: IS THIS THE REAL LIFE? Books include: Erasing History, Autocracy, Inc, Fascism: A Warning, How Democracies Die"'
+    - text: ALT
+    - 'button "Sign: IS THIS JUST FANTASY? Books include; It Can’t Happen Here, 1984, Fahrenheit 451, The Handmaid’s Tale"':
+      - 'img "Sign: IS THIS JUST FANTASY? Books include; It Can’t Happen Here, 1984, Fahrenheit 451, The Handmaid’s Tale"'
+    - text: ALT
+    - button "Reply (242 replies)":
+      - img
+      - text: "242"
+    - button "Repost or quote post":
+      - img
+      - text: 1.8K
+    - button "Like (10,254 likes)":
+      - img
+      - text: 10.2K
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Fiasco the cat's avatar View profileView profile · April 15, 2025 at 12:52 AM ... Babby is right behind me isn't she me, fiasco, a fluffy grey tabby, suffering, in loaf formation in a hallway with a wooden floor and a patterned rug. next to me is a terrible, horrible, probably satanic fluffy black kitten with her front paws visible. Reply (17 replies) Repost or quote post Like (436 likes) Open post options menu t-pets":
+    - link "Fiasco the cat's avatar"
+    - link "View profile": ‪Fiasco the cat‬
+    - link "View profile": ‪@fiascothecat.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 12:52 AM": 1h
+    - text: ... Babby is right behind me isn't she
+    - img "me, fiasco, a fluffy grey tabby, suffering, in loaf formation in a hallway with a wooden floor and a patterned rug. next to me is a terrible, horrible, probably satanic fluffy black kitten with her front paws visible."
+    - text: ALT
+    - button "Reply (17 replies)":
+      - img
+      - text: "17"
+    - button "Repost or quote post":
+      - img
+      - text: "24"
+    - button "Like (436 likes)":
+      - img
+      - text: "436"
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "Poet and fiction writer David Holper's avatar View profileView profile · April 14, 2025 at 11:34 PM Hashtag books Hashtag authors Hashtag booksky Hashtag writing Hashtag marketing Hashtag writingcommunity Hashtag bookchallenge Hashtag bookreview Hashtag bookpodcast Hashtag writer Hashtag resist Hashtag poetrymonth Reply (34 replies) Repost or quote post Like (764 likes) Open post options menu t-books":
+    - link "Poet and fiction writer David Holper's avatar"
+    - link "View profile": ‪Poet and fiction writer David Holper‬
+    - link "View profile": ‪@davidholper.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 11:34 PM": 2h
+    - link "Hashtag books": "#books"
+    - link "Hashtag authors": "#authors"
+    - link "Hashtag booksky": "#booksky"
+    - link "Hashtag writing": "#writing"
+    - link "Hashtag marketing": "#marketing"
+    - link "Hashtag writingcommunity": "#writingcommunity"
+    - link "Hashtag bookchallenge": "#bookchallenge"
+    - link "Hashtag bookreview": "#bookreview"
+    - link "Hashtag bookpodcast": "#bookpodcast"
+    - link "Hashtag writer": "#writer"
+    - link "Hashtag resist": "#resist"
+    - link "Hashtag poetrymonth": "#poetrymonth"
+    - button "Reply (34 replies)":
+      - img
+      - text: "34"
+    - button "Repost or quote post":
+      - img
+      - text: "112"
+    - button "Like (764 likes)":
+      - img
+      - text: "764"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - link "Casey Newton's avatar View profileView profile · April 14, 2025 at 3:32 PM Katy Perry flew into space to announce something but the livestream cut out so no one knows what the announcement was. Perfect Katy Perry story www.theverge.com/news/647935/... Katy Perry launched into space with Blue Origin Reply (87 replies) Repost or quote post Like (1,934 likes) Open post options menu frontpage":
+    - link "Casey Newton's avatar"
+    - link "View profile": ‪Casey Newton‬
+    - link "View profile": ‪@caseynewton.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 3:32 PM": 10h
+    - text: Katy Perry flew into space to announce something but the livestream cut out so no one knows what the announcement was. Perfect Katy Perry story
+    - link "www.theverge.com/news/647935/..."
+    - link "Katy Perry launched into space with Blue Origin":
+      - img
+      - text: Katy Perry launched into space with Blue Origin She she has a “special reveal” to make.
+      - img
+      - text: www.theverge.com
+    - button "Reply (87 replies)":
+      - img
+      - text: "87"
+    - button "Repost or quote post":
+      - img
+      - text: "304"
+    - button "Like (1,934 likes)":
+      - img
+      - text: 1.9K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - 'link "Peter Sagal''s avatar View profileView profile · April 14, 2025 at 8:15 PM In his letter to the community explaining his decision to defy the Fed Gov''t''s demands, Harvard President Alan Garber included a link to the letter laying out those demands. Here it is: www.harvard.edu/research-fun... Open link to www.harvard.edu Reply (65 replies) Repost or quote post Like (1,043 likes) Open post options menu frontpage"':
+    - link "Peter Sagal's avatar"
+    - link "View profile": ‪Peter Sagal‬
+    - link "View profile": ‪@petersagal.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 8:15 PM": 6h
+    - text: "In his letter to the community explaining his decision to defy the Fed Gov't's demands, Harvard President Alan Garber included a link to the letter laying out those demands. Here it is:"
+    - link "www.harvard.edu/research-fun..."
+    - link "Open link to www.harvard.edu":
+      - text: https://www.harvard.edu/research-funding/wp-content/uploads/sites/16/2025/04/Letter-Sent-to-Harvard-2025-04-11.pdf
+      - img
+      - text: www.harvard.edu
+    - button "Reply (65 replies)":
+      - img
+      - text: "65"
+    - button "Repost or quote post":
+      - img
+      - text: "303"
+    - button "Like (1,043 likes)":
+      - img
+      - text: 1K
+    - button "Open post options menu":
+      - img
+    - text: frontpage
+  - link "Mike Melton's avatar View profileView profile · April 15, 2025 at 1:51 AM Baby American Dippers having breakfast this morning. Washington state Hashtag birds Hashtag nature 🌿 Reply (9 replies) Repost or quote post Like (449 likes) Open post options menu t-nature":
+    - link "Mike Melton's avatar"
+    - link "View profile": ‪Mike Melton‬
+    - link "View profile": ‪@mikemelton.bsky.social‬
+    - text: ·
+    - link "April 15, 2025 at 1:51 AM": 39m
+    - text: Baby American Dippers having breakfast this morning. Washington state
+    - link "Hashtag birds": "#birds"
+    - link "Hashtag nature": "#nature"
+    - text: 🌿
+    - button "Reply (9 replies)":
+      - img
+      - text: "9"
+    - button "Repost or quote post":
+      - img
+      - text: "35"
+    - button "Like (449 likes)":
+      - img
+      - text: "449"
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "Ramin Nasibov's avatar View profileView profile · April 14, 2025 at 7:53 PM Reply (28 replies) Repost or quote post Like (1,216 likes) Open post options menu t-animals":
+    - link "Ramin Nasibov's avatar"
+    - link "View profile": ‪Ramin Nasibov‬
+    - link "View profile": ‪@nasibov.bsky.social‬
+    - text: ·
+    - link "April 14, 2025 at 7:53 PM": 6h
+    - button "Reply (28 replies)":
+      - img
+      - text: "28"
+    - button "Repost or quote post":
+      - img
+      - text: "125"
+    - button "Like (1,216 likes)":
+      - img
+      - text: 1.2K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+- navigation:
+  - img
+  - img
+  - button "Create account"
+  - button "Sign in"
+- img
+- search "Search"
+- img
+- text: Trending
+- button "Hide trending topics":
+  - img
+- link "Browse topic Phillies": Phillies
+- link "Browse topic Mohsen Mahdawi": Mohsen Mahdawi
+- link "Browse topic JD Vance": JD Vance
+- link "Browse topic Harvard": Harvard
+- link "Browse topic San Diego Earthquake": San Diego Earthquake
+- link "Browse topic Meta Antitrust": Meta Antitrust
+- link "Privacy"
+- text: •
+- link "Terms"
+- text: •
+- link "Help"
+- img
+- combobox:
+  - option "English" [selected]
+  - option "Aragonés – Aragonese"
+  - option "Asturianu – Asturian"
+  - option "Català – Catalan"
+  - option "Cymraeg – Welsh"
+  - option "Dansk – Danish"
+  - option "Deutsch – German"
+  - option "Ελληνικά – Greek"
+  - option "English (UK)"
+  - option "Esperanto"
+  - option "Español – Spanish"
+  - option "Euskera – Basque"
+  - option "Suomi – Finnish"
+  - option "Français – French"
+  - option "Gaeilge – Irish"
+  - option "Gàidhlig – Scottish Gaelic"
+  - option "Galego – Galician"
+  - option "हिंदी – Hindi"
+  - option "magyar – Hungarian"
+  - option "Interlingua"
+  - option "Bahasa Indonesia – Indonesian"
+  - option "Italiano – Italian"
+  - option "日本語 – Japanese"
+  - option "ភាសាខ្មែរ – Khmer"
+  - option "한국어 – Korean"
+  - option "नेपाली – Nepali"
+  - option "Nederlands – Dutch"
+  - option "Polski – Polish"
+  - option "Português (BR) – Portuguese (BR)"
+  - option "Română – Romanian"
+  - option "Русский – Russian"
+  - option "Svenska – Swedish"
+  - option "ภาษาไทย – Thai"
+  - option "Türkçe – Turkish"
+  - option "Українська – Ukrainian"
+  - option "Tiếng Việt – Vietnamese"
+  - option "简体中文 – Simplified Chinese"
+  - option "繁體中文 – Traditional Chinese"
+  - option "粵文 – Cantonese"
+```
+
+# Test source
+
+```ts
+   1 | import {expect, test} from '@playwright/test'
+   2 |
+   3 | test('user can follow and unfollow mercytum', async ({page}) => {
+   4 |   //Go to site and Login
+   5 |   await page.goto('http://localhost:19006/')
+   6 |   // await page.goto('https://bsky.app/')
+>  7 |   await page.getByRole('button', {name: 'Sign in'}).click()
+     |                                                     ^ Error: locator.click: Test timeout of 30000ms exceeded.
+   8 |   await page.getByTestId('loginUsernameInput').click()
+   9 |   await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
+  10 |   await page.getByTestId('loginPasswordInput').click()
+  11 |   await page.getByTestId('loginPasswordInput').fill('CIS565TestGroup')
+  12 |   await page.getByTestId('loginNextButton').click()
+  13 |
+  14 |   //Confirm Login was successful
+  15 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  16 |
+  17 |   //Search for user(mercytum)
+  18 |   await page.getByRole('search', {name: 'Search'}).click()
+  19 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+  20 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  21 |
+  22 |   //Go to People tab and select the user
+  23 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+  24 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+  25 |
+  26 |   //Follow the user
+  27 |   await page.getByTestId('followBtn').click()
+  28 |
+  29 |   // Expect to see the "Unfollow" button now
+  30 |   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
+  31 |
+  32 |   //Navigate back Home
+  33 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  34 |
+  35 |   //Check if user is in your Following list
+  36 |   await page.getByTestId('homeScreenFeedTabs-Following').click()
+  37 |   // await page.goto('http://localhost:19006/')
+  38 |   // await page.goto('https://bsky.app/')
+  39 |   await page.locator('a').filter({hasText: '‪Mercy Tum‬'}).click()
+  40 |
+  41 |   //Unfollow user
+  42 |   await page.getByTestId('unfollowBtn').click()
+  43 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  44 | })
+  45 |
+```
+
+# Local changes
+
+```diff
+diff --git a/.github/workflows/test-playwright.yml b/.github/workflows/test-playwright.yml
+new file mode 100644
+index 000000000..450e29fe5
+--- /dev/null
++++ b/.github/workflows/test-playwright.yml
+@@ -0,0 +1,50 @@
++name: Playwright Tests
++on:
++  push:
++    branches: [ search-and-post-tests ]
++  
++jobs:
++  test:
++    timeout-minutes: 60
++    runs-on: ubuntu-latest
++    steps:
++    - uses: actions/checkout@v4
++    - uses: actions/setup-node@v4
++      with:
++        node-version: 20
++    - name: Install dependencies
++      run: npm install -g yarn && yarn
++    - name: Install Playwright Browsers
++      run: yarn playwright install --with-deps
++    - name: Run Playwright tests
++      run: yarn playwright test
++      env:
++          BS_EMAIL: ${{ secrets.BS_EMAIL}}
++          BS_PASSWORD: ${{ secrets.BS_PASSWORD}}
++    - uses: actions/upload-artifact@v4
++      if: ${{ !cancelled() }}
++      with:
++        name: playwright-report
++        path: playwright-report/
++        retention-days: 30
++    - name: Load test report history
++      uses: actions/checkout@v3
++      if: always()
++      continue-on-error: true
++      with:
++        ref: gh-pages
++        path: gh-pages
++    - name: Build test report
++      uses: simple-elf/allure-report-action@v1.7
++      if: always()
++      with:
++        gh_pages: gh-pages
++        allure_history: allure-history
++        allure_results: allure-results
++    - name: Publish test report
++      uses: peaceiris/actions-gh-pages@v3
++      if: always()
++      with:
++        github_token: ${{ secrets.GITHUB_TOKEN }}
++        publish_branch: gh-pages
++        publish_dir: allure-history
+diff --git a/How To Deploy ReadMe.md b/How To Deploy ReadMe.md
+new file mode 100644
+index 000000000..9c9cab19e
+--- /dev/null
++++ b/How To Deploy ReadMe.md	
+@@ -0,0 +1,32 @@
++## Github Actions CI/CD Pipeline Setup
++
++### How it works?
++#### Whenever a pull request (PR) or a commit to the 'main' branch is initiated, the Github Actions CI/CD pipeline runs the Playwright Tests.yml which house all of the job configurations.
++#### Once triggered the pipeline:
++###### 1. Starts by setting a maximum time limit for which the entire pipeline should be completed (i.e. 1hr). After that 1hr limit, the pipeline is programmed to stop the job(s) running if not yet completed
++###### 2. Setup it's virtual env runner to use the latest version of ubuntu
++###### 3. Checks out the git repo
++###### 4. Setup Node.js using version 20 (compatible version to enable yarn to run)
++###### 5. Installs the yarn dependencies (globally) and runs the yarn package manager
++###### 6. Installs the Playwright Browsers (chromium, webkit, firefox) with associated dependencies
++###### 7. Runs the playwright tests listed within the __test__/lib directory
++###### 8. Uploads the playwright test results as an artifact (i.e. zip file) to the job summary, if the job was not cancelled. Keeps the artifact for 30 days
++###### 9. Load test report history
++###### 10. Build Allure Test Report using Github Pages
++###### 11. Deploys Allure Test Report on Github Pages using 'gh-pages' branch, placing the reports within a dedicated directory called 'allure-history'
++
++***
++
++### How to run CI/CD Pipeline?
++##### 1. Commit a change to the 'main' branch or create a 'pull request'
++
++***
++
++## How to run Locally (without CI/CD Pipeline)?
++#### Prerequisites:
++###### 1. Ensure VS Code (v1.97.1 or later) is installed on your local machine 
++###### 2. Git clone this repo
++###### 3. Open the clone repo project within VS Code
++###### 4. Within VS Code Extensions, install the 'Playwright Test for VSCode by Microsoft" (v1.1.13 or later)
++###### 5. Enable the plugin once installed
++###### 6. 
+diff --git a/__tests__/lib/Playwright/PostPageCancellation.test.ts b/__tests__/lib/Playwright/PostPageCancellation.test.ts
+new file mode 100644
+index 000000000..8e19d7ef5
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageCancellation.test.ts
+@@ -0,0 +1,90 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Cancel post without typing any text
++test('Cancel Post without typing any text', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click on the cancel button within the create new post popup box
++    await page.getByRole('button', { name: 'Cancel' }).click();
++
++    // Assertion
++    // Verify that home screen is displayed by checking for Discovery & Following tabs
++    const discoveryTab = await page.getByTestId('homeScreenFeedTabs-Discover');
++    await expect(discoveryTab).toBeVisible();
++
++    const followingTab = await page.getByTestId('homeScreenFeedTabs-Following');
++    await expect(followingTab).toBeVisible();
++
++});
++
++// Cancel post during its creation
++test('Cancel Post during its creation', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click in post paragraph field
++    await page.getByRole('paragraph').click();
++
++    // Type post message
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('My first BlueSky post');
++
++    // Click on the cancel button within the create new post popup box
++    await page.getByRole('button', { name: 'Cancel' }).click();
++
++    await page.waitForTimeout(3000);
++
++    // Verify discard button is visible
++    await page.getByTestId('confirmBtn').click();
++
++    // Verify that home screen is displayed by checking for Discovery & Following tabs
++    const discoveryTab = await page.getByTestId('homeScreenFeedTabs-Discover');
++    await expect(discoveryTab).toBeVisible();
++
++    const followingTab = await page.getByTestId('homeScreenFeedTabs-Following');
++    await expect(followingTab).toBeVisible();
++
++});
+diff --git a/__tests__/lib/Playwright/PostPageCreation.test.ts b/__tests__/lib/Playwright/PostPageCreation.test.ts
+new file mode 100644
+index 000000000..7bb76b691
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageCreation.test.ts
+@@ -0,0 +1,119 @@
++import { test, expect, type Page } from '@playwright/test';
++import { promises } from "fs";
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = "cis565bskytests@gmail.com";
++const BSKY_PASS = "CIS565TestGroup";
++
++// Global total post variable
++let TOTAL_POSTS = 0;
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Check if post exists, return boolean 
++async function chkPostExist(postText: string): Promise<boolean> {
++
++    // If postText is not a string, return false
++    if (typeof postText !== 'string' || !postText) {
++        return false;
++    }
++
++    // Else return
++    return postText.trim().includes(' ');
++}
++
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++// Create Post using one character
++test('Create Post using one character', {tag: '@post'}, async ({ page }) => {
++
++    // Navigate to profile page
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Click on the compose button
++    await page.getByTestId('profileView').getByTestId('composeFAB').click();
++
++    // Click on the post textbox and type 1 character post msg
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('A');
++    
++    // Click the publish / post button to create post
++    await page.getByTestId('composerPublishBtn').click();
++
++    // Initiate a page reload to show upated post numbers
++    await page.reload();
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Assertion
++    // Expected length of post toBe 1
++    await expect(postText?.length).toBe(1);
++
++});
++
++
++// Create Post using 300 character
++test('Create Post using 300 characters', {tag: '@post'}, async ({ page }) => {
++
++    // Navigate to profile page
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Click on the compose button
++    await page.getByTestId('profileView').getByTestId('composeFAB').click();
++
++    // Click on the post textbox and type 300 character post msg
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdums.');
++    
++    // Click the publish / post button to create post
++    await page.getByTestId('composerPublishBtn').click();
++
++    // Initiate a page reload to show upated post numbers
++    await page.reload();
++
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has more than one word
++    let actual = await chkPostExist(postText);
++
++    // Assertion
++    // Expected length of post toBe 300
++    await expect(postText?.length).toBe(300);
++
++    // Verify post description has more than one word
++    await expect(actual).toEqual(true);
++
++});
+diff --git a/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts b/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts
+new file mode 100644
+index 000000000..d65c67fa2
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageCreationEdgeCase.test.ts
+@@ -0,0 +1,76 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++// Create Post using less than 0 characters
++test('Create Post using less than 0 characters', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click in post paragraph field
++    await page.getByRole('paragraph').click();
++
++    // Assertions
++    // Verify post button is disabled due to min no.of characters not met
++    const postBtn = await page.getByTestId('composerPublishBtn');
++    await expect(postBtn).toHaveAttribute('disabled','');
++
++});
++
++// Create Post using greater than 300 characters
++test('Create Post using greater than 300 characters', {tag: '@post'}, async ({ page }) => {
++
++    // Click on the create new post fab button
++    await page.getByTestId('customFeedPage').getByTestId('composeFAB').click();
++
++    // Click in post paragraph field
++    await page.getByRole('paragraph').click();
++
++    // Type post message with 388 characters
++    await page.getByRole('textbox', { name: 'Rich-Text Editor' }).fill('Lorem ipsum odor amet, consectetuer adipiscing elit. Etiam himenaeos nascetur elit molestie semper. Sagittis ad senectus mauris; facilisi maximus a. Ex lectus ad tempor placerat egestas faucibus, a quam tincidunt. Parturient sagittis curae dignissim, tortor nam molestie ullamcorper mattis interdum. Hi');
++
++    // Assertions
++    // Verify post button is disabled due to max no.of characters exceeded
++    const postBtn = await page.getByTestId('composerPublishBtn');
++    await expect(postBtn).toHaveAttribute('disabled','');
++
++});
+diff --git a/__tests__/lib/Playwright/PostPageDeletion.test.ts b/__tests__/lib/Playwright/PostPageDeletion.test.ts
+new file mode 100644
+index 000000000..b02aff347
+--- /dev/null
++++ b/__tests__/lib/Playwright/PostPageDeletion.test.ts
+@@ -0,0 +1,134 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// getDate function
++async function getDate() {
++
++  // Get current date
++  const currentDate = new Date();
++
++  // Extract month, day and year from currentDate obj
++  const monthIndex = currentDate.getMonth();
++  const day = currentDate.getDate();
++  const year = currentDate.getFullYear();
++
++  // Months of the year array list
++  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
++
++  // Assign month name based on current month index
++  const monthOfYr = monthNames[monthIndex];
++
++  // Format the date in mm dd, yyyy format
++  const formatDate = `${monthOfYr} ${day}, ${year}`
++
++  // Return currentDate
++  return formatDate;
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++// Delete last created Post
++test('Delete Last Created Post', {tag: '@post'}, async ({ page }) => {
++
++    // Get current date
++    const currentDate = new Date();
++
++    // Extract month, day and year from currentDate obj
++    const monthIndex = currentDate.getMonth();
++    const day = currentDate.getDate();
++    const year = currentDate.getFullYear();
++
++    // Months of the year array list
++    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
++
++    // Assign month name based on current month index
++    const monthOfYr = monthNames[monthIndex];
++
++    // Format the date in mm dd, yyyy format
++    const formatDate = `${monthOfYr} ${day}, ${year}`;
++
++    // Navigate to Profile
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Get the number of posts
++    const post = await page.locator('xpath=//*[@id="root"]/div/div/div/div/div/main/div/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div[2]/div[3]/div/div').innerHTML();
++
++    // Split off the first element of variable
++    let postNum: number = parseInt(post.split("")[0]);
++
++    // Select Post tab
++    await page.getByTestId('profilePager-Posts').click();
++
++    // Wait for 5 secs for page elems to full load
++    await page.waitForTimeout(5000);
++
++    // Select ellipses for post based on current date
++    await page.getByRole('link', { name: `cis565testgroup.bsky.social\'s avatar View profileView profile · ${formatDate}` }).first().getByTestId('postDropdownBtn').click();
++
++    // Click delete this post
++    await page.getByTestId('postDropdownDeleteBtn').click();
++
++    // Confirm post deletion
++    await page.getByRole('button', { name: 'Delete' }).click();
++
++    // Wait for 5 secs for page elems to full load
++    await page.waitForTimeout(5000);
++
++    // Initiate a page reload to show upated post numbers
++    await page.reload();
++
++    // Navigate to profile (click on profile nav link)
++    await page.getByRole('link', { name: 'Profile', exact: true }).click();
++
++    // Get the number of posts
++    const postChk2 = await page.locator('xpath=//*[@id="root"]/div/div/div/div/div/main/div/div/div/div/div/div[2]/div/div[1]/div[1]/div/div[2]/div[3]/div/div').innerHTML();
++
++    // Split off the first element of variable
++    let actualNum: number = parseInt(postChk2.split("")[0]);
++ 
++    // Assertions
++    let expectedPosts = postNum -=1;
++
++    // Expected posts number to have decremented as latest post was deleted
++    await expect(actualNum).toEqual(expectedPosts);    
++
++
++});
+diff --git a/__tests__/lib/Playwright/SearchPageErrorCase.test.ts b/__tests__/lib/Playwright/SearchPageErrorCase.test.ts
+new file mode 100644
+index 000000000..db57475bd
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPageErrorCase.test.ts
+@@ -0,0 +1,70 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for empty term
++test('Search for empty term', {tag: '@search'}, async ({ page }) => {
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Get Discovery text
++    let discoveryTabExt = await page.getByTestId('homeScreenFeedTabs-Discover').textContent();
++
++    // Get Following text
++    let followTabExt = await page.getByTestId('homeScreenFeedTabs-Following').textContent();
++
++    // Get current url
++    let currentUrl: string = page.url();
++
++    // Assertion
++    // Verify empty search remains on search page where elements: Discover, Following are seen
++    await expect(discoveryTabExt).toContain('Discover');
++    await expect(followTabExt).toContain('Following');
++
++    // Verify current url searched matches default home url
++    await expect(currentUrl).toContain('https://bsky.app');
++        
++});
++
+diff --git a/__tests__/lib/Playwright/SearchPageFeeds.test.ts b/__tests__/lib/Playwright/SearchPageFeeds.test.ts
+new file mode 100644
+index 000000000..d99690be9
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPageFeeds.test.ts
+@@ -0,0 +1,121 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Check if post exists, return boolean 
++async function chkPostExist(postText: string): Promise<boolean> {
++
++    // If postText is not a string, return false
++    if (typeof postText !== 'string' || !postText) {
++        return false;
++    }
++
++    // Else return
++    return postText.trim().includes(' ');
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for feeds by using term
++test('Search for feeds using search term', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const searchTerm = 'weather';
++
++    // Search for Feeds
++    await page.getByRole('link', { name: 'Feeds', exact: true }).click();
++
++    // Click on search bar in feeds page
++    await page.getByTestId('FeedsScreen').getByRole('search', { name: 'Search' }).click();
++
++    // Type searchTerm
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).fill(searchTerm);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on a predefined weather feed
++    await page.getByRole('link', { name: 'Ontario Weather #ONstorm' }).click();
++
++    // Select the first feed description seen
++    let feedText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has no than one word
++    let actual = await chkPostExist(feedText);
++
++    // Assertion
++    // Verify post description has no than one word
++    await expect(actual).toEqual(true);
++
++});
++
++
++// Search for feeds using hashtag
++test('Search for feeds using hashtag', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const hashtag = '#nba';
++
++    // Search for Feeds
++    await page.getByRole('link', { name: 'Feeds', exact: true }).click();
++
++    // Click on search bar in feeds page
++    await page.getByTestId('FeedsScreen').getByRole('search', { name: 'Search' }).click();
++
++    // Type searchTerm
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).fill(hashtag);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('main').getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on a predefined feed
++    await page.getByRole('link', { name: hashtag }).click();
++
++    // Select the first feed description seen
++    let feedText = await page.getByTestId('postText').first().innerText();
++
++    // Check that post has more than one word
++    let actual = await chkPostExist(feedText);
++
++    // Assertion
++    // Verify post description has more than one word
++    await expect(actual).toEqual(true);
++
++});
+diff --git a/__tests__/lib/Playwright/SearchPagePosts.test.ts b/__tests__/lib/Playwright/SearchPagePosts.test.ts
+new file mode 100644
+index 000000000..4ffb27ead
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPagePosts.test.ts
+@@ -0,0 +1,109 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Check if post exists, return boolean 
++async function chkPostExist(postText: string): Promise<boolean> {
++
++    // If postText is not a string, return false
++    if (typeof postText !== 'string' || !postText) {
++        return false;
++    }
++
++    // Else return
++    return postText.trim().includes(' ');
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for posts using general search
++test('Search for posts using general search', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const searchTerm = 'pickleball';
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Type searchTerm
++    await page.getByRole('search', { name: 'Search' }).fill(searchTerm);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has no than one word
++    let actual = await chkPostExist(postText);
++
++    // Assertion
++    // Verify post description has no than one word
++    await expect(actual).toEqual(true);
++
++});
++
++
++// Search for post within user profile
++test('Search for post within user profile', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const profile = '@majorleaguepb.bsky.social'
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Search using profile handle
++    await page.getByRole('search', { name: 'Search' }).fill(profile);
++    
++    // Click on exact profile handle
++    await page.getByRole('link', { name: 'majorleaguepb.bsky.social', exact: true }).click();
++
++    // Select the first post description seen
++    let postText = await page.getByTestId('postText').first().textContent();
++
++    // Check that post has more than one word
++    let actual = await chkPostExist(postText);
++
++    // Assertion
++    // Verify post description has more than one word
++    await expect(actual).toEqual(true);
++
++});
+diff --git a/__tests__/lib/Playwright/SearchPageUsers.test.ts b/__tests__/lib/Playwright/SearchPageUsers.test.ts
+new file mode 100644
+index 000000000..53cda41b1
+--- /dev/null
++++ b/__tests__/lib/Playwright/SearchPageUsers.test.ts
+@@ -0,0 +1,106 @@
++import { test, expect, type Page } from '@playwright/test';
++
++const BLUESKY_WEB_URL = 'https://bsky.app';
++
++const BSKY_EMAIL = process.env.BS_USERNAME;
++const BSKY_PASS = process.env.BS_PASSWORD;
++
++// Login function
++async function login(page: Page): Promise<void> {
++
++  // Navigate to the login page
++  await page.goto(`${BLUESKY_WEB_URL}`);
++
++  // Click the sign-in button
++  await page.getByRole('button', { name: 'Sign in' }).click();
++
++  // Click on username field
++  await page.getByTestId('loginUsernameInput').click();
++
++  // Enter username
++  await page.getByTestId('loginUsernameInput').fill(`${BSKY_EMAIL}`);
++
++  // Click on password field
++  await page.getByTestId('loginPasswordInput').click();
++
++  // Enter pswd
++  await page.getByTestId('loginPasswordInput').fill(`${BSKY_PASS}`);
++
++  // Click on next button to sign-in
++  await page.getByTestId('loginNextButton').click();
++
++}
++
++// Setup functionality
++test.beforeEach(async ({ page }) => {
++
++    // Call login function
++    await login(page);
++
++});
++
++
++// Search for user profile using username handle
++test('Search for user using username handle', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const userHandle = 'mcuban.bsky.social';
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Type userHandle
++    await page.getByRole('search', { name: 'Search' }).fill(userHandle);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on the "People" tab for search for persons
++    await page.getByTestId('undefined-selector-2').getByText('People').click();
++
++    // Click on people based on user handle
++    await page.getByRole('link', { name: userHandle }).click();
++
++    // Get current url
++    let currenUrl: string = page.url();
++
++    // Assertion
++    // Verify currect profile searched matches based on url
++    await expect(currenUrl).toContain(`https://bsky.app/profile/${userHandle}`);
++        
++});
++
++
++// Search for user profile using first and last name
++test('Search for user using first and last name', {tag: '@search'}, async ({ page }) => {
++
++    // Search term
++    const firstname = 'Barack';
++    const lastname = 'Obama';
++    const fullname = firstname + lastname;
++    const handlename = fullname + '.bsky.social';
++
++    // Navigate to search bar
++    await page.getByRole('search', { name: 'Search' }).click();
++
++    // Type fullname
++    await page.getByRole('search', { name: 'Search' }).fill(fullname);
++
++    // Stimulate pressing Enter key on keyboard
++    await page.getByRole('search', { name: 'Search' }).press('Enter');
++
++    // Click on the "People" tab for search for persons
++    await page.getByTestId('undefined-selector-2').getByText('People').click();
++
++    // Click on people based on user handle
++    await page.getByRole('link', { name: handlename }).click();
++
++    // Get current url
++    let currentUrl: string = page.url();
++
++    // Assertion
++    // Verify current profile searched matches based on url
++    await expect(currentUrl).toContain(`https://bsky.app/profile/${handlename.toLowerCase()}`);
++        
++});
++
+```
