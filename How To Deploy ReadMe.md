@@ -20,7 +20,7 @@
 ### How to run CI/CD Pipeline?
 ##### [Option 1] Commit a change to the 'main' branch 
 ##### [Option 2] Create a 'pull request' to the 'main' branch
-##### [Option 3] Click the manual 'Run workflow' button for the 'Playwright Test' named workflow
+##### [Option 3] Manually re-run any of the 'Playwright Test' previously executed within the 'Actions' section
 
 ***
 
