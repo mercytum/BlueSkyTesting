@@ -18,20 +18,39 @@
 ***
 
 ### How to run CI/CD Pipeline?
-##### 1. Commit a change to the 'main' branch or create a 'pull request'
+##### [Option 1] Commit a change to the 'main' branch 
+##### [Option 2] Create a 'pull request' to the 'main' branch
+##### [Option 3] Manually re-run any of the 'Playwright Test' previously executed within the 'Actions' section
 
 ***
 
 ## How to run Locally (without CI/CD Pipeline)?
 #### Prerequisites:
-###### 1. Ensure VS Code (v1.97.1 or later) is installed on your local machine 
-###### 2. Git clone this repo
-###### 3. Open the clone repo project within VS Code
-###### 4. Within VS Code Extensions, install the 'Playwright Test for VSCode by Microsoft" (v1.1.13 or later)
-###### 5. Enable the plugin once installed
-###### 6. Open terminal within VSCode and run "yarn" to install dependencies
-###### 7. Run "yarn web" to start local server instance and note the localhost url plus port being used to run the application
-###### 8. Open the playwright.config.ts file and set the webserver url attribute to equal the url indicated in Step 7 (in most cases it will run on http://127.0.0.1:19006)
-###### 9. Save changes within the playwright.config.ts file
-###### 10. Open another terminal instance, and run the following cmd: npx playwright test
-###### 11. [Optional] you can run the tests with parallelization by adding '--workers=3' 
+###### 1. Ensure VS Code (v1.97.1 or later) is installed on your local machine (https://code.visualstudio.com/download)
+###### 2. Ensure Node (v20 or later) is installed on your local machine (https://nodejs.org/en/download)
+###### -- run node -v (verify installation success)
+###### 3. Ensure yarn (v1.22.22) is installed on your local machine (https://classic.yarnpkg.com/lang/en/docs/install/)
+###### -- run npm install --global yarn
+###### -- run yarn --version (verify installation success)
+###### 4. Ensure npm Dotenv is installed (https://www.npmjs.com/package/dotenv)
+
+#### Setup Project:
+###### 1. Git clone this repo
+###### 2. Open the clone repo project within VS Code
+###### 3. Within the root of cloned project, navigate to the .env file and add your bluesky account password to the BS_PASSWORD variable and bluesky username to the BS_USERNAME variable and save the file
+
+###### 4. Navigate to each test file within the \_\_tests\_\_/lib/Playwright directory and change the following: 
+###### 'const BSKY_EMAIL = process.env.SECRET_USR;' to 'const BSKY_EMAIL = process.env.BS_USERNAME;'
+###### 'const BSKY_PASS = process.env.SECRET_PWD;' to 'const BSKY_PASS = process.env.BS_PASSWORD;'
+
+###### and add "import dotenv from 'dotenv';" to the top of the .ts files (all of them).
+
+###### 5. Save the files
+
+#### Run the Tests:
+###### 1. Open terminal within VSCode and run "yarn" to install dependencies
+###### 2. Run "yarn web" to start local server instance and note the localhost url plus port being used to run the application (this takes several minutes)
+###### 3. Open the playwright.config.ts file and set the webserver url attribute to equal the url indicated in Step 2 (in most cases it will run on http://127.0.0.1:19006)
+###### 4. Save changes within the playwright.config.ts file
+###### 5. Open another terminal instance, and run the following cmd: npx playwright test
+###### 6. [Optional] you can run the tests with parallelization by adding '--workers=3' 
