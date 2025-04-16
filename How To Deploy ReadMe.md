@@ -41,7 +41,7 @@
 
 ###### 4. Navigate to each test file within the __tests_/lib/Playwright directory and change the following: 
 ###### 'const BSKY_EMAIL = process.env.SECRET_USR;' to 'const BSKY_EMAIL = process.env.BS_USERNAME;'
-######'const BSKY_PASS = process.env.SECRET_PWD;' to 'const BSKY_PASS = process.env.BS_PASSWORD;'
+###### 'const BSKY_PASS = process.env.SECRET_PWD;' to 'const BSKY_PASS = process.env.BS_PASSWORD;'
 
 ###### and add 'import dotenv from 'dotenv';' to the top of the .ts files (all of them).
 
