@@ -40,10 +40,10 @@
 ###### 3. Within the root of cloned project, navigate to the .env file and add your bluesky account password to the BS_PASSWORD variable and bluesky username to the BS_USERNAME variable and save the file
 
 ###### 4. Navigate to each test file within the __tests_/lib/Playwright directory and change the following: 
-'const BSKY_EMAIL = process.env.SECRET_USR;' to 'const BSKY_EMAIL = process.env.BS_USERNAME;'
-'const BSKY_PASS = process.env.SECRET_PWD;' to 'const BSKY_PASS = process.env.BS_PASSWORD;'
+###### 'const BSKY_EMAIL = process.env.SECRET_USR;' to 'const BSKY_EMAIL = process.env.BS_USERNAME;'
+######'const BSKY_PASS = process.env.SECRET_PWD;' to 'const BSKY_PASS = process.env.BS_PASSWORD;'
 
-and add 'import dotenv from 'dotenv';' to the top of the .ts files (all of them).
+###### and add 'import dotenv from 'dotenv';' to the top of the .ts files (all of them).
 
 ###### 5. Save the files
 
