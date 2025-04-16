@@ -19,6 +19,9 @@ jobs:
       run: yarn playwright install --with-deps
     - name: Run Playwright tests
       run: yarn playwright test
+      env: 
+          SECRET_USR: ${{ secrets.BS_USERNAME}}
+          SECRET_PWD: ${{ secrets.BS_PASSWORD}}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
