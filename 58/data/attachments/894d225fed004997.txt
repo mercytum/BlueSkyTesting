@@ -1,0 +1,197 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: user can navigate to followed user profile
+- Location: /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:56:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByTestId('undefined-selector-2').getByText('People')
+    - locator resolved to <div dir="auto" class="css-text-146c3p1">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    42 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+    at /home/runner/work/BlueSkyTesting/BlueSkyTesting/__tests__/lib/Playwright/FollowingPage.test.ts:66:70
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - img
+  - search "Search": mercytum
+  - button "Clear search query":
+    - img
+  - 'button "Filter search by language (currently: All languages)"':
+    - img
+    - text: All languages
+    - img
+  - tablist:
+    - tab "Top"
+    - tab "Latest"
+    - tab "People"
+    - tab "Feeds"
+  - text: No results found for mercytum
+- navigation:
+  - button "Switch accounts"
+  - link "Home"
+  - link "Explore"
+  - link "Notifications"
+  - link "Chat"
+  - link "Feeds"
+  - link "Lists"
+  - link "Profile"
+  - link "Settings"
+- link "Discover"
+- link "Following"
+- link "More feeds"
+- img
+- text: Trending
+- button "Hide trending topics":
+  - img
+- link "Browse topic Abrego Garcia": Abrego Garcia
+- link "Browse topic Dan Caldwell": Dan Caldwell
+- link "Browse topic Karoline Leavitt": Karoline Leavitt
+- link "Browse topic OpenAI Network": OpenAI Network
+- link "Browse topic 4chan Hack": 4chan Hack
+- link "Browse topic Jackie Robinson": Jackie Robinson
+- link "Feedback"
+- text: •
+- link "Privacy"
+- text: •
+- link "Terms"
+- text: •
+- link "Help"
+```
+
+# Test source
+
+```ts
+   1 | import {expect, type Page, test} from '@playwright/test'
+   2 |
+   3 | const USERNAME = process.env.SECRET_USR
+   4 | const PASSWORD = process.env.SECRET_PWD
+   5 | const LOCALHOST = 'http://localhost:19006/'
+   6 |
+   7 | async function login(page: Page): Promise<void> {
+   8 |   //Go to site and Login
+   9 |   await page.goto(LOCALHOST)
+  10 |   await page.getByRole('button', {name: 'Sign in'}).click()
+  11 |   await page.getByTestId('loginUsernameInput').click()
+  12 |   await page.getByTestId('loginUsernameInput').fill(`${USERNAME}`)
+  13 |   await page.getByTestId('loginPasswordInput').click()
+  14 |   await page.getByTestId('loginPasswordInput').fill(`${PASSWORD}`)
+  15 |   await page.getByTestId('loginNextButton').click()
+  16 | }
+  17 |
+  18 | test.beforeEach(async ({page}) => {
+  19 |   await login(page)
+  20 | })
+  21 |
+  22 | test('user can follow mercytum', async ({page}) => {
+  23 |   //Confirm Login was successful
+  24 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  25 |
+  26 |   //Search for user(mercytum)
+  27 |   await page.getByRole('search', {name: 'Search'}).click()
+  28 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+  29 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  30 |
+  31 |   //Go to People tab and select the user
+  32 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+  33 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+  34 |
+  35 |   if (await page.getByTestId('unfollowBtn').isVisible()) {
+  36 |     // Follow the user
+  37 |     await page.getByTestId('unfollowBtn').click()
+  38 |   }
+  39 |
+  40 |   //Follow the user
+  41 |   await page.getByTestId('followBtn').click()
+  42 |
+  43 |   // Expect to see the "Unfollow" button now
+  44 |   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
+  45 | })
+  46 |
+  47 | test('user can load the Following list', async ({page}) => {
+  48 |   //Confirm Login was successful
+  49 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  50 |
+  51 |   //Check if user is in your Following list
+  52 |   await page.getByTestId('homeScreenFeedTabs-Following').click()
+  53 |   await page.getByTestId('feedItem-by-mercytum.bsky.social').isVisible
+  54 | })
+  55 |
+  56 | test('user can navigate to followed user profile', async ({page}) => {
+  57 |   //Confirm Login was successful
+  58 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  59 |
+  60 |   //Search for user(mercytum)
+  61 |   await page.getByRole('search', {name: 'Search'}).click()
+  62 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+  63 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  64 |
+  65 |   //Go to People tab and select the user
+> 66 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+     |                                                                      ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  67 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+  68 | })
+  69 |
+  70 | test('user can unfollow mercytum', async ({page}) => {
+  71 |   //Confirm Login was successful
+  72 |   await expect(page.getByTestId('homeScreenFeedTabs-Following')).toBeVisible()
+  73 |
+  74 |   //Search for user(mercytum)
+  75 |   await page.getByRole('search', {name: 'Search'}).click()
+  76 |   await page.getByRole('search', {name: 'Search'}).fill('mercytum')
+  77 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  78 |
+  79 |   //Go to People tab and select the user
+  80 |   await page.getByTestId('undefined-selector-2').getByText('People').click()
+  81 |   await page.getByRole('link', {name: 'mercytum.bsky.social'}).click()
+  82 |
+  83 |   await page.waitForTimeout(1000)
+  84 |
+  85 |   if (await page.getByTestId('followBtn').isVisible()) {
+  86 |     // Follow the user
+  87 |     await page.getByTestId('followBtn').click()
+  88 |   }
+  89 |   // Expect to see the "Unfollow" button now
+  90 |   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
+  91 |
+  92 |   //Unfollow the user
+  93 |   await page.getByTestId('unfollowBtn').click()
+  94 |
+  95 |   //Navigate back Home
+  96 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  97 | })
+  98 |
+```
