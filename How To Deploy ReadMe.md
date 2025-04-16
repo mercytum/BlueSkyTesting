@@ -39,18 +39,18 @@
 ###### 2. Open the clone repo project within VS Code
 ###### 3. Within the root of cloned project, navigate to the .env file and add your bluesky account password to the BS_PASSWORD variable and bluesky username to the BS_USERNAME variable and save the file
 
-###### 4. Navigate to each test file within the __tests_/lib/Playwright directory and change the following: 
+###### 4. Navigate to each test file within the \_\_tests\_\_/lib/Playwright directory and change the following: 
 ###### 'const BSKY_EMAIL = process.env.SECRET_USR;' to 'const BSKY_EMAIL = process.env.BS_USERNAME;'
 ###### 'const BSKY_PASS = process.env.SECRET_PWD;' to 'const BSKY_PASS = process.env.BS_PASSWORD;'
 
-###### and add 'import dotenv from 'dotenv';' to the top of the .ts files (all of them).
+###### and add "import dotenv from 'dotenv';" to the top of the .ts files (all of them).
 
 ###### 5. Save the files
 
 #### Run the Tests:
 ###### 1. Open terminal within VSCode and run "yarn" to install dependencies
-###### 2. Run "yarn web" to start local server instance and note the localhost url plus port being used to run the application
-###### 3. Open the playwright.config.ts file and set the webserver url attribute to equal the url indicated in Step 7 (in most cases it will run on http://127.0.0.1:19006)
+###### 2. Run "yarn web" to start local server instance and note the localhost url plus port being used to run the application (this takes several minutes)
+###### 3. Open the playwright.config.ts file and set the webserver url attribute to equal the url indicated in Step 2 (in most cases it will run on http://127.0.0.1:19006)
 ###### 4. Save changes within the playwright.config.ts file
 ###### 5. Open another terminal instance, and run the following cmd: npx playwright test
 ###### 6. [Optional] you can run the tests with parallelization by adding '--workers=3' 
